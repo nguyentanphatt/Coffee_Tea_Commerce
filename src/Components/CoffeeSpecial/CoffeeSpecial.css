@@ -1,0 +1,35 @@
+
+.coffee_special{
+    display: flex;
+    flex-direction: column;
+    background-color: #F5F5F5;
+}
+.coffee_banner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #3D3434;
+    margin: 20px;
+}
+
+.coffee_banner h1{
+    color: white;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #838383;
+}
+
+.coffee_banner img{
+    width: 100px;
+    height: 100px;
+}
+
+.special_item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px;
+}
