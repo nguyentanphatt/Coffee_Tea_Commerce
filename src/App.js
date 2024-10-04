@@ -4,6 +4,10 @@ import Heading from './Components/Heading/Heading';
 import Navbar from './Components/Navbar/Navbar';
 import HomePage from './Pages/HomePage';
 import Footer from './Components/Footer/Footer';
+import ItemCategory from './Pages/ItemCategory';
+import coffee_banner from './assets/frontend/coffee_banner.png'
+import tea_banner from './assets/frontend/tea_banner.jpg'
+import seed_banner from './assets/frontend/seed_banner.webp'
 function App() {
   return (
     <div>
@@ -12,6 +16,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element ={<HomePage />}/>
+          <Route path='/coffee' element={<ItemCategory banner={coffee_banner} category="coffee"/>}/>
+          <Route path='/tea' element={<ItemCategory banner={tea_banner} category="tea"/>}/>
+          <Route path='/seed' element={<ItemCategory banner={seed_banner} category="seed"/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -26,10 +26,18 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer_social">
-        <img src={facebook_icon} alt="" />
-        <img src={insta_icon} alt="" />
-        <img src={twitter_icon} alt="" />
-        <img src={youtube_icon} alt="" />
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+          <img src={facebook_icon} alt="" />
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+          <img src={insta_icon} alt="" />
+        </a>
+        <a href="https://x.com/?lang=vi" target="_blank" rel="noopener noreferrer">
+          <img src={twitter_icon} alt="" />
+        </a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+          <img src={youtube_icon} alt="" />
+        </a>
       </div>
     </div>
   )

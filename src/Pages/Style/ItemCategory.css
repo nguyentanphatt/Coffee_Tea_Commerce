@@ -1,0 +1,89 @@
+.item_category{
+    display: flex;
+}
+
+.item_category_banner{
+    display: flex;
+    width: 100%;
+    position: relative;
+    background-color: #F5F5F5;
+}
+
+.item_category_banner img{
+    width: 80%;
+    height: 80%;
+    margin-left: 200px;
+}
+
+.coffee_h1{
+    position: absolute;
+    left: 60%;
+    top: 10%;
+    font-size: 40px;
+    color: #3D3434;
+}
+
+.coffee_p1{
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    font-size: 25px;
+    font-weight: 600;
+    color: #3D3434;
+}
+
+.coffee_p2{
+    position: absolute;
+    left: 70%;
+    top: 32%;
+    font-size: 25px;
+    font-weight: 600;
+    color: #3D3434;
+}
+
+.tea_h1{
+    position: absolute;
+    left: 45%;
+    top: 5%;
+    font-size: 40px;
+    color: #118906;
+}
+
+.tea_p1{
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    font-size: 25px;
+    font-weight: 600;
+    color: #118906;
+}
+
+.tea_p2{
+    position: absolute;
+    left: 62%;
+    top: 34%;
+    font-size: 25px;
+    font-weight: 600;
+    color: #118906;
+}
+.seed_h1{
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    font-size: 40px;
+}
+.seed_p1{
+    position: absolute;
+    left: 35%;
+    top: 27%;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.seed_p2{
+    position: absolute;
+    left: 35%;
+    top: 35%;
+    font-size: 25px;
+    font-weight: 600;
+}

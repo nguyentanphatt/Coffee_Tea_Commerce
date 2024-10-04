@@ -6,7 +6,7 @@ const Banner = () => {
     <div className='banner'>
         <div className='banner-left'>
             <h1>BEST COFFEE IN THE WORLD</h1>
-            <p>Sale up to 20%</p>
+            <p>Get now to sale up to 20%</p>
             <button>Get it now!!</button>
         </div>
         <div className="banner-right">
