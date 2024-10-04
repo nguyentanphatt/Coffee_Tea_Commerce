@@ -1,5 +1,5 @@
 import image01 from './sencha.png'
-import image02 from './White_tea.jpg'
+import image02 from './White_tea.png'
 import image03 from './Chamomile_tea.jpg'
 let special_tea =[
     {

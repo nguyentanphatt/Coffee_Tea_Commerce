@@ -11,6 +11,7 @@
     gap: 200px;
     list-style: none;
     color: #fff;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
 }

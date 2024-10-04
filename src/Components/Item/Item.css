@@ -30,3 +30,8 @@
 .item_info {
     background-color: #838383;
 }
+
+.item img:hover{
+    transform: scale(1.05);
+    transition: 0.6s;
+}
