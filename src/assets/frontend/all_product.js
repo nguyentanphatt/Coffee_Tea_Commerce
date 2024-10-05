@@ -6,7 +6,7 @@ import image05 from './Organic_french_roast.jpg'
 import image06 from './Monster_fuel.jpg'
 import image07 from './Royal_silk_espresso.jpg'
 import image08 from './Goldern-Morning.png'
-import image09 from './Bliss_brew.jpg'
+import image09 from './Bliss_brew.png'
 import image10 from './sencha.png'
 import image11 from './White_tea.png'
 import image12 from './Chamomile_tea.jpg'
@@ -42,10 +42,10 @@ let all_product = [
     },
     {
         "id":2,
-        "name": "Caribbean Roasters Sunrise Roast",
+        "name": "Caribbean Roasters Sunrise",
         "price": 35.00,
         "description": "Caribbean Roasters Sunrise Roast Ground Coffee is a medium roasted blend featuring delicate notes of chocolate, orange zest, and apricot. Enjoy the flavors of the island life from the comfort of home with this 8oz pouch.",
-        "small_description": "Wake up gently with the soft and balanced flavors.",
+        "small_description": "Wake up gently with the soft.",
         "image": image02,
         "favor": "Light favor",
         "category": "coffee",
@@ -58,7 +58,7 @@ let all_product = [
         "name": "Whisper Espresso",
         "price": 14.50,
         "description": "Bright, fruity, and melodious, with notes of cherry, dark chocolate, and orange peel. Our seasonal espresso blend. ",
-        "small_description": "For espresso lovers who prefer a softer touch.",
+        "small_description": "For espresso lovers.",
         "image": image03,
         "favor": "Light favor",
         "category": "coffee",
@@ -268,7 +268,7 @@ let all_product = [
         "description": "Arabica is the most popular coffee bean, known for its smooth flavor and aromatic qualities. It typically has a mild, fruity taste with a slight acidity.",
         "small_description": "Smooth and aromatic.",
         "image": image19,
-        "category": "Bean and Seed",
+        "category": "bean and seed",
         "quantity": 100,
         "type":"Coffee bean"
     },
@@ -279,7 +279,7 @@ let all_product = [
         "description": "Robusta beans are stronger and more bitter than Arabica, often used in espresso blends. They have higher caffeine content and a bold, earthy flavor.",
         "small_description": "Bold, earthy flavor with high caffeine.",
         "image": image20,
-        "category": "Bean and Seed",
+        "category": "bean and seed",
         "quantity": 100,
         "type":"Coffee bean"
     },
@@ -290,7 +290,7 @@ let all_product = [
         "description": "Liberica beans are less common, offering a unique smoky, woody flavor. They tend to have a fuller body and are known for their complex taste profile.",
         "small_description": "Unique smoky, woody flavor.",
         "image": image21,
-        "category": "Bean and Seed",
+        "category": "bean and seed",
         "quantity": 100,
         "type":"Coffee bean"
     },
@@ -301,7 +301,7 @@ let all_product = [
         "description": "Excelsa, a member of the Liberica family, has a tart, fruity taste. It is often used to add complexity and depth to coffee blends.",
         "small_description": "Tart, fruity flavor",
         "image": image22,
-        "category": "Bean and Seed",
+        "category": "bean and seed",
         "quantity": 100,
         "type":"Coffee bean"
     },
@@ -312,7 +312,7 @@ let all_product = [
         "description": " Assam tea is a black tea grown in the Assam region of India. It is known for its strong, malty flavor and rich, deep color. Often used in breakfast blends, it is popular for its robust taste.",
         "small_description": "Bold and malty",
         "image": image23,
-        "category": "Bean and Seed",
+        "category": "bean and seed",
         "quantity": 100,
         "type":"Tea leaf"
     },
@@ -323,7 +323,7 @@ let all_product = [
         "description": "Darjeeling tea is often referred to as the champagne of teas due to its light, floral flavor with hints of muscatel. Grown in the Darjeeling region of India, it can be enjoyed as black, green, or oolong tea.",
         "small_description": "Light, floral with muscatel notes",
         "image": image24,
-        "category": "Bean and Seed",
+        "category": "bean and seed",
         "quantity": 100,
         "type":"Tea leaf"
     },
@@ -334,7 +334,7 @@ let all_product = [
         "description": "Sencha is a popular Japanese green tea, known for its fresh, grassy flavor and slightly sweet undertones. It is steamed to prevent oxidation, retaining its vibrant green color.",
         "small_description": "Fresh, grassy flavor",
         "image": image25,
-        "category": "Bean and Seed",
+        "category": "bean and seed",
         "quantity": 100,
         "type":"Tea leaf"
     },
@@ -345,7 +345,7 @@ let all_product = [
         "description": " Pu-erh tea is a fermented tea from China, offering a rich, earthy flavor. It improves with age, like wine, and is prized for its medicinal properties and unique taste.",
         "small_description": " Rich, earthy, and fermented",
         "image": image26,
-        "category": "Bean and Seed",
+        "category": "bean and seed",
         "quantity": 100,
         "type":"Tea leaf"
     },
@@ -356,7 +356,7 @@ let all_product = [
         "description": "Tieguanyin is a famous oolong tea from China, celebrated for its floral aroma and smooth, creamy texture. It has a complex taste, blending sweetness with subtle roasted notes.",
         "small_description": "Floral and creamy",
         "image": image27,
-        "category": "Bean and Seed",
+        "category": "bean and seed",
         "quantity": 100,
         "type":"Tea leaf"
     },

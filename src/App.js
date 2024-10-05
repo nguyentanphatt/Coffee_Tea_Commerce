@@ -18,7 +18,7 @@ function App() {
           <Route path='/' element ={<HomePage />}/>
           <Route path='/coffee' element={<ItemCategory banner={coffee_banner} category="coffee"/>}/>
           <Route path='/tea' element={<ItemCategory banner={tea_banner} category="tea"/>}/>
-          <Route path='/seed' element={<ItemCategory banner={seed_banner} category="seed"/>}/>
+          <Route path='/seed' element={<ItemCategory banner={seed_banner} category="bean and seed"/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>
