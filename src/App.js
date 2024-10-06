@@ -9,6 +9,7 @@ import coffee_banner from './assets/frontend/coffee_banner.png'
 import tea_banner from './assets/frontend/tea_banner.jpg'
 import seed_banner from './assets/frontend/seed_banner.webp'
 import LoginSignup from './Pages/LoginSignup';
+import News from './Pages/News';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/tea' element={<ItemCategory banner={tea_banner} category="tea"/>}/>
           <Route path='/seed' element={<ItemCategory banner={seed_banner} category="bean and seed"/>}/>
           <Route path='/login' element={<LoginSignup />}/>
+          <Route path='/news' element={<News />}/>
         </Routes>
         <Footer />
       </BrowserRouter>

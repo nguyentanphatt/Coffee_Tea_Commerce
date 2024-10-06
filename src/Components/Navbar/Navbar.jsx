@@ -18,7 +18,7 @@ const Navbar = () => {
         <li><Link style={{textDecoration: 'none',color: 'inherit'}} to='/'>Home</Link></li>
         <li onClick={handleShowMenu}>Category</li>
         {menu && <CategoryMenu onClose={handleCloseMenu}/>}
-        <li>News</li>
+        <li><Link style={{textDecoration: 'none',color: 'inherit'}} to='/news'>News</Link></li>
         <li>About Us</li>
       </ul>
     </div>

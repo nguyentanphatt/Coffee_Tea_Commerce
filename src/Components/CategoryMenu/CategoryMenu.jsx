@@ -3,8 +3,6 @@ import './CategoryMenu.css'
 import { Link } from 'react-router-dom'
 const CategoryMenu = ({onClose}) => {
 
-    //const [menu,setMenu] = useState()
-
   return (
     <div className='category_menu'>
         <button onClick={onClose}>X</button>
@@ -31,7 +29,7 @@ const CategoryMenu = ({onClose}) => {
         <div className="category_menu-category">
             <h3>WANT TO KNOW MORE</h3>
             <hr />
-            <p>Sign in or Sign up to get more info</p>
+            <p><Link style={{textDecoration: 'none' ,color: 'inherit'}} to='/login' onClick={onClose}>Sign in or Sign up to get more info</Link></p>
         </div>
     </div>
   )

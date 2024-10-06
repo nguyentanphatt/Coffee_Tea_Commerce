@@ -30,6 +30,10 @@
     font-size: 18px;
 }
 
+.category_menu-category h3:hover{
+    color: #3d3434;
+}
+
 .category_menu button{
     position: absolute;
     top: 10px;
