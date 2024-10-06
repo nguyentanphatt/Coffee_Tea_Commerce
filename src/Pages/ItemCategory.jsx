@@ -3,8 +3,9 @@ import './Style/ItemCategory.css'
 import all_product from '../assets/frontend/all_product'
 import Item from '../Components/Item/Item'
 import { FormGroup, FormControlLabel, Checkbox } from '@mui/material'
+//import { useParams } from 'react-router-dom'
 const ItemCategory = (props) => {
-
+    
     const [favor, setFavor] = useState('')
     const [price, setPrice] = useState('')
     const [type, setType] = useState('')
@@ -159,7 +160,6 @@ const ItemCategory = (props) => {
         const value = e.target.name
         setSpecial(special === value ? '' : value);
     };
-
     useEffect(()=>{
         setFavor('')
         setPrice('')
@@ -188,7 +188,7 @@ const ItemCategory = (props) => {
         }
         if(price === 'above'){
             products = products.filter(product => product.price >= '20');
-        } else {
+        } else if (price === 'below') {
             products = products.filter(product => product.price < '20');
         }
 
