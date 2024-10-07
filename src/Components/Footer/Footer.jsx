@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="footer_contac">
           <h3>Get To Know Us</h3>
           <p><Link style={{textDecoration: 'none',color: 'inherit'}} to='/aboutus'>About Us</Link></p>
-          <p>Contact</p>
+          <p><Link style={{textDecoration: 'none',color: 'inherit'}} to='/contactus'>Contact Us</Link></p>
         </div>
         <div className="footer_help">
           <h3>Let Us Help  You</h3>

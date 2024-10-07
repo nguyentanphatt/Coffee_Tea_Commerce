@@ -28,7 +28,7 @@ import image27 from './Tieguanyin.jpg'
 
 let all_product = [
     {
-        "id":1,
+        id: 1,
         "name": "Morning Mist Blend",
         "price": 31.50,
         "description": "A lively, balanced coffee, sweet and smooth with lively citrus topnotes and a lingering buttery finish. Bright enough for breakfast, smooth enough to drink all day...or mix with whiskey for a memorable Irish Coffee.",

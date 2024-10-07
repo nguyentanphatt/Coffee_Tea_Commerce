@@ -7,11 +7,12 @@
     margin-bottom: 50px;
     background-color: white;
     border: 2px solid #3d3434;
+    height: 300px;
 }
 
 .aboutContactcontainer img {
     width: 40%;
-    height: auto;
+    height: 300px;
     object-fit: cover;
     margin-right: 20px;
 }
@@ -26,7 +27,6 @@
 }
 
 .aboutContact_text h1 {
-    margin-bottom: 20px;
     color: #3d3434;
     text-align: center;
 }
@@ -35,6 +35,7 @@
     font-size: 20px;
     color: #666;
     line-height: 1.6;
+    margin-bottom: 30px;
 }
 
 .reversed {

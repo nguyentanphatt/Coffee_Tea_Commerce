@@ -13,6 +13,7 @@ import News from './Pages/News';
 import AboutUs from './Pages/AboutUs';
 import ContactUs from './Pages/ContactUs';
 import ScrollToTop from './Context/ScrollToTop';
+import Product from './Pages/Product';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
           <Route path='/news' element={<News />}/>
           <Route path='/aboutus' element={<AboutUs />}/>
           <Route path='/contactus' element={<ContactUs />}/>
+          <Route path='/product' element={<Product />}>
+            <Route path=':productId' element={<Product />}/>
+          </Route>
         </Routes>
         <Footer />
       </BrowserRouter>

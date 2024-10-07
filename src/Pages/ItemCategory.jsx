@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Style/ItemCategory.css'
-import all_product from '../assets/frontend/all_product'
 import Item from '../Components/Item/Item'
 import { FormGroup, FormControlLabel, Checkbox } from '@mui/material'
-//import { useParams } from 'react-router-dom'
+import { ShopContext } from '../Context/ShopContext'
 const ItemCategory = (props) => {
+    const {all_product} = useContext(ShopContext)
     
     const [favor, setFavor] = useState('')
     const [price, setPrice] = useState('')
@@ -166,7 +166,7 @@ const ItemCategory = (props) => {
         setSpecial('')
         setType('')
         setFilterProduct(all_product.filter(product => product.category === props.category))
-    },[props.category])
+    },[all_product,props.category])
 
     const handleSearchItem = () => {
         let products = all_product.filter(product => product.category===props.category)
@@ -231,7 +231,7 @@ const ItemCategory = (props) => {
             </div>
             <div className="item_category-item">
             {filterProduct.map((item,index)=>{
-                return <Item key={index} name={item.name} image={item.image} price={item.price} small_description={item.small_description}/>
+                return <Item key={index} id={item.id} name={item.name} image={item.image} price={item.price} small_description={item.small_description}/>
             })}
             </div>
         </div>

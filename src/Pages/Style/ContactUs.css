@@ -1,0 +1,109 @@
+.contactus_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #F5F5F5;
+}
+
+.contactus_container h1{
+    color: #3d3434;
+    font-weight: bold;
+
+}
+
+.contactus_form{
+    width: 60%;
+    height: auto;
+    border: 1px solid black;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.contactus_ourContact{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.ourContact{
+    width: 60%;
+    margin-left: 100px;
+}
+
+.ourContact h3{
+    font-weight: bold;
+    font-size: 24px;
+    color: #3d3434;
+}
+
+.ourContact p{
+    font-weight: 600;
+    padding: 5px;
+}
+
+.contactImg {
+    width: 40%;
+    height: auto;
+}
+
+.contactImg img{
+    width: 100%;
+    margin-right: 50px;
+}
+
+.contactus_email{
+    margin-left: 100px;
+}
+
+.contactus_inputEmail{
+    display: flex;
+    flex-direction: row;
+}
+
+.contactus_email h3{
+    font-weight: bold;
+    font-size: 24px;
+    color: #3d3434;
+}
+
+.contactus_inputEmail input{
+    width: 30%;
+    margin-right: 50px;
+    border: 2px solid #3d3434;
+    padding: 10px;
+}
+
+.contactus_inputEmail button{
+    width: 100px;
+    background-color: #3d3434;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    border-radius: 1vh;
+    cursor: pointer;
+}
+
+.contactus_social{
+    margin-left: 100px;
+
+}
+
+.contactus_social h3{
+    font-weight: bold;
+    font-size: 24px;
+    color: #3d3434;
+}
+
+.social_img{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.social_img img{
+    padding-right: 20px;
+    width: 50px;
+    height: 50px;
+}
