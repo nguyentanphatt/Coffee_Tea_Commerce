@@ -4,13 +4,14 @@ import facebook_icon from '../../assets/frontend/Facebook.png'
 import insta_icon from '../../assets/frontend/Insta.png'
 import twitter_icon from '../../assets/frontend/Twitter.png'
 import youtube_icon from '../../assets/frontend/Youtube.png'
+import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
     <div className='footer'>
       <div className="footer_info">
         <div className="footer_contac">
           <h3>Get To Know Us</h3>
-          <p>About Us</p>
+          <p><Link style={{textDecoration: 'none',color: 'inherit'}} to='/aboutus'>About Us</Link></p>
           <p>Contact</p>
         </div>
         <div className="footer_help">
@@ -19,7 +20,7 @@ const Footer = () => {
           <p>Help Center</p>
         </div>
         <div className="footer_contactInfo">
-          <h3>Our Contact</h3>
+          <h3><Link style={{textDecoration: 'none',color: 'inherit'}} to='/contactus'>Our Contact</Link></h3>
           <p>Street: 16A Avalon St</p>
           <p>Phone: +809890890</p>
           <p>Email: coffeeLY@gmail.com</p>

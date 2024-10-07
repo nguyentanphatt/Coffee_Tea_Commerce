@@ -10,6 +10,9 @@ import tea_banner from './assets/frontend/tea_banner.jpg'
 import seed_banner from './assets/frontend/seed_banner.webp'
 import LoginSignup from './Pages/LoginSignup';
 import News from './Pages/News';
+import AboutUs from './Pages/AboutUs';
+import ContactUs from './Pages/ContactUs';
+import ScrollToTop from './Context/ScrollToTop';
 
 function App() {
   return (
@@ -17,6 +20,7 @@ function App() {
       <BrowserRouter>
         <Heading/>
         <Navbar />
+        <ScrollToTop />
         <Routes>
           <Route path='/' element ={<HomePage />}/>
           <Route path='/coffee' element={<ItemCategory banner={coffee_banner} category="coffee"/>}/>
@@ -24,6 +28,8 @@ function App() {
           <Route path='/seed' element={<ItemCategory banner={seed_banner} category="bean and seed"/>}/>
           <Route path='/login' element={<LoginSignup />}/>
           <Route path='/news' element={<News />}/>
+          <Route path='/aboutus' element={<AboutUs />}/>
+          <Route path='/contactus' element={<ContactUs />}/>
         </Routes>
         <Footer />
       </BrowserRouter>

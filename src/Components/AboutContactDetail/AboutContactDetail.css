@@ -1,0 +1,42 @@
+.aboutContactcontainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 50px;
+    background-color: white;
+    border: 2px solid #3d3434;
+}
+
+.aboutContactcontainer img {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.aboutContact_text {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.aboutContact_text h1 {
+    margin-bottom: 20px;
+    color: #3d3434;
+    text-align: center;
+}
+
+.aboutContact_text p {
+    font-size: 20px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.reversed {
+    flex-direction: row-reverse;
+}

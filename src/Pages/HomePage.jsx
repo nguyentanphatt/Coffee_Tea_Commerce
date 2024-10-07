@@ -12,7 +12,6 @@ const HomePage = () => {
         <CoffeeSpecial />
         <TeaSpecial />
         <NewSeed />
-        <News />
     </div>
   )
 }
