@@ -16,7 +16,7 @@
     padding: 2px;
     border: 3px solid #342B2B;
     margin-right: 50px;
-    width: 600px;
+    width: 610px;
 }
 
 .search input{
@@ -71,4 +71,44 @@
     font-size: 14px;
     background: red;
     color: white;
+}
+
+.search_results {
+    position: absolute;
+    top: 9%;
+    left: 37%;
+    background-color: white;
+    border: 2px solid black;
+    width: 610px; 
+    max-height: 200px; 
+    overflow-y: auto;
+    z-index: 10;
+}
+  
+.search_results ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.search_item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+  
+.search_item img {
+    width: 40px; /* Adjust image size */
+    height: 40px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+  
+.search_item:hover {
+    background-color: #f0f0f0;
+}
+  
+.search_item span {
+    font-size: 16px;
 }
