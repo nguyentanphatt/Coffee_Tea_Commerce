@@ -1,15 +1,14 @@
 .item{
-    width: 300px;
+    width: 277px;
     height: 450px;
     background-color: white;
-    margin-right: 10px;
+    
 }
 
 .item img{
-    width: 300px;
+    width: 277px;
     height: 300px;
     object-fit:contain;
-    
 }
 
 .item_name{

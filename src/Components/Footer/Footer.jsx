@@ -16,8 +16,8 @@ const Footer = () => {
         </div>
         <div className="footer_help">
           <h3>Let Us Help  You</h3>
-          <p>Sell Item</p>
-          <p>Help Center</p>
+          <p><Link style={{textDecoration: 'none',color: 'inherit'}} to='/selling'>Selling Item </Link></p>
+          <p><Link style={{textDecoration: 'none',color: 'inherit'}} to='/helpcenter'>Help Center </Link></p>
         </div>
         <div className="footer_contactInfo">
           <h3><Link style={{textDecoration: 'none',color: 'inherit'}} to='/contactus'>Our Contact</Link></h3>

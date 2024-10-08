@@ -14,6 +14,9 @@ import AboutUs from './Pages/AboutUs';
 import ContactUs from './Pages/ContactUs';
 import ScrollToTop from './Context/ScrollToTop';
 import Product from './Pages/Product';
+import Selling from './Pages/Selling';
+import HelpCenter from './Pages/HelpCenter';
+import HelpDetail from './Components/HelpDetail/HelpDetail';
 
 function App() {
   return (
@@ -31,6 +34,9 @@ function App() {
           <Route path='/news' element={<News />}/>
           <Route path='/aboutus' element={<AboutUs />}/>
           <Route path='/contactus' element={<ContactUs />}/>
+          <Route path='/selling' element={<Selling />}/>
+          <Route path='/helpcenter' element={<HelpCenter />}/>
+          <Route path='/helpcenter/:title' element={<HelpDetail />}/>
           <Route path='/product' element={<Product />}>
             <Route path=':productId' element={<Product />}/>
           </Route>
