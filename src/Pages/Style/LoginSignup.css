@@ -42,6 +42,7 @@
     padding-left: 10px;
     color: red;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .loginsignup_continue{

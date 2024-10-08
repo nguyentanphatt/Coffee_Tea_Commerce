@@ -12,7 +12,7 @@ const CoffeeSpecial = () => {
         </div>
         <div className="special_item">
             {special_coffee.map((item,index)=>{
-                return <Item key={index} name={item.name} image={item.image} price={item.price} small_description={item.small_description}/>
+                return <Item key={index} id={item.id} name={item.name} image={item.image} price={item.price} small_description={item.small_description}/>
             })}
         </div>
     </div>
