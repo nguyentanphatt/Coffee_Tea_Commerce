@@ -7,7 +7,7 @@ import './Heading.css'
 import { ShopContext } from '../../Context/ShopContext'
 const Heading = () => {
 
-  const {all_product} = useContext(ShopContext)
+  const {all_product, getTotalCartItems} = useContext(ShopContext)
 
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -61,8 +61,8 @@ const Heading = () => {
       </div>
       <div className='item_cart'>
         <Link to='/login'><button className='btn'>Login with us</button></Link>
-        <img src={cart} alt="" />
-        <div className="cart_count">0</div>
+        <Link to='/cart'><img src={cart} alt="" /></Link>
+        <div className="cart_count">{getTotalCartItems()}</div>
       </div>
     </div>
   )

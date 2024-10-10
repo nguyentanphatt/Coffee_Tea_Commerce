@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import black_star from '../../assets/frontend/black_star.png'
 import './ProductDisplay.css'
+import { ShopContext } from '../../Context/ShopContext';
 const ProductDisplay = (props) => {
 
     const {product} = props; 
-    const [count, setCount] = useState(0)
+    const {addToCart} = useContext(ShopContext)
+    const [count, setCount] = useState(1)
 
     const specialType = () =>{
         switch(product.category){
@@ -44,7 +46,7 @@ const ProductDisplay = (props) => {
 
     const handleChangeNumber = (value) => {
         if(value === "-"){
-            setCount(prev => prev > 0 ? prev - 1 : 0)
+            setCount(prev => prev > 1 ? prev - 1 : 1)
         } else if(value === "+"){
             setCount(prev => prev + 1)
         }
@@ -85,7 +87,7 @@ const ProductDisplay = (props) => {
                 <p style={{fontSize: '18px', fontWeight: '600', textAlign: 'center', width:'30px'}}>{count}</p>
                 <button className='btn' onClick={()=>handleChangeNumber('+')}>+</button>
             </div>
-            <button className='add_to_cart_btn'>ADD TO CART</button>
+            <button className='add_to_cart_btn' onClick={()=>{addToCart(product.id, count)}}>ADD TO CART</button>
         </div>
     </div>
   )

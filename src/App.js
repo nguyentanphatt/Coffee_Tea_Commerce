@@ -17,6 +17,7 @@ import Product from './Pages/Product';
 import Selling from './Pages/Selling';
 import HelpCenter from './Pages/HelpCenter';
 import HelpDetail from './Components/HelpDetail/HelpDetail';
+import Cart from './Pages/Cart';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path='/product' element={<Product />}>
             <Route path=':productId' element={<Product />}/>
           </Route>
+          <Route path='/cart' element={<Cart />}/>
         </Routes>
         <Footer />
       </BrowserRouter>

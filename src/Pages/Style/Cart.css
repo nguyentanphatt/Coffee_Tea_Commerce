@@ -1,0 +1,94 @@
+.cart_container{
+    margin: 100px 170px;
+}
+
+.cart_container hr{
+    height: 3px;
+    background: #3d3434;
+    border: 0;
+}
+
+.cart_form{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 35px;
+    padding: 20px 0px;
+    color: #454545;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.cart_format{
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.cart_item_img{
+    width: 100px;
+    height: 100px;
+}
+
+.cart_quantity{
+    margin-left: 30px;
+}
+
+.cart_remove_icon{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.cart_down{
+    display: flex;
+    flex-direction: row;
+
+    margin: 100px 0px;
+    width: 100%;
+}
+
+.cart_total{
+    margin-right: 200px;
+    gap: 20px;
+    flex: 1;
+    width: 50%;
+}
+
+.cart_total_info{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0px;
+}
+
+.checkout_btn{
+    width: 300px;
+    height: 50px;
+    background-color: #3d3434;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 150px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.cart_promo{
+    width: 50%;
+}
+
+.cart_promo input{
+    width: 300px;
+    height: 25px;
+    border: 2px solid #3d3434;
+    margin-right: 10px;
+}
+
+.cart_promo button{
+    width: 100px;
+    height: 32px;
+    background-color: #3d3434;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}

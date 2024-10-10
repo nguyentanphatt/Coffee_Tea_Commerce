@@ -7,7 +7,7 @@ const TeaSpecial = () => {
   return (
     <div className='tea_special'>
         <div className="tea_banner">
-            <h1>SPECIAL IN LIGHT FAVOR</h1>
+            <h1>TEA LEAF GOOD FOR HEALTH</h1>
             <img src={tea_icon} alt="" />
         </div>
         <div className="special_item">
