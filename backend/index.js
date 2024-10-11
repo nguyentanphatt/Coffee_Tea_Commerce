@@ -148,7 +148,12 @@ app.post('/addproduct',async (req,res)=>{
         res.status(500).json({success: false, error: "Failed to add product"})
     }
 })
-
+//List All Product API
+app.get('/allproduct',async (req,res)=>{
+    let listProduct = await Product.find({})
+    console.log("All Product fetched");
+    res.send(listProduct)
+})
 
 
 
