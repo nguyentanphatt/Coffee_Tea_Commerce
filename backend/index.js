@@ -149,7 +149,7 @@ app.post('/addproduct',async (req,res)=>{
     }
 })
 //List All Product API
-app.get('/allproduct',async (req,res)=>{
+app.get('/listproduct',async (req,res)=>{
     let listProduct = await Product.find({})
     console.log("All Product fetched");
     res.send(listProduct)
