@@ -55,7 +55,7 @@ const productSchema = new Schema({
     },
     small_description: {
         type: String,
-        required: true
+        required: false
     },
     price: {
         type: Number,
@@ -79,15 +79,21 @@ const productSchema = new Schema({
     },
     grind: {
         type: String,
-        required: function() { return this.category === 'coffee'; }
+        required: function() {
+            return this.category === 'coffee' ? true : false;
+        },
     },
     form: {
         type: String,
-        required: function() { return this.category === 'tea'; }
+        required: function() {
+            return this.category === 'tea' ? true : false;
+        },
     },
     favor: {
         type: String,
-        required: function() { return this.category === 'coffee' || this.category === 'tea'; }
+        required: function() {
+            return this.category === 'coffee' || this.category === 'tea' ? true : false; // Required for coffee or tea
+        },
     },
     available: {
         type: Boolean,
@@ -153,6 +159,16 @@ app.get('/listproduct',async (req,res)=>{
     let listProduct = await Product.find({})
     console.log("All Product fetched");
     res.send(listProduct)
+})
+
+//Delete Product API
+app.post('/deleteproduct', async (req, res) => {
+    await Product.findOneAndDelete({id:req.body.id})
+    console.log("Removed");
+    res.json({
+        success:true,
+        name:req.body.name
+    })
 })
 
 

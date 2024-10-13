@@ -13,6 +13,18 @@ const ListProduct = () => {
     getAllProduct()
   },[])
 
+  const deleteProduct = async (id) => {
+    await fetch('http://localhost:4000/deleteproduct', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({id:id})
+    })
+    await getAllProduct()
+  }
+
   return (
     <div className="p-6">
       <div className='flex justify-start mb-4 bg-white border border-gray-400 p-2 rounded-r-md w-80'>
@@ -41,7 +53,7 @@ const ListProduct = () => {
                 <td className="border border-gray-400 p-2">{product.price}</td>
                 <td className="border border-gray-400 p-2">{product.category}</td>
                 <td className=" p-2 flex border-b border-gray-400">
-                  <button className="text-red-500">delete,</button>
+                  <button className="text-red-500" onClick={() => {deleteProduct(product.id)}}>delete,</button>
                   <button className="text-blue-500">update</button>
                 </td>
               </tr>
