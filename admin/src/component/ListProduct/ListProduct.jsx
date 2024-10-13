@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
+//import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import search_icon from '../../assets/search.png'
 const ListProduct = () => {
 
   const [allProduct, setAllProduct] = useState([])
+  const navigate = useNavigate();
 
   const getAllProduct = async () => {
     await fetch ('http://localhost:4000/listproduct').then((res)=>res.json())
@@ -23,6 +26,10 @@ const ListProduct = () => {
       body: JSON.stringify({id:id})
     })
     await getAllProduct()
+  }
+
+  const updateProduct = (product) => {
+    navigate('/update-product', { state: { product } });
   }
 
   return (
@@ -54,7 +61,7 @@ const ListProduct = () => {
                 <td className="border border-gray-400 p-2">{product.category}</td>
                 <td className=" p-2 flex border-b border-gray-400">
                   <button className="text-red-500" onClick={() => {deleteProduct(product.id)}}>delete,</button>
-                  <button className="text-blue-500">update</button>
+                  <button className="text-blue-500" onClick={() => {updateProduct(product)}} >update</button>
                 </td>
               </tr>
             )

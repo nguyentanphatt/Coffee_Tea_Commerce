@@ -32,11 +32,9 @@ const MenuList = () => {
                 <MenuItem className="">Add Product</MenuItem>
               </div>
             </Link>
-            <Link to="/update-product">
               <div className=' bg-gray-500 rounded-md'>
-                <MenuItem className="">Update Product</MenuItem>
+                <MenuItem disabled={true} className="">Update Product</MenuItem>
               </div>
-            </Link>
           </div>
         )}
       </div>

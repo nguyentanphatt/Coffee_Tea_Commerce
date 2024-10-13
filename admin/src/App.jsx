@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="h-screen flex flex-col">
       <Header />
-      <Admin />  {/*Render Admin component */}
+      <Admin />
     </div>
   )
 }

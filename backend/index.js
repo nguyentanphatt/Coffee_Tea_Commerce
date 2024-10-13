@@ -170,7 +170,30 @@ app.post('/deleteproduct', async (req, res) => {
         name:req.body.name
     })
 })
+//Update Product API
+app.post('/updateProduct', async (req, res) => {
+    const {id, ...updateData } = req.body;
+    try {
+        const updateProduct = await Product.findByIdAndUpdate(id, updateData, {new: true})
+        if(!updateProduct){
+            return res.status(404).json({
+                success: false,
+                message: "Product not found"
+            })
+        }
+        res.json({
+            success:true,
+            data: updateProduct
+        })
+    } catch (error) {
+        res.status(500).json({
+            success:false,
+            message: error.message
+        })
+    }
+    
 
+})
 
 
 app.listen(port,(error)=>{
