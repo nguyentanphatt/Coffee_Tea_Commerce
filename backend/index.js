@@ -195,6 +195,151 @@ app.post('/updateproduct', upload.single('image'),async (req, res) => {
         });
     }
 })
+//Schema for user
+const Users = mongoose.model('Users',{
+    name:{
+        type:String,
+    },
+    email:{
+        type:String,
+        unique:true,
+    },
+    password:{
+        type:String,
+    },
+    cartData:{
+        type:Object,
+    },
+    date:{
+        type:Date,
+        default:Date.now()
+    }
+})
+//Create User API
+app.post('/signup', async(req,res)=>{
+    let check = await Users.findOne({email:req.body.email})
+    if(check){
+        return res.status(400).json({success:false, errors:"Existing User Email"})
+    }
+    let cart = {}
+    for(let i = 0; i < 300; i++){
+        cart[i] = 0
+    }
+    const user = new Users({
+        name:req.body.username,
+        email:req.body.email,
+        password:req.body.password,
+        cartData: cart,
+    })
+    await user.save()
+    const data = {
+        user:{
+            id:user.id
+        }
+    }
+    const token = jwt.sign(data, 'secret_token')
+    res.json({success:true, token})
+})
+
+//Login User API
+app.post('/login', async (req,res) => {
+    let user = await Users.findOne({email:req.body.email})
+    if(user){
+        const pass = req.body.password === user.password
+        if(pass){
+            const data = {
+                user:{
+                    id:user.id
+                }
+            }
+            const token = jwt.sign(data, 'secret_token')
+            res.json({
+                success:true,
+                token
+            })
+        } else{
+            res.json({
+                success:false,
+                errors: "Wrong passwor!!! Try Again"
+            })
+        }
+    } else{
+        res.json({
+            success:false,
+            errors: "Wrong email or not found email adress"
+        })
+    }
+})
+
+//Schema for Admin
+const Admins = mongoose.model('Admins',{
+    name:{
+        type:String,
+    },
+    email:{
+        type:String,
+        unique:true,
+    },
+    password:{
+        type:String,
+    },
+    date:{
+        type:Date,
+        default:Date.now()
+    }
+})
+//Create Admin API
+app.post('/adminsignup', async(req,res)=>{
+    let check = await Admins.findOne({email:req.body.email})
+    if(check){
+        return res.status(400).json({success:false, errors:"Existing Admin Email"})
+    }
+    const admin = new Admins({
+        name:req.body.name,
+        email:req.body.email,
+        password:req.body.password,
+    })
+    await admin.save()
+    const data = {
+        user:{
+            id:admin.id
+        }
+    }
+    const token = jwt.sign(data, 'secret_token')
+    res.json({success:true, token})
+})
+
+//Login Admin API
+app.post('/adminlogin', async (req,res) => {
+    let admin = await Admins.findOne({email:req.body.email})
+    if(admin){
+        const pass = req.body.password === admin.password
+        if(pass){
+            const data = {
+                user:{
+                    id:admin.id
+                }
+            }
+            const token = jwt.sign(data, 'secret_token')
+            res.json({
+                success:true,
+                token
+            })
+        } else{
+            res.json({
+                success:false,
+                errors: "Wrong passwor!!! Try Again"
+            })
+        }
+    } else{
+        res.json({
+            success:false,
+            errors: "Wrong email or not found email adress"
+        })
+    }
+})
+
+
 
 
 app.listen(port,(error)=>{

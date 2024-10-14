@@ -60,7 +60,10 @@ const Heading = () => {
         )}
       </div>
       <div className='item_cart'>
-        <Link to='/login'><button className='btn'>Login with us</button></Link>
+        {localStorage.getItem('auth-token')? <button className='btn' onClick={()=>{localStorage.removeItem('auth-token');window.location.reload('/')}}>Logout</button>
+          :
+          <Link to='/login'><button className='btn'>Login with us</button></Link>
+        }    
         <Link to='/cart'><img src={cart} alt="" /></Link>
         <div className="cart_count">{getTotalCartItems()}</div>
       </div>

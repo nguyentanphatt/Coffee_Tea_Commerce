@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ListProduct from '../component/ListProduct/ListProduct';
 import AddProduct from '../component/AddProduct/AddProduct';
 import UpdateProduct from '../component/UpdateProduct/UpdateProduct';
+import Login from '../component/Login/Login';
 const Admin = () => {
   return (
       <div className="flex h-screen">
@@ -16,6 +17,7 @@ const Admin = () => {
             <Route path="/all-selling" element={<ListProduct />} />
             <Route path="/add-to-product" element={<ListProduct />} />
             <Route path="/user" element={<ListProduct />} />
+            <Route path="/login" element={<Login />} />
             {/* Add more routes as needed */}
           </Routes>
         </div>

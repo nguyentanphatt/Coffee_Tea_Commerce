@@ -7,13 +7,13 @@ const MenuList = () => {
 
   const toggleProductMenu = () => setProductOpen(!productOpen);
   const toggleSellingMenu = () => setSellingOpen(!sellingOpen);
-
+  const isAuthenticated = !!localStorage.getItem('auth-token');
   return (
     <div className="flex flex-col w-1/6 text-white p-4">
       {/* Product Menu */}
       <div className="relative mb-2">
-        <div className='mb-1 bg-gray-700 rounded-md h-12 flex items-center'>
-          <Button onClick={toggleProductMenu} className="">
+        <div className={`mb-1 ${!isAuthenticated ? 'bg-gray-400' : 'bg-gray-700'}  rounded-md h-12 flex items-center`}>
+          <Button onClick={toggleProductMenu} className="" disabled={!isAuthenticated}>
             <div className='text-white flex'>
               <p className='mr-44'>Product</p>
               {productOpen ? '▼' : '►'} 
@@ -41,8 +41,8 @@ const MenuList = () => {
 
       {/* Selling Menu */}
       <div className="relative mb-2">
-      <div className='mb-1 bg-gray-700 rounded-md h-12 flex items-center'>
-          <Button onClick={toggleSellingMenu} className="">
+      <div className={`mb-1 ${!isAuthenticated ? 'bg-gray-400' : 'bg-gray-700'}  rounded-md h-12 flex items-center`}>
+          <Button onClick={toggleSellingMenu} className="" disabled={!isAuthenticated}>
             <div className='text-white flex'>
               <p className='mr-44'>SELLING</p>
               <p className='ml-2'>{sellingOpen ? '▼' : '►'} </p>
@@ -66,14 +66,32 @@ const MenuList = () => {
       </div>
 
       {/* User Menu */}
-      <div className='mb-1 bg-gray-700 rounded-md h-12 flex items-center'>
-        <Link to="/user">
-          <Button className="bg-gray-800 text-white mt-2">
+      <div className={`mb-3 ${!isAuthenticated ? 'bg-gray-400' : 'bg-gray-700'}  rounded-md h-12 flex items-center`}>
+        <Link to={isAuthenticated ? "/user" : "/"}>
+          <Button className="bg-gray-800 text-white mt-2" disabled={!isAuthenticated}>
             <div className='text-white'>USER</div>
           </Button>
         </Link>
       </div>
+        
 
+      {/* Login */}
+      {localStorage.getItem('auth-token') ? 
+      <div className='mb-1 bg-gray-700 rounded-md h-12 flex items-center'>
+          <Button className="bg-gray-800 text-white mt-2" onClick={()=>{localStorage.removeItem('auth-token');window.location.reload('/')}}>
+            <div className='text-white'>LOGOUT</div>
+          </Button>
+      </div>
+      :
+      <div className='mb-1 bg-gray-700 rounded-md h-12 flex items-center'>
+        <Link to="/login">
+          <Button className="bg-gray-800 text-white mt-2">
+            <div className='text-white'>LOGIN</div>
+          </Button>
+        </Link>
+      </div>
+      }
+      
     </div>
   );
 };
