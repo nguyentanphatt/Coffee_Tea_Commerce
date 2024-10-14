@@ -171,28 +171,29 @@ app.post('/deleteproduct', async (req, res) => {
     })
 })
 //Update Product API
-app.post('/updateProduct', async (req, res) => {
-    const {id, ...updateData } = req.body;
+app.post('/updateproduct', upload.single('image'),async (req, res) => {
+    const { id, ...updateData } = req.body;
+    if(req.file){
+        updateData.image = `http://localhost:${port}/images/${req.file.filename}`;
+    }
     try {
-        const updateProduct = await Product.findByIdAndUpdate(id, updateData, {new: true})
-        if(!updateProduct){
+        const updateProduct = await Product.findOneAndUpdate({ id: id }, updateData, { new: true });
+        if (!updateProduct) {
             return res.status(404).json({
                 success: false,
                 message: "Product not found"
-            })
+            });
         }
         res.json({
-            success:true,
+            success: true,
             data: updateProduct
-        })
+        });
     } catch (error) {
         res.status(500).json({
-            success:false,
+            success: false,
             message: error.message
-        })
+        });
     }
-    
-
 })
 
 

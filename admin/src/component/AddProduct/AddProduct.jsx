@@ -162,7 +162,7 @@ const AddProduct = () => {
                 <FormLabel>Grind</FormLabel>
                 <RadioGroup row name='grind' value={formData.grind} onChange={handleInputChange}>
                     <FormControlLabel value="espresso" control={<Radio />} label="Espresso" />
-                    <FormControlLabel value="manual_drop" control={<Radio />} label="Manual Drop" />
+                    <FormControlLabel value="manual_drip" control={<Radio />} label="Manual Drip" />
                     <FormControlLabel value="auto_drip" control={<Radio />} label="Auto Drip" />
                 </RadioGroup>
             </FormControl>

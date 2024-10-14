@@ -4,7 +4,7 @@ import { TextField, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio,
 const UpdateProduct = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const product = location.state.product; // Get product from location state
+    const product = location.state.product;
 
     const [formData, setFormData] = useState({
         id: product.id,
@@ -20,9 +20,10 @@ const UpdateProduct = () => {
         form: product.form || '',
         favor: product.favor || '',
     });
+    const [newImage, setNewImage] = useState(null); 
 
     useEffect(() => {
-        setFormData({ ...formData, category: product.category }); // Update category
+        setFormData({ ...formData, category: product.category });
     }, [product.category]);
 
     const handleInputChange = (e) => {
@@ -30,16 +31,36 @@ const UpdateProduct = () => {
         setFormData({ ...formData, [name]: value });
     };
 
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            setNewImage(file); 
+            setFormData({ ...formData, image: URL.createObjectURL(file) });  // Preview the image
+        }
+    };
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await fetch(`http://localhost:4000/updateproduct`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
+        const updateFormData = new FormData();
+
+        // Append all other fields to FormData
+        Object.keys(formData).forEach(key => {
+            if (key !== 'image') {
+                updateFormData.append(key, formData[key]);
+            }
         });
-        navigate('/list'); // Navigate back to the list after update
+        if (newImage) {
+            updateFormData.append('image', newImage);
+        } else {
+            updateFormData.append('image', formData.image || '');
+        }
+        await fetch(`http://localhost:4000/updateproduct`, {
+            method: 'POST',
+            //headers: {
+            //    'Content-Type': 'application/json',
+            //},
+            body: updateFormData,
+        });
+        navigate('/all-product');
     };
 
     return (
@@ -79,13 +100,45 @@ const UpdateProduct = () => {
 
             <FormControl className="mb-4">
                 <FormLabel>Category</FormLabel>
-                <RadioGroup row name="category" value={formData.category} onChange={handleInputChange}>
-                    <FormControlLabel value="coffee" control={<Radio />} label="Coffee" />
-                    <FormControlLabel value="tea" control={<Radio />} label="Tea" />
-                    <FormControlLabel value="bean and seed" control={<Radio />} label="Bean and Seed" />
+                {formData.category === 'coffee' && (
+                    <RadioGroup row name="category" value={formData.category} onChange={handleInputChange}>
+                        <FormControlLabel value="coffee" control={<Radio />} label="Coffee" />
+                    </RadioGroup>
+                )}
+                {formData.category === 'tea' && (
+                    <RadioGroup row name="category" value={formData.category} onChange={handleInputChange}>
+                        <FormControlLabel value="tea" control={<Radio />} label="Tea" />
+                    </RadioGroup>
+                )}
+                {formData.category === 'bean and seed' && (
+                    <RadioGroup row name="category" value={formData.category} onChange={handleInputChange}>
+                        <FormControlLabel value="bean and seed" control={<Radio />} label="Bean and Seed" />
+                    </RadioGroup>
+                )}
+            </FormControl>
+            <FormControl className="mb-4">
+                <FormLabel className='ml-10'>Type</FormLabel>
+                <RadioGroup row className='ml-10' name='type' value={formData.type} onChange={handleInputChange}>
+                    {formData.category === 'coffee' &&(
+                <>
+                    <FormControlLabel value="regular" control={<Radio />} label="Regular" />
+                    <FormControlLabel value="decaf" control={<Radio />} label="Decaf" />
+                </>
+                )}
+                {formData.category === 'tea' && (
+                <>
+                    <FormControlLabel value="tea_bag" control={<Radio />} label="Tea Bag" />
+                    <FormControlLabel value="powdered_tea" control={<Radio />} label="Powdered Tea" />
+                </>
+                )}
+                {formData.category ==='bean and seed' &&(
+                <>
+                    <FormControlLabel value="coffee_bean" control={<Radio />} label="Coffee Bean" />
+                    <FormControlLabel value="tea_seed" control={<Radio />} label="Tea Seed" /> 
+                </>
+                )}
                 </RadioGroup>
             </FormControl>
-
             {formData.category === 'coffee' && (
                 <FormControl className="mb-4">
                     <FormLabel>Grind</FormLabel>
@@ -139,7 +192,7 @@ const UpdateProduct = () => {
                         <div className="w-full h-full bg-gray-300 rounded-md"></div>
                     )}
                 </div>
-                <input type="file" name='image' onChange={(e) => setFormData({ ...formData, image: URL.createObjectURL(e.target.files[0]) })} />
+                <input type="file" name='image' onChange={handleImageChange} />
             </div>
 
             <div className="mb-6">
