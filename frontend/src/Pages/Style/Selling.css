@@ -57,7 +57,9 @@
 }
 
 .img_upload{
-    object-fit: contain;
+    width: 20%;
+    height: 20%;
+    object-fit: cover;
     margin: 10px 0px;
 }
 
@@ -77,4 +79,16 @@
 .selling_description textarea{
     width: 100%;
     height: 150px;
+}
+.selling_submit{
+    width: 300px;
+    height: 50px;
+    border: 1px solid #3d3434;
+    background-color: #3d3434;
+    color: white;
+    border-radius: 2vh;
+    margin-bottom: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
 }

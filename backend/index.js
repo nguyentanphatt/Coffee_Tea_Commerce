@@ -381,6 +381,87 @@ app.post('/getcart',fetchUser,async (req,res)=>{
     res.json(userData.cartData)
 })
 
+//Selling item API
+const Selling = mongoose.model('Selling',{
+    id: {
+        type: Number,
+        require: true
+    },
+    sellEmail: {
+        type:String,
+        require: true
+    },
+    sellName: {
+        type:String,
+        require: true
+    },
+    name: {
+        type:String,
+        require: true
+    },
+    price:{
+        type:Number,
+        require: true
+    },
+    type: {
+        type: String,
+        require: true
+    },
+    quantity: {
+        type: Number,
+        require: true
+    },
+    image: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+    },
+    date:{
+        type:Date,
+        default: Date.now()
+    }
+})
+
+//Add selling item API
+app.post('/addsellingitem',async (req,res)=>{
+    try {
+        let sellingItem = await Selling.find({});
+        let id;
+        if(sellingItem.length > 0){
+            let last_item = sellingItem[sellingItem.length - 1];
+            id = last_item.id + 1
+        }
+        else{
+            id = 1
+        }
+
+        const sellingData = {
+            id: id,
+            sellEmail: req.body.sellEmail,
+            sellName: req.body.sellName,
+            name: req.body.name,
+            price: req.body.price,
+            type: req.body.type,
+            image: req.body.image,
+            quantity: req.body.quantity,
+            description: req.body.description,   
+        };
+        const selling = new Selling(sellingData)
+
+        await selling.save()
+        console.log("Selling Saved", selling);
+        res.json({
+            success: true,
+            selling: selling
+        })
+    } catch (error) {
+        console.log("Error: ", error);
+        res.status(500).json({success: false, error: "Failed to add selling item"})
+    }
+})
+
 app.listen(port,(error)=>{
     if(!error){
         console.log("server running on port "+port);
