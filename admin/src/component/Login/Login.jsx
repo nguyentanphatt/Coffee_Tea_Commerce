@@ -1,12 +1,14 @@
 import React from 'react'
 import { TextField } from '@mui/material';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
 
     const [formData, setFormData] = useState({
         email: "",
         password: "",
     })
+    const navigate = useNavigate()
 
     const handleChangeValue = (e) =>{
         setFormData({
@@ -29,6 +31,7 @@ const Login = () => {
         }).then(res => res.json()).then(data=>response=data)
         if(response.success){
             localStorage.setItem('auth-token',response.token)
+            navigate('/')
             window.location.reload('/')
         }else {
             alert(response.errors)

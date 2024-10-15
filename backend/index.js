@@ -339,8 +339,47 @@ app.post('/adminlogin', async (req,res) => {
     }
 })
 
+//Fetch User for add cart item
+const fetchUser = async (req,res,next) => {
+    const token = req.header('auth-token')
+    if(!token){
+        res.status(401).send({errors: "Please Login"})
+    } else {
+        try {
+            const data = jwt.verify(token, 'secret_token')
+            req.user = data.user
+            next()
+        } catch (error) {
+            res.status(401).send({errors: "Please Login"})
+        }
+    }
+}
 
+//Add product to cart API
+app.post('/addtocart', fetchUser, async(req,res) => {
+    const {itemId, quantity} = req.body
+    let userData = await Users.findOne({_id:req.user.id})
+    userData.cartData = userData.cartData || {};
+    userData.cartData[itemId] = (userData.cartData[itemId] || 0) + quantity;
+    await Users.findOneAndUpdate({_id:req.user.id}, {cartData:userData.cartData})
+    res.send("Added")
+    
+})
 
+//Remove product from cart API
+app.post('/removefromcart',fetchUser, async (req,res)=>{
+    let userData = await Users.findOne({_id:req.user.id});
+    if(userData.cartData[req.body.itemId]>0)
+    userData.cartData[req.body.itemId] -= 1
+    await Users.findOneAndUpdate({_id:req.user.id},{cartData:userData.cartData})
+    res.send("Removed")
+})
+
+//Get all item in user cart to cart API
+app.post('/getcart',fetchUser,async (req,res)=>{
+    let userData = await Users.findOne({_id:req.user.id})
+    res.json(userData.cartData)
+})
 
 app.listen(port,(error)=>{
     if(!error){

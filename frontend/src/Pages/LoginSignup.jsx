@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Style/LoginSignup.css'
 import { Checkbox, FormControlLabel } from '@mui/material'
+import { useNavigate } from 'react-router-dom';
 const LoginSignup = () => {
 
     const [state, setState] = useState('LOGIN')
@@ -9,6 +10,7 @@ const LoginSignup = () => {
         email: "",
         password: "",
     })
+    const navigate = useNavigate()
 
     const handleChangeValue = (e) => {
         setFormData({
@@ -18,7 +20,6 @@ const LoginSignup = () => {
     }
 
     const signup = async () => {
-        console.log("Login", formData);
         let response;
         await fetch('http://localhost:4000/signup',{
             method: 'POST',
@@ -30,6 +31,7 @@ const LoginSignup = () => {
         }).then(res => res.json()).then((data)=>response=data)
         if(response.success){
             localStorage.setItem('auth-token',response.token)
+            navigate('/')
             window.location.reload('/')
         }else {
             alert(response.errors)
@@ -37,7 +39,6 @@ const LoginSignup = () => {
     }
 
     const login = async () => {
-        console.log("Login", formData);
         let response;
         await fetch('http://localhost:4000/login',{
             method: 'POST',
@@ -49,7 +50,9 @@ const LoginSignup = () => {
         }).then(res => res.json()).then(data=>response=data)
         if(response.success){
             localStorage.setItem('auth-token',response.token)
+            navigate('/')
             window.location.reload('/')
+            
         }else {
             alert(response.errors)
         }
