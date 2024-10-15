@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Style/LoginSignup.css'
-import { Checkbox, FormControlLabel } from '@mui/material'
+import { Checkbox, FormControlLabel, TextField } from '@mui/material'
 import { useNavigate } from 'react-router-dom';
 const LoginSignup = () => {
 
@@ -10,6 +10,7 @@ const LoginSignup = () => {
         email: "",
         password: "",
     })
+    const [checked, setChecked] = useState(false)
     const navigate = useNavigate()
 
     const handleChangeValue = (e) => {
@@ -20,6 +21,10 @@ const LoginSignup = () => {
     }
 
     const signup = async () => {
+        if(!checked){
+            alert("You must agree to the term to Sign up")
+            return
+        }
         let response;
         await fetch('http://localhost:4000/signup',{
             method: 'POST',
@@ -59,17 +64,89 @@ const LoginSignup = () => {
     }
 
   return (
-    <div className="loginsignup">
+    <div className={`loginsignup ${state === 'LOGIN' ? 'loginstyle' : 'loginsignup'}`}>
         <div className="loginsignup_container">
             <h1>{state}</h1>
-            <div className="loginsignup_input">
-                {state==='SIGN UP'?<input type="text" placeholder='Username' name='username' value={formData.username} onChange={handleChangeValue}/> : <></>}
-                
-                <input type="text" placeholder='Email' name='email' value={formData.email} onChange={handleChangeValue}/>
-                <input type="text" placeholder='Password' name='password' value={formData.password} onChange={handleChangeValue}/>
+            <div className="loginsignup_inputt">
+                {state==='SIGN UP'?
+                (<TextField
+                    label="username"
+                    type='username'
+                    name='username'
+                    fullWidth
+                    value={formData.username}
+                    onChange={handleChangeValue}
+                    sx={{
+                        marginBottom: '50px',
+                        marginTop: '20px',
+                        '& .MuiOutlinedInput-root': {
+                            '& fieldset': {
+                                borderColor: '#5d5d5d',
+                                borderWidth: '2px',
+                            },
+                            '&:hover fieldset': {
+                                borderColor: '#3D3434',
+                            },
+                            '&.Mui-focused fieldset': {
+                                borderColor: '#3D3434',
+                            },
+                        },
+                    }}
+                />)
+                    : 
+                <></>}
+                <TextField
+                    label="email"
+                    type='email'
+                    name='email'
+                    fullWidth
+                    value={formData.email}
+                    onChange={handleChangeValue}
+                    sx={{
+                        marginBottom: '50px',
+                        '& .MuiOutlinedInput-root': {
+                            '& fieldset': {
+                                borderColor: '#5d5d5d',
+                                borderWidth: '2px',
+                            },
+                            '&:hover fieldset': {
+                                borderColor: '#3D3434',
+                            },
+                            '&.Mui-focused fieldset': {
+                                borderColor: '#3D3434',
+                            },
+                        },
+                    }}
+                />
+                <TextField
+                    label="password"
+                    type='password'
+                    name='password'
+                    fullWidth
+                    value={formData.password}
+                    onChange={handleChangeValue}
+                    sx={{
+                        marginBottom: '50px',
+                        '& .MuiOutlinedInput-root': {
+                            '& fieldset': {
+                                borderColor: '#5d5d5d',
+                                borderWidth: '2px',
+                            },
+                            '&:hover fieldset': {
+                                borderColor: '#3D3434',
+                            },
+                            '&.Mui-focused fieldset': {
+                                borderColor: '#3D3434',
+                            },
+                        },
+                    }}
+                />
             </div>
             <div className="loginsignup_term">
-                <FormControlLabel control={<Checkbox />} label="I agree to the term of use & private policy"/>
+                {state ==='SIGN UP' && (
+                    <FormControlLabel control={<Checkbox checked={checked} onChange={(e)=>setChecked(e.target.checked)}/>} label="I agree to the term of use & private policy"/>
+                )}
+                
                 <div className="loginsigup_createNew">
                     {state==='LOGIN'?<p>Do not have any account? Create a new one now
                     <span onClick={()=>setState('SIGN UP')}>Sign up</span></p>
