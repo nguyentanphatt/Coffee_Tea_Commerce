@@ -403,7 +403,7 @@ const Selling = mongoose.model('Selling',{
         type:Number,
         require: true
     },
-    type: {
+    category: {
         type: String,
         require: true
     },
@@ -443,7 +443,7 @@ app.post('/addsellingitem',async (req,res)=>{
             sellName: req.body.sellName,
             name: req.body.name,
             price: req.body.price,
-            type: req.body.type,
+            category: req.body.category,
             image: req.body.image,
             quantity: req.body.quantity,
             description: req.body.description,   
@@ -461,6 +461,23 @@ app.post('/addsellingitem',async (req,res)=>{
         res.status(500).json({success: false, error: "Failed to add selling item"})
     }
 })
+//List All Selling API
+app.get('/listselling',async (req,res)=>{
+    let listSelling = await Selling.find({})
+    console.log("All selling fetched");
+    res.send(listSelling)
+})
+
+//Delete Selling API
+app.post('/deleteselling', async (req, res) => {
+    await Selling.findOneAndDelete({id:req.body.id})
+    console.log("Removed");
+    res.json({
+        success:true,
+        name:req.body.name
+    })
+})
+
 
 app.listen(port,(error)=>{
     if(!error){

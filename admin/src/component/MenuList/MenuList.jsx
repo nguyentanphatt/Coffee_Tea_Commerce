@@ -56,11 +56,9 @@ const MenuList = () => {
                 <MenuItem className="">All Selling</MenuItem>
               </div>
             </Link>
-            <Link to="/add-to-product">
-              <div className=' bg-gray-500 rounded-md'>
-                <MenuItem className="">Add to Product</MenuItem>
-              </div>
-            </Link>
+            <div className=' bg-gray-500 rounded-md'>
+                <MenuItem disabled={true} className="">Add to Product</MenuItem>
+            </div>
           </div>
         )}
       </div>

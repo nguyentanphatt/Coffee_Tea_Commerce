@@ -3,14 +3,14 @@ import './Style/Selling.css'
 import upload_img from '../assets/frontend/upload_area.svg'
 const Selling = () => {
 
-    const [type, setType] = useState("")
+    const [category, setCategory] = useState("")
     const [selectedImage, setSelectedImage] = useState(null);
     const [formData, setFormData] = useState({
         sellEmail: "",
         sellName: "",
         name:"",
         price: "",
-        type: "",
+        category: "",
         quantity: "",
         image: null,
         description: "",
@@ -29,8 +29,8 @@ const Selling = () => {
             ...prevData,
             [name]: value,
         }));
-        if (name === 'type') {
-            setType(value);
+        if (name === 'category') {
+            setCategory(value);
         }
     }
 
@@ -72,6 +72,7 @@ const Selling = () => {
                 const data = await responseSelling.json()
                 if(data.success){
                     console.log("Selling Added");
+                    window.location.reload('/')
                 } else{
                     console.log("Failed to add"); 
                 }
@@ -95,9 +96,9 @@ const Selling = () => {
         </div>
         <div className="selling_type">
             <p>Type:</p>
-            <input type="radio" title='Coffee' name='type' value="coffee" onChange={handleChangeValue} checked={formData.type==="coffee"}/>Coffee
-            <input type="radio" title='Tea' name='type' value="tea" onChange={handleChangeValue} checked={formData.type==="tea"}/>Tea
-            <input type="radio" title='Bean and Seed' name='type' value="bean and seed" onChange={handleChangeValue} checked={formData.type==="bean and seed"}/>Bean and Seed
+            <input type="radio" title='Coffee' name='category' value="coffee" onChange={handleChangeValue} checked={formData.category ==="coffee"}/>Coffee
+            <input type="radio" title='Tea' name='category' value="tea" onChange={handleChangeValue} checked={formData.category ==="tea"}/>Tea
+            <input type="radio" title='Bean and Seed' name='category' value="bean and seed" onChange={handleChangeValue} checked={formData.category ==="bean and seed"}/>Bean and Seed
         </div>
         <div className="selling_img">
                 <p>Image:</p>
