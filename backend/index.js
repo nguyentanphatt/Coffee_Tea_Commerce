@@ -207,6 +207,9 @@ const Users = mongoose.model('Users',{
     password:{
         type:String,
     },
+    birthday:{
+        type: Date,
+    },
     cartData:{
         type:Object,
     },
@@ -229,6 +232,7 @@ app.post('/signup', async(req,res)=>{
         name:req.body.username,
         email:req.body.email,
         password:req.body.password,
+        birthday: req.body.birthday,
         cartData: cart,
     })
     await user.save()
@@ -381,6 +385,43 @@ app.post('/getcart',fetchUser,async (req,res)=>{
     res.json(userData.cartData)
 })
 
+//Get user data API
+app.get('/getuserdata', fetchUser, async (req, res) => {
+    try {
+        const user = await Users.findById(req.user.id);
+        if (!user) {
+            return res.status(404).json({ success: false, message: 'User not found' });
+        }
+        res.json({
+            success: true,
+            user: {
+                name: user.name,
+                email: user.email
+            }
+        });
+    } catch (error) {
+        console.error("Error fetching user data:", error);
+        res.status(500).json({ success: false, message: 'Failed to fetch user data' });
+    }
+});
+
+//Get all user API
+app.get('/getalluser',async (req,res)=>{
+    let listUser = await Users.find({})
+    console.log("All user fetched");
+    res.send(listUser)
+})
+
+//Delete user API
+app.post('/deleteuser', async (req, res) => {
+    await Users.findOneAndDelete({email:req.body.email})
+    console.log("Removed");
+    res.json({
+        success:true,
+        email:req.body.email
+    })
+})
+
 //Selling item API
 const Selling = mongoose.model('Selling',{
     id: {
@@ -425,8 +466,9 @@ const Selling = mongoose.model('Selling',{
 })
 
 //Add selling item API
-app.post('/addsellingitem',async (req,res)=>{
+app.post('/addsellingitem',fetchUser ,async (req,res)=>{
     try {
+        let userData = await Users.findOne({_id:req.user.id});
         let sellingItem = await Selling.find({});
         let id;
         if(sellingItem.length > 0){
@@ -439,8 +481,8 @@ app.post('/addsellingitem',async (req,res)=>{
 
         const sellingData = {
             id: id,
-            sellEmail: req.body.sellEmail,
-            sellName: req.body.sellName,
+            sellEmail: userData.email,
+            sellName: userData.name,
             name: req.body.name,
             price: req.body.price,
             category: req.body.category,

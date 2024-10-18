@@ -138,20 +138,20 @@ const AddProduct = () => {
         <RadioGroup row className='ml-10' name='type' value={formData.type} onChange={handleInputChange}>
             {formData.category === 'coffee' &&(
                 <>
-                    <FormControlLabel value="regular" control={<Radio />} label="Regular" />
-                    <FormControlLabel value="decaf" control={<Radio />} label="Decaf" />
+                    <FormControlLabel value="Regular" control={<Radio />} label="Regular" />
+                    <FormControlLabel value="Decaf" control={<Radio />} label="Decaf" />
                 </>
             )}
             {formData.category === 'tea' && (
                 <>
-                    <FormControlLabel value="tea_bag" control={<Radio />} label="Tea Bag" />
-                    <FormControlLabel value="powdered_tea" control={<Radio />} label="Powdered Tea" />
+                    <FormControlLabel value="Tea Bag" control={<Radio />} label="Tea Bag" />
+                    <FormControlLabel value="Powdered Tea" control={<Radio />} label="Powdered Tea" />
                 </>
             )}
             {formData.category ==='bean and seed' &&(
                 <>
-                    <FormControlLabel value="coffee_bean" control={<Radio />} label="Coffee Bean" />
-                    <FormControlLabel value="tea_seed" control={<Radio />} label="Tea Seed" /> 
+                    <FormControlLabel value="Coffee Bean" control={<Radio />} label="Coffee Bean" />
+                    <FormControlLabel value="Tea Seed" control={<Radio />} label="Tea Seed" /> 
                 </>
             )}
         </RadioGroup>
@@ -161,9 +161,9 @@ const AddProduct = () => {
             <FormControl className="mb-4">
                 <FormLabel>Grind</FormLabel>
                 <RadioGroup row name='grind' value={formData.grind} onChange={handleInputChange}>
-                    <FormControlLabel value="espresso" control={<Radio />} label="Espresso" />
-                    <FormControlLabel value="manual_drip" control={<Radio />} label="Manual Drip" />
-                    <FormControlLabel value="auto_drip" control={<Radio />} label="Auto Drip" />
+                    <FormControlLabel value="Espresso" control={<Radio />} label="Espresso" />
+                    <FormControlLabel value="Manual Drip" control={<Radio />} label="Manual Drip" />
+                    <FormControlLabel value="Auto Drip" control={<Radio />} label="Auto Drip" />
                 </RadioGroup>
             </FormControl>
         )}
@@ -171,9 +171,9 @@ const AddProduct = () => {
             <FormControl className="mb-4">
                 <FormLabel>Form</FormLabel>
                 <RadioGroup row name='form' value={formData.form} onChange={handleInputChange}>
-                    <FormControlLabel value="pound" control={<Radio />} label="Pound" />
-                    <FormControlLabel value="bags" control={<Radio />} label="Bags" />
-                    <FormControlLabel value="tin_can" control={<Radio />} label="Tin Can" />
+                    <FormControlLabel value="Pound" control={<Radio />} label="Pound" />
+                    <FormControlLabel value="Bags" control={<Radio />} label="Bags" />
+                    <FormControlLabel value="Tin Can" control={<Radio />} label="Tin Can" />
             </RadioGroup>
       </FormControl>
       )}
@@ -182,9 +182,9 @@ const AddProduct = () => {
             <FormControl className="mb-4">
                 <FormLabel>Favor</FormLabel>
                 <RadioGroup row name='favor' value={formData.favor} onChange={handleInputChange}>
-                <FormControlLabel value="light_favor" control={<Radio />} label="Light Favor" />
-                    <FormControlLabel value="strong_favor" control={<Radio />} label="Strong Favor" />
-                    <FormControlLabel value="good_with_milk" control={<Radio />} label="Good With Milk" />
+                <FormControlLabel value="Light Favor" control={<Radio />} label="Light Favor" />
+                    <FormControlLabel value="Strong Favor" control={<Radio />} label="Strong Favor" />
+                    <FormControlLabel value="Good With Milk" control={<Radio />} label="Good With Milk" />
                 </RadioGroup>
             </FormControl>
         )}
@@ -192,9 +192,9 @@ const AddProduct = () => {
             <FormControl className="mb-4">
                 <FormLabel className='ml-20'>Favor</FormLabel>
                 <RadioGroup row className='ml-20' name='favor' value={formData.favor} onChange={handleInputChange}>
-                    <FormControlLabel value="light_favor" control={<Radio />} label="Light Favor" />
-                    <FormControlLabel value="strong_favor" control={<Radio />} label="Strong Favor" />
-                    <FormControlLabel value="special_leaf" control={<Radio />} label="Special Leaf" />
+                    <FormControlLabel value="Light Favor" control={<Radio />} label="Light Favor" />
+                    <FormControlLabel value="Strong Favor" control={<Radio />} label="Strong Favor" />
+                    <FormControlLabel value="Special Leaf" control={<Radio />} label="Special Leaf" />
             </RadioGroup>
       </FormControl>
       )}

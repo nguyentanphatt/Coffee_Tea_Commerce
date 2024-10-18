@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Style/Selling.css'
 import upload_img from '../assets/frontend/upload_area.svg'
 const Selling = () => {
@@ -15,6 +15,32 @@ const Selling = () => {
         image: null,
         description: "",
     })
+
+    useEffect(()=>{
+        const fetchUserData = async() => {
+            try {
+                const response = await fetch('http://localhost:4000/getuserdata',{
+                    method: 'GET',
+                    headers:{
+                        'auth-token': localStorage.getItem('auth-token')
+                    },
+                })
+                const data = await response.json()
+                if(data.success){
+                    setFormData({
+                        ...formData,
+                        sellEmail: data.user.email,
+                        sellName: data.user.name,
+                    })
+                } else {
+                    alert('Please login to use')
+                }
+            } catch (error) {
+                console.error(error)
+            }
+        }
+        fetchUserData()
+    },[formData])
 
     const handleImageChange = (e) => {
         if (e.target.files && e.target.files[0]) {
@@ -65,7 +91,8 @@ const Selling = () => {
                     method: 'POST',
                     headers:{
                         Accept: 'applocation/json',
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'auth-token': localStorage.getItem('auth-token')
                     },
                     body: JSON.stringify(sellingDetails)
                 })
@@ -88,7 +115,7 @@ const Selling = () => {
     <div className="selling_container">
         <h1>Wanna to make profit? Give us more information!!</h1>
         <div className="selling_info">
-            <input type="text" name="sellEmail" value={formData.sellEmail} onChange={handleChangeValue} id="" placeholder='Email'/>
+            <input type="text" name="sellEmail" disabled={true} value={formData.sellEmail} onChange={handleChangeValue} id="" placeholder='Email'/>
             <input type="text" name="sellName" value={formData.sellName} onChange={handleChangeValue} id="" placeholder='Your name'/>
             <input type="text" name="name" value={formData.name} onChange={handleChangeValue} id="" placeholder='Item name'/>
             <input type="text" name="price" value={formData.price} onChange={handleChangeValue} id="" placeholder='Price'/>

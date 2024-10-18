@@ -9,6 +9,7 @@ const LoginSignup = () => {
         username: "",
         email: "",
         password: "",
+        birthday: "",
     })
     const [checked, setChecked] = useState(false)
     const navigate = useNavigate()
@@ -77,7 +78,7 @@ const LoginSignup = () => {
                     value={formData.username}
                     onChange={handleChangeValue}
                     sx={{
-                        marginBottom: '50px',
+                        marginBottom: '20px',
                         marginTop: '20px',
                         '& .MuiOutlinedInput-root': {
                             '& fieldset': {
@@ -91,10 +92,38 @@ const LoginSignup = () => {
                                 borderColor: '#3D3434',
                             },
                         },
-                    }}
-                />)
+                    }}/>
+                )
                     : 
-                <></>}
+                <></>
+                }
+                {state==='SIGN UP'?
+                (<TextField
+                    label="birthday"
+                    type='birthday'
+                    name='birthday'
+                    fullWidth
+                    value={formData.birthday}
+                    onChange={handleChangeValue}
+                    sx={{
+                        marginBottom: '20px',
+                        '& .MuiOutlinedInput-root': {
+                            '& fieldset': {
+                                borderColor: '#5d5d5d',
+                                borderWidth: '2px',
+                            },
+                            '&:hover fieldset': {
+                                borderColor: '#3D3434',
+                            },
+                            '&.Mui-focused fieldset': {
+                                borderColor: '#3D3434',
+                            },
+                        },
+                    }}/>
+                )
+                    : 
+                <></>
+                }
                 <TextField
                     label="email"
                     type='email'
@@ -103,7 +132,7 @@ const LoginSignup = () => {
                     value={formData.email}
                     onChange={handleChangeValue}
                     sx={{
-                        marginBottom: '50px',
+                        marginBottom: '20px',
                         '& .MuiOutlinedInput-root': {
                             '& fieldset': {
                                 borderColor: '#5d5d5d',
@@ -126,7 +155,7 @@ const LoginSignup = () => {
                     value={formData.password}
                     onChange={handleChangeValue}
                     sx={{
-                        marginBottom: '50px',
+                        marginBottom: '20px',
                         '& .MuiOutlinedInput-root': {
                             '& fieldset': {
                                 borderColor: '#5d5d5d',

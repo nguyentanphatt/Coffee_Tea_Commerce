@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-//import { useHistory } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import search_icon from '../../assets/search.png'
 

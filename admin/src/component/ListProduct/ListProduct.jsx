@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-//import { useHistory } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import search_icon from '../../assets/search.png'
 const ListProduct = () => {
@@ -39,8 +38,9 @@ const ListProduct = () => {
         <img src={search_icon} alt="" className='h-5 w-5 mt-1 cursor-pointer'/>
       </div>
       <h1 className="text-2xl font-bold mb-4">List product</h1>
+      <div className="max-h-96 overflow-y-auto">
       <table className="min-w-full border-collapse border border-gray-400">
-        <thead>
+        <thead className="bg-gray-100 sticky top-0 z-10  border-gray-400">
           <tr className="bg-gray-100">
             <th className="border border-gray-400 p-2 text-left">No</th>
             <th className="border border-gray-400 p-2 text-left">Name</th>
@@ -50,7 +50,7 @@ const ListProduct = () => {
             <th className="border border-gray-400 p-2 text-left">Action</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="divide-y divide-gray-200">
           {allProduct.map((product,index)=>{
             return(
               <tr key={index}>
@@ -68,6 +68,7 @@ const ListProduct = () => {
           })}
         </tbody>
       </table>
+      </div>
     </div>
   )
 }

@@ -58,9 +58,9 @@ const ItemCategory = (props) => {
                 <div>
                     <h2>Favor</h2>
                     <FormGroup className='item_category-checkbox'>
-                        <FormControlLabel control={<Checkbox checked={favor==='Light favor'}/>} onClick={handleFavorChange} name='Light favor' label="Light Favor"/>
-                        <FormControlLabel control={<Checkbox checked={favor==='Strong favor'}/>} onClick={handleFavorChange} name='Strong favor' label="Strong Favor"/>
-                        <FormControlLabel control={<Checkbox checked={favor==='Special leaf'}/>} onClick={handleFavorChange} name='Special leaf' label="Special Leaf"/>
+                        <FormControlLabel control={<Checkbox checked={favor==='Light Favor'}/>} onClick={handleFavorChange} name='Light Favor' label="Light Favor"/>
+                        <FormControlLabel control={<Checkbox checked={favor==='Strong Favor'}/>} onClick={handleFavorChange} name='Strong Favor' label="Strong Favor"/>
+                        <FormControlLabel control={<Checkbox checked={favor==='Special Leaf'}/>} onClick={handleFavorChange} name='Special Leaf' label="Special Leaf"/>
                     </FormGroup>
                 </div>
             )
@@ -69,9 +69,9 @@ const ItemCategory = (props) => {
                 <div>
                     <h2>Favor</h2>
                     <FormGroup className='item_category-checkbox'>
-                        <FormControlLabel control={<Checkbox checked={favor==='Light favor'}/>} onClick={handleFavorChange} name='Light favor' label="Light Favor"/>
-                        <FormControlLabel control={<Checkbox checked={favor==='Strong favor'}/>} onClick={handleFavorChange} name='Strong favor' label="Strong Favor"/>
-                        <FormControlLabel control={<Checkbox checked={favor==='Good with milk'}/>} onClick={handleFavorChange} name='Good with milk' label="Good With Milk"/>
+                        <FormControlLabel control={<Checkbox checked={favor==='Light Favor'}/>} onClick={handleFavorChange} name='Light Favor' label="Light Favor"/>
+                        <FormControlLabel control={<Checkbox checked={favor==='Strong Favor'}/>} onClick={handleFavorChange} name='Strong Favor' label="Strong Favor"/>
+                        <FormControlLabel control={<Checkbox checked={favor==='Good With Milk'}/>} onClick={handleFavorChange} name='Good With Milk' label="Good With Milk"/>
                     </FormGroup>
                 </div>
             )
@@ -86,8 +86,8 @@ const ItemCategory = (props) => {
                 <div>
                     <h2>Type</h2>
                     <FormGroup className='item_category-checkbox'>
-                        <FormControlLabel control={<Checkbox checked={type==='Tea bag'}/>} onClick={handleTypeChange} name='Tea bag' label="Tea Bag"/>
-                        <FormControlLabel control={<Checkbox checked={type==='Powdered tea'}/>} onClick={handleTypeChange} name='Powdered tea' label="Powdered Tea"/>
+                        <FormControlLabel control={<Checkbox checked={type==='Tea Bag'}/>} onClick={handleTypeChange} name='Tea Bag' label="Tea Bag"/>
+                        <FormControlLabel control={<Checkbox checked={type==='Powdered Tea'}/>} onClick={handleTypeChange} name='Powdered Tea' label="Powdered Tea"/>
                     </FormGroup>
                 </div>
             )
@@ -106,8 +106,8 @@ const ItemCategory = (props) => {
                 <div>
                     <h2>Type</h2>
                     <FormGroup className='item_category-checkbox'>
-                        <FormControlLabel control={<Checkbox checked={type==='Coffee bean'}/>} onClick={handleTypeChange} name='Coffee bean' label="Coffee Bean"/>
-                        <FormControlLabel control={<Checkbox checked={type==='Tea leaf'}/>} onClick={handleTypeChange} name='Tea leaf' label="Tea Seed"/>
+                        <FormControlLabel control={<Checkbox checked={type==='Coffee Bean'}/>} onClick={handleTypeChange} name='Coffee Bean' label="Coffee Bean"/>
+                        <FormControlLabel control={<Checkbox checked={type==='Tea Seed'}/>} onClick={handleTypeChange} name='Tea Seed' label="Tea Seed"/>
                     </FormGroup>
                 </div>
             )
@@ -122,7 +122,7 @@ const ItemCategory = (props) => {
                     <FormGroup className='item_category-checkbox'>
                         <FormControlLabel control={<Checkbox checked={special==='Pound'}/>} onClick={handleSpecialChange} name='Pound' label="Pound"/>
                         <FormControlLabel control={<Checkbox checked={special==='Bags'}/>} onClick={handleSpecialChange} name='Bags' label="Bags"/>
-                        <FormControlLabel control={<Checkbox checked={special==='Tin can'}/>} onClick={handleSpecialChange} name='Tin can' label="Tin Can"/>
+                        <FormControlLabel control={<Checkbox checked={special==='Tin Can'}/>} onClick={handleSpecialChange} name='Tin Can' label="Tin Can"/>
                     </FormGroup>
                 </div>
             )

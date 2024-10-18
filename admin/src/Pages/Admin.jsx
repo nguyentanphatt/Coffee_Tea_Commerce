@@ -7,6 +7,7 @@ import UpdateProduct from '../component/UpdateProduct/UpdateProduct';
 import Login from '../component/Login/Login';
 import ListSelling from '../component/ListSelling/ListSelling';
 import ApplySellingToProduct from '../component/ApplySellingToProduct/ApplySellingToProduct';
+import ListUser from '../component/ListUser/ListUser';
 const Admin = () => {
   return (
       <div className="flex h-screen">
@@ -18,7 +19,7 @@ const Admin = () => {
             <Route path="/update-product" element={<UpdateProduct />} />
             <Route path="/all-selling" element={<ListSelling />} />
             <Route path="/add-to-product" element={<ApplySellingToProduct />} />
-            <Route path="/user" element={<ListProduct />} />
+            <Route path="/user" element={<ListUser />} />
             <Route path="/login" element={<Login />} />
             {/* Add more routes as needed */}
           </Routes>
