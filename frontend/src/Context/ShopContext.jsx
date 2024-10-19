@@ -1,5 +1,5 @@
 import React, {createContext, useState, useEffect} from "react";
-import all_product from "../assets/frontend/all_product";
+//import all_product from "../assets/frontend/all_product";
 
 export const ShopContext = createContext(null)
 
@@ -11,9 +11,13 @@ const getDefaultCart = () =>{
     return cart
 }
 const ShopContextProvider = (props) => {
+
+    const [all_product, setAll_Product] = useState([])
     const [cartItems, setCartItems] = useState(getDefaultCart())
     
     useEffect(()=>{
+        fetch('http://localhost:4000/listproduct')
+            .then(res=>res.json()).then(data=>setAll_Product(data))
 
         if(localStorage.getItem('auth-token')){
             fetch('http://localhost:4000/getcart',{

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MenuItem, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const MenuList = () => {
   const [productOpen, setProductOpen] = useState(false);
   const [sellingOpen, setSellingOpen] = useState(false);
@@ -8,6 +9,9 @@ const MenuList = () => {
   const toggleProductMenu = () => setProductOpen(!productOpen);
   const toggleSellingMenu = () => setSellingOpen(!sellingOpen);
   const isAuthenticated = !!localStorage.getItem('auth-token');
+
+  const navigate = useNavigate()
+
   return (
     <div className="flex flex-col w-1/6 text-white p-4">
       {/* Product Menu */}
@@ -76,7 +80,7 @@ const MenuList = () => {
       {/* Login */}
       {localStorage.getItem('auth-token') ? 
       <div className='mb-1 bg-gray-700 rounded-md h-12 flex items-center'>
-          <Button className="bg-gray-800 text-white mt-2" onClick={()=>{localStorage.removeItem('auth-token');window.location.reload('/')}}>
+          <Button className="bg-gray-800 text-white mt-2" onClick={()=>{localStorage.removeItem('auth-token');navigate('/');window.location.reload('/')}}>
             <div className='text-white'>LOGOUT</div>
           </Button>
       </div>
