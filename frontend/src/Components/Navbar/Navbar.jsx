@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Navbar.css'
 import CategoryMenu from '../CategoryMenu/CategoryMenu'
 import { Link } from 'react-router-dom'
+import {Tab, Tabs} from '@mui/material'
 const Navbar = () => {
 
   const [menu, setMenu] = useState(false)
@@ -20,7 +21,7 @@ const Navbar = () => {
         {menu && <CategoryMenu onClose={handleCloseMenu}/>}
         <li><Link style={{textDecoration: 'none',color: 'inherit'}} to='/news'>News</Link></li>
         <li><Link style={{textDecoration: 'none',color: 'inherit'}} to='/aboutus'>About Us</Link></li>
-      </ul>
+      </ul> 
     </div>
   )
 }

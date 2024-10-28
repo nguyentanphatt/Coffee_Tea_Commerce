@@ -24,14 +24,6 @@
 .category_menu-category hr{
     height: 3px;
     background-color: white;
-    margin-top: 0;
-}
-.category_menu-category p{
-    font-size: 18px;
-}
-
-.category_menu-category h3:hover{
-    color: #3d3434;
 }
 
 .category_menu button{

@@ -1,38 +1,74 @@
 import React from 'react'
 import './CategoryMenu.css'
 import { Link } from 'react-router-dom'
+import { Button, Typography, Divider, Box } from '@mui/material';
 const CategoryMenu = ({onClose}) => {
 
-  return (
-    <div className='category_menu'>
-        <button onClick={onClose}>X</button>
-        <div className="category_menu-category">
-            <h3><Link style={{textDecoration: 'none' ,color: 'inherit'}} to='/coffee' onClick={onClose}>COFFEE</Link></h3>
-            <hr />
-            <p>Light Favor</p>
-            <p>Strong Favor</p>
-            <p>Good With Milk</p>
-        </div>
-        <div className="category_menu-category">
-            <h3><Link style={{textDecoration: 'none',color: 'inherit'}} to='/tea' onClick={onClose}>TEA LEAF</Link></h3>
-            <hr />
-            <p>Light Favor</p>
-            <p>Strong Favor</p>
-            <p>Special Leaf</p>
-        </div>
-        <div className="category_menu-category">
-            <h3><Link style={{textDecoration: 'none',color: 'inherit'}} to='/seed' onClick={onClose}>SEED</Link></h3>
-            <hr />
-            <p>Coffee Bean</p>
-            <p>Tea Leaf Seed</p>
-        </div>
-        <div className="category_menu-category">
-            <h3>WANT TO KNOW MORE</h3>
-            <hr />
-            <p><Link style={{textDecoration: 'none' ,color: 'inherit'}} to='/login' onClick={onClose}>Sign in or Sign up to get more info</Link></p>
-        </div>
-    </div>
-  )
+    return (
+        <Box className="category_menu" sx={{ padding: 2, backgroundColor: 'gray', borderRadius: 1 }}>
+            <Button onClick={onClose} variant="contained" color="error" sx={{}}> <Typography sx={{color:'#fff'}}>X</Typography></Button>        
+            <Box className="category_menu-category" sx={{ mb: 3, mt: 5 }}>
+                <Typography variant="h4" 
+                    sx={{
+                        mb: 2,
+                        '&:hover':{
+                            color: '#3D3434'
+                        }
+                    }}
+                >
+                    <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/coffee' onClick={onClose}>COFFEE</Link>
+                </Typography>
+                <Divider sx={{mb:2}}/>
+                <Typography variant="body1" sx={{mb:2, fontSize: 18}}>Light Favor</Typography>
+                <Typography variant="body1" sx={{mb:2, fontSize: 18}}>Strong Favor</Typography>
+                <Typography variant="body1" sx={{mb:2, fontSize: 18}}>Good With Milk</Typography>
+            </Box>
+
+            <Box className="category_menu-category" sx={{ mb: 3 }}>
+                <Typography variant="h4"
+                    sx={{
+                        mb: 2,
+                        '&:hover':{
+                            color: '#3D3434'
+                        }
+                    }}
+                >
+                    <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/tea' onClick={onClose}>TEA LEAF</Link>
+                </Typography>
+                <Divider  sx={{mb:2}}/>
+                <Typography variant="body1" sx={{mb:2,fontSize: 18}}>Light Favor</Typography>
+                <Typography variant="body1" sx={{mb:2,fontSize: 18}}>Strong Favor</Typography>
+                <Typography variant="body1" sx={{mb:2,fontSize: 18}}>Special Leaf</Typography>
+            </Box>
+
+            <Box className="category_menu-category" sx={{ mb: 3 }}>
+                <Typography variant="h4"
+                    sx={{
+                        mb: 2,
+                        '&:hover':{
+                            color: '#3D3434'
+                        }
+                    }}
+                >
+                    <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/seed' onClick={onClose}>SEED</Link>
+                </Typography>
+                <Divider sx={{mb:2}}/>
+                <Typography variant="body1" sx={{mb:2,fontSize: 18}}>Coffee Bean</Typography>
+                <Typography variant="body1" sx={{mb:2,fontSize: 18}}>Tea Leaf Seed</Typography>
+            </Box>
+
+            <Box className="category_menu-category">
+                <Typography variant="h4"
+                    sx={{mb: 2}}
+                >
+                    WANT TO KNOW MORE</Typography>
+                <Divider sx={{mb:2}}/>
+                <Typography variant="body1" sx={{mb:2,fontSize: 18}}>
+                    <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/login' onClick={onClose}>Sign in or Sign up to get more info</Link>
+                </Typography>
+            </Box>
+        </Box>
+    );
 }
 
 export default CategoryMenu
