@@ -5,10 +5,11 @@ import cart from '../../assets/frontend/cart.png'
 import { Link } from 'react-router-dom'
 import './Heading.css'
 import { ShopContext } from '../../Context/ShopContext'
+import { InputBase, IconButton, List, ListItem, ListItemAvatar, ListItemText, Avatar, Button, Box } from '@mui/material'
+import { Search as SearchIcon} from '@mui/icons-material'
 const Heading = () => {
 
   const {all_product, getTotalCartItems} = useContext(ShopContext)
-
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -31,43 +32,79 @@ const Heading = () => {
   };
 
   return (
-    <div className='heading'>
+    <Box className='heading'>
       <div className="logo">
         <img src={logo} alt="" />
       </div>
-      <div className='search'>
-        <input type="text" name="" id="" placeholder='Search Item' 
-          value={searchTerm}
+      <Box className='search'>
+        <InputBase 
+          placeholder='Search Item' 
+          className='search_input' 
+          value={searchTerm} 
           onChange={handleSearchChange}
         />
-        <img src={search_img} alt="" />
-        {filteredProducts.length > 0 && (
-          <div className="search_results">
-            <ul>
-              {filteredProducts.map(product => (
-                <li key={product.id} className="search_item">
-                <Link to={`/product/${product.id}`}
-                  style={{textDecoration: 'none',color: 'inherit'}}
-                  onClick={handleProductClick}
-                >
-                  <img src={product.image} alt={product.name} className="search_item_image" />
-                  <span>{product.name}</span>
-                </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-      <div className='item_cart'>
-        {localStorage.getItem('auth-token')? <button className='btn' onClick={()=>{localStorage.removeItem('auth-token');window.location.reload('/')}}>Logout</button>
+        <IconButton type='submit'>
+          <SearchIcon />
+        </IconButton>
+      </Box>
+      {filteredProducts.length > 0 && searchTerm.length > 0 && (
+        <List
+          style={{
+            position: 'absolute',
+            top: '10%',
+            left: '694px',
+            width: '624px',
+            backgroundColor: '#fff',
+            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
+            maxHeight: '200px',
+            overflowY: 'auto',
+            zIndex: 1000,
+            border: '1px solid #ccc',
+          }}
+        >
+          {filteredProducts.map((product) => (
+            <ListItem
+              key={product.id}
+              component={Link}
+              to={`/product/${product.id}`}
+              onClick={() => {
+                handleProductClick();
+              }}
+              sx={{
+                transition: 'background-color 0.2s ease',
+                '&:hover':{
+                  backgroundColor: '#f0f0f0'
+                }
+              }}
+            >
+              <ListItemAvatar>
+                <Avatar src={product.image} alt={product.name} />
+              </ListItemAvatar>
+              <ListItemText primary={product.name} />
+            </ListItem>
+          ))}
+        </List>
+      )}
+      <Box className='item_cart'>
+        {localStorage.getItem('auth-token') ? 
+          (
+            <Button
+              className='btn'
+              onClick={()=>{localStorage.removeItem('auth-token');window.location.reload('/')}}
+              variant='outlined'
+            >
+              Logout
+            </Button>
+          )
           :
-          <Link to='/login'><button className='btn'>Login with us</button></Link>
+          <Link to='/login'>
+            <Button className='btn' variant='outlined'>Login with us</Button>
+          </Link>
         }    
         <Link to='/cart'><img src={cart} alt="" /></Link>
         <div className="cart_count">{getTotalCartItems()}</div>
-      </div>
-    </div>
+      </Box>
+    </Box>
   )
 }
 
