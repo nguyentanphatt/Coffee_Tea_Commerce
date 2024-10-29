@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Navbar.css'
 import CategoryMenu from '../CategoryMenu/CategoryMenu'
 import { Link } from 'react-router-dom'
-import {Tab, Tabs} from '@mui/material'
+import {Box} from '@mui/material'
 const Navbar = () => {
 
   const [menu, setMenu] = useState(false)
@@ -14,15 +14,15 @@ const Navbar = () => {
     setMenu(false)
   }
   return (
-    <div className='navbar'>
+    <Box className='navbar'>
       <ul className="nav_menu">
-        <li><Link style={{textDecoration: 'none',color: 'inherit'}} to='/'>Home</Link></li>
-        <li onClick={handleShowMenu}>Category</li>
+        <li><Link style={{textDecoration: 'none',color: 'inherit'}} to='/'>HOME</Link></li>
+        <li onClick={handleShowMenu}>CATEGORY</li>
         {menu && <CategoryMenu onClose={handleCloseMenu}/>}
-        <li><Link style={{textDecoration: 'none',color: 'inherit'}} to='/news'>News</Link></li>
-        <li><Link style={{textDecoration: 'none',color: 'inherit'}} to='/aboutus'>About Us</Link></li>
+        <li><Link style={{textDecoration: 'none',color: 'inherit'}} to='/news'>NEWS</Link></li>
+        <li><Link style={{textDecoration: 'none',color: 'inherit'}} to='/aboutus'>ABOUT US</Link></li>
       </ul> 
-    </div>
+    </Box>
   )
 }
 

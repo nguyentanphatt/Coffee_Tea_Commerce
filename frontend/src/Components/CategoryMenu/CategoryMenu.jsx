@@ -11,8 +11,11 @@ const CategoryMenu = ({onClose}) => {
                 <Typography variant="h4" 
                     sx={{
                         mb: 2,
+                        fontWeight: '600',
+                        textShadow: '3px 3px 5px rgba(0, 0, 0, 0.4)',
                         '&:hover':{
-                            color: '#3D3434'
+                            color: '#3D3434',
+                            textShadow: '3px 3px 5px rgba(255, 255, 255, 0.4)',
                         }
                     }}
                 >
@@ -28,8 +31,11 @@ const CategoryMenu = ({onClose}) => {
                 <Typography variant="h4"
                     sx={{
                         mb: 2,
+                        fontWeight: '600',
+                        textShadow: '3px 3px 5px rgba(0, 0, 0, 0.4)',
                         '&:hover':{
-                            color: '#3D3434'
+                            color: '#3D3434',
+                            textShadow: '3px 3px 5px rgba(255, 255, 255, 0.4)',
                         }
                     }}
                 >
@@ -45,8 +51,11 @@ const CategoryMenu = ({onClose}) => {
                 <Typography variant="h4"
                     sx={{
                         mb: 2,
+                        fontWeight: '600',
+                        textShadow: '3px 3px 5px rgba(0, 0, 0, 0.4)',
                         '&:hover':{
-                            color: '#3D3434'
+                            color: '#3D3434',
+                            textShadow: '3px 3px 5px rgba(255, 255, 255, 0.4)',
                         }
                     }}
                 >

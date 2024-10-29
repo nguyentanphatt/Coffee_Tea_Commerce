@@ -13,16 +13,6 @@
     align-items: center;
 }
 
-/* .bean_banner h1{
-    color: white;
-    margin-left: 30px;
-    display: flex;
-    align-items: center;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
-    font-size: 40px;
-}
- */
 .bean_banner img{
     width: 100px;
     height: 100px;
