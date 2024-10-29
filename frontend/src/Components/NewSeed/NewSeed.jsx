@@ -5,6 +5,7 @@ import seed_icon from '../../assets/frontend/seed_icon.png'
 import Item from '../Item/Item'
 import { ShopContext } from '../../Context/ShopContext'
 import { useState, useContext, useEffect } from 'react'
+import { Box, Typography } from '@mui/material'
 const NewSeed = () => {
   const {all_product} = useContext(ShopContext)
   const [filterProduct, setFilterProduct] = useState([])
@@ -14,17 +15,26 @@ const NewSeed = () => {
     setFilterProduct(new_bean)
   },[all_product])
   return (
-    <div className='bean_special'>
-        <div className="bean_banner">
-            <h1>NEW BEAN FOR YOU</h1>
+    <Box className='bean_special'>
+        <Box className="bean_banner">
+            <Typography
+              variant='h3'
+              sx={{
+                color: '#fff',
+                fontWeight: '600',
+                textTransform: 'uppercase',
+                ml: 3,
+                textShadow: '3px 3px 5px rgba(0, 0, 0, 0.6)',
+              }}
+            >NEW BEAN FOR YOU</Typography>
             <img src={seed_icon} alt="" />
-        </div>
-        <div className="special_item">
+        </Box>
+        <Box className="special_item">
             {filterProduct.map((item,index)=>{
                 return <Item key={index} id={item.id} name={item.name} image={item.image} price={item.price} small_description={item.small_description}/>
             })}
-        </div>
-    </div>
+        </Box>
+    </Box>
   )
 }
 

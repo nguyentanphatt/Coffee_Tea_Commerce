@@ -1,9 +1,9 @@
 import React from 'react'
 import './CoffeeSpecial.css'
 import coffee_icon from '../../assets/frontend/coffee_icon.png'
-//import special_coffee from '../../assets/frontend/special_coffee'
 import Item from '../Item/Item'
 import { ShopContext } from '../../Context/ShopContext'
+import { Box, Typography } from '@mui/material'
 import { useState, useContext, useEffect } from 'react'
 const CoffeeSpecial = () => {
 
@@ -15,17 +15,26 @@ const CoffeeSpecial = () => {
     setFilterProduct(special_coffee)
   },[all_product])
   return (
-    <div className='coffee_special'>
-        <div className="coffee_banner">
-            <h1>SPECIAL IN LIGHT FAVOR</h1>
+    <Box className='coffee_special'>
+        <Box className="coffee_banner">
+            <Typography
+              variant='h3'
+              sx={{
+                color: '#fff',
+                fontWeight: '600',
+                textTransform: 'uppercase',
+                ml: 3,
+                textShadow: '5px 5px 10px rgba(0, 0, 0, 0.5)',
+              }}
+            >SPECIAL IN LIGHT FAVOR</Typography>
             <img src={coffee_icon} alt="" />
-        </div>
-        <div className="special_item">
+        </Box>
+        <Box className="special_item">
             {filterProduct.map((item,index)=>{
                 return <Item key={index} id={item.id} name={item.name} image={item.image} price={item.price} small_description={item.small_description}/>
             })}
-        </div>
-    </div>
+        </Box>
+    </Box>
   )
 }
 

@@ -10,9 +10,10 @@
     justify-content: space-between;
     background-color: #9DC183;
     margin: 20px;
+    align-items: center;
 }
 
-.tea_banner h1{
+/* .tea_banner h1{
     color: black;
     margin-left: 30px;
     display: flex;
@@ -20,7 +21,7 @@
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: white;
     font-size: 40px;
-}
+} */
 
 .tea_banner img{
     width: 100px;

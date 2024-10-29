@@ -1,11 +1,11 @@
 import React from 'react'
 import banner_img from '../../assets/frontend/main_banner.webp'
-import { Button, Typography } from '@mui/material'
+import { Button, Typography, Box } from '@mui/material'
 import './Banner.css'
 const Banner = () => {
   return (
-    <div className='banner'>
-        <div className='banner-left'>
+    <Box className='banner'>
+        <Box className='banner-left'>
             <Typography
               variant='h3'
               sx={{
@@ -35,11 +35,11 @@ const Banner = () => {
                 }
               }}
             >Get it now!!</Button>
-        </div>
-        <div className="banner-right">
+        </Box>
+        <Box className="banner-right">
             <img src={banner_img} alt="" />
-        </div>
-    </div>
+        </Box>
+    </Box>
   )
 }
 
