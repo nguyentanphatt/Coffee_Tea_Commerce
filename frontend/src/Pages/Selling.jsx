@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Style/Selling.css'
 import upload_img from '../assets/frontend/upload_area.svg'
+import { useNavigate } from 'react-router-dom';
 const Selling = () => {
 
     const [category, setCategory] = useState("")
@@ -15,6 +16,7 @@ const Selling = () => {
         image: null,
         description: "",
     })
+    const navigate = useNavigate()
 
     useEffect(()=>{
         const fetchUserData = async() => {
@@ -34,6 +36,7 @@ const Selling = () => {
                     })
                 } else {
                     alert('Please login to use')
+                    navigate('/login')
                 }
             } catch (error) {
                 console.error(error)

@@ -1,32 +1,111 @@
-import React from 'react'
-import './Style/HelpCenter.css'
-import { Link } from 'react-router-dom'
+import React from "react";
+import "./Style/HelpCenter.css";
+import { Link } from "react-router-dom";
+import { Box, Typography, Stack } from "@mui/material";
 const HelpCenter = () => {
   return (
-    <div className="helpcenter_container">
-      <h1>Help Center</h1>
-      <div className="helpcenter_content">
-        <p><Link style={{textDecoration: 'none',color: 'inherit'}} to={`/helpcenter/copyright_policy`}>Copyright && Policy</Link></p>
-        <p>About everything you should be know about Copyright && Policy</p>
-      </div>
-      <div className="helpcenter_content">
-        <p><Link style={{textDecoration: 'none',color: 'inherit'}} to={`/helpcenter/safety_card`}>Safety Card</Link></p>
-        <p>About everything you should be know about Safety Card</p>
-      </div>
-      <div className="helpcenter_content">
-        <p><Link style={{textDecoration: 'none',color: 'inherit'}} to={`/helpcenter/shipping`}>Shipping</Link></p>
-        <p>About everything you should be know about Shipping</p>
-      </div>
-      <div className="helpcenter_content">
-        <p><Link style={{textDecoration: 'none',color: 'inherit'}} to={`/helpcenter/selling_rule`}>Selling Rule</Link></p>
-        <p>About everything you should be know about Selling Rule</p>
-      </div>
-      <div className="helpcenter_content">
-        <p><Link style={{textDecoration: 'none',color: 'inherit'}} to={`/helpcenter/your_satisfaction`}>Your Satisfaction</Link></p>
-        <p>About everything you should be know about Your satisfaction</p>
-      </div>
-    </div>
-  )
-}
+    <Box className="helpcenter_container">
+      <Typography
+        variant="h3"
+        sx={{
+          color: "#3d3434",
+          fontWeight: "bold",
+          mt: 5,
+          mb: 5,
+          textAlign: "center",
+        }}
+      >
+        Help Center
+      </Typography>
+      <Stack
+        spacing={3}
+        sx={{
+          ml: 40,
+        }}
+      >
+        <Box className="helpcenter_content">
+          <Typography
+            component={Link}
+            to={`/helpcenter/copyright_policy`}
+            variant="h5"
+            sx={{
+              color: "red",
+              textDecoration: "none",
+            }}
+          >
+            Copyright && Policy
+          </Typography>
+          <Typography variant="body1">
+            About everything you should be know about Copyright && Policy
+          </Typography>
+        </Box>
+        <Box className="helpcenter_content">
+          <Typography
+            component={Link}
+            to={`/helpcenter/safety_card`}
+            variant="h5"
+            sx={{
+              color: "red",
+              textDecoration: "none",
+            }}
+          >
+            Safety Card
+          </Typography>
+          <Typography variant="body1">
+            About everything you should be know about Safety Card
+          </Typography>
+        </Box>
+        <Box className="helpcenter_content">
+          <Typography
+            component={Link}
+            to={`/helpcenter/shipping`}
+            variant="h5"
+            sx={{
+              color: "red",
+              textDecoration: "none",
+            }}
+          >
+            Shipping
+          </Typography>
+          <Typography variant="body1">
+            About everything you should be know about Shipping
+          </Typography>
+        </Box>
+        <Box className="helpcenter_content">
+          <Typography
+            component={Link}
+            to={`/helpcenter/selling_rule`}
+            variant="h5"
+            sx={{
+              color: "red",
+              textDecoration: "none",
+            }}
+          >
+            Selling Rule
+          </Typography>
+          <Typography variant="body1">
+            About everything you should be know about Selling Rule
+          </Typography>
+        </Box>
+        <Box className="helpcenter_content">
+          <Typography
+            component={Link}
+            to={`/helpcenter/your_satisfaction`}
+            variant="h5"
+            sx={{
+              color: "red",
+              textDecoration: "none",
+            }}
+          >
+            Your Satisfaction
+          </Typography>
+          <Typography variant="body1">
+            About everything you should be know about Your satisfaction
+          </Typography>
+        </Box>
+      </Stack>
+    </Box>
+  );
+};
 
-export default HelpCenter
+export default HelpCenter;
