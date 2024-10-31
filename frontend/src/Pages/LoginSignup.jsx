@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Style/LoginSignup.css'
-import { Checkbox, FormControlLabel, TextField } from '@mui/material'
+import { Checkbox, FormControlLabel, TextField, Box, Typography, Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom';
 const LoginSignup = () => {
 
@@ -65,10 +65,17 @@ const LoginSignup = () => {
     }
 
   return (
-    <div className={`loginsignup ${state === 'LOGIN' ? 'loginstyle' : 'loginsignup'}`}>
-        <div className="loginsignup_container">
-            <h1>{state}</h1>
-            <div className="loginsignup_inputt">
+    <Box className={`loginsignup ${state === 'LOGIN' ? 'loginstyle' : 'loginsignup'}`}>
+        <Box className="loginsignup_container">
+            <Typography
+                variant='h3'
+                sx={{
+                    mb: 5,
+                    color: '#3D3434',
+                    fontWeight: '700'
+                }}
+            >{state}</Typography>
+            <Box>
                 {state==='SIGN UP'?
                 (<TextField
                     label="username"
@@ -170,25 +177,45 @@ const LoginSignup = () => {
                         },
                     }}
                 />
-            </div>
-            <div className="loginsignup_term">
+            </Box>
+            <Box className="loginsignup_term">
                 {state ==='SIGN UP' && (
                     <FormControlLabel control={<Checkbox checked={checked} onChange={(e)=>setChecked(e.target.checked)}/>} label="I agree to the term of use & private policy"/>
                 )}
                 
-                <div className="loginsigup_createNew">
-                    {state==='LOGIN'?<p>Do not have any account? Create a new one now
-                    <span onClick={()=>setState('SIGN UP')}>Sign up</span></p>
-                    : 
-                    <p>Already have an account? Login now
-                    <span onClick={()=>setState('LOGIN')}>Log in</span></p>}     
-                </div>
-            </div>
-            <div className="loginsignup_continue">
-                <button onClick={() => {state === 'LOGIN' ? login():signup()}}>Continue</button>
-            </div>
-        </div>
-    </div>
+                <Box className="loginsigup_createNew">
+                    {state==='LOGIN' ?
+                        <Typography variant='body1' mt={2}>Do not have any account? Create a new one now
+                            <span onClick={()=>setState('SIGN UP')}>Sign up</span>
+                        </Typography>
+                        : 
+                        <Typography variant='body1' mt={2}>Already have an account? Login now
+                            <span onClick={()=>setState('LOGIN')}>Log in</span>
+                        </Typography>
+                    }     
+                </Box>
+            </Box>
+            <Box className="loginsignup_continue">
+                <Button
+                    size='large'
+                    variant='contained'
+                    onClick={() => {state === 'LOGIN' ? login():signup()}}
+                    sx={{
+                        border: '2px solid #3d3434',
+                        color: '#fff',
+                        backgroundColor:'#3d3434',
+                        mt: 3,
+                        width: '300px',
+                        height: '60px',
+                        fontWeight: '700',
+                        fontSize: 18
+                    }}
+                >
+                    Continue
+                </Button>
+            </Box>
+        </Box>
+    </Box>
   )
 }
 

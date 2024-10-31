@@ -1,153 +1,350 @@
-import React, { useState, useEffect } from 'react'
-import './Style/Selling.css'
-import upload_img from '../assets/frontend/upload_area.svg'
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import upload_img from "../assets/frontend/upload_area.svg";
+import { useNavigate } from "react-router-dom";
+import {
+  FormControlLabel,
+  TextField,
+  Box,
+  Typography,
+  Button,
+  FormControl,
+  FormLabel,
+  RadioGroup,
+  Radio,
+  Avatar,
+} from "@mui/material";
+
 const Selling = () => {
+  const [selectedImage, setSelectedImage] = useState();
+  const [formData, setFormData] = useState({
+    sellEmail: "",
+    sellName: "",
+    name: "",
+    price: "",
+    category: "",
+    quantity: "",
+    image: null,
+    description: "",
+  });
+  const navigate = useNavigate();
 
-    const [category, setCategory] = useState("")
-    const [selectedImage, setSelectedImage] = useState(null);
-    const [formData, setFormData] = useState({
-        sellEmail: "",
-        sellName: "",
-        name:"",
-        price: "",
-        category: "",
-        quantity: "",
-        image: null,
-        description: "",
-    })
-    const navigate = useNavigate()
-
-    useEffect(()=>{
-        const fetchUserData = async() => {
-            try {
-                const response = await fetch('http://localhost:4000/getuserdata',{
-                    method: 'GET',
-                    headers:{
-                        'auth-token': localStorage.getItem('auth-token')
-                    },
-                })
-                const data = await response.json()
-                if(data.success){
-                    setFormData({
-                        ...formData,
-                        sellEmail: data.user.email,
-                        sellName: data.user.name,
-                    })
-                } else {
-                    alert('Please login to use')
-                    navigate('/login')
-                }
-            } catch (error) {
-                console.error(error)
-            }
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await fetch("http://localhost:4000/getuserdata", {
+          method: "GET",
+          headers: {
+            "auth-token": localStorage.getItem("auth-token"),
+          },
+        });
+        const data = await response.json();
+        if (data.success) {
+          setFormData((prevFormData) =>({
+            ...prevFormData,
+            sellEmail: data.user.email,
+            sellName: data.user.name,
+          }));
+        } else {
+          alert("Please login to use");
+          navigate("/login");
         }
-        fetchUserData()
-    },[formData])
-
-    const handleImageChange = (e) => {
-        if (e.target.files && e.target.files[0]) {
-            setSelectedImage(e.target.files[0]);
-            setFormData({...formData, image: e.target.files[0]})
-        }
+      } catch (error) {
+        console.error(error);
+      }
     };
+    fetchUserData();
+  }, [navigate]);
 
-    const handleChangeValue = (e) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({
-            ...prevData,
-            [name]: value,
-        }));
-        if (name === 'category') {
-            setCategory(value);
-        }
+  const handleImageChange = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      setSelectedImage(e.target.files[0]);
+      setFormData({ ...formData, image: e.target.files[0] });
+    }
+  };
+
+  const handleChangeValue = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async () => {
+    let responseImage;
+    const imageFormData = new FormData();
+    imageFormData.append("product", formData.image);
+    try {
+      responseImage = await fetch("http://localhost:4000/upload", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: imageFormData,
+      });
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      return;
     }
 
-    const handleSubmit = async() => {
-        let responseImage;
-        const imageFormData = new FormData()
-        imageFormData.append('product', formData.image)
-        try {
-            responseImage = await fetch('http://localhost:4000/upload',{
-                method: 'POST',
-                headers:{
-                    Accept: 'application/json'
-                },
-                body: imageFormData
-            })
-        } catch (error) {
-            console.error("Error uploading image:", error);
-            return;
-        }
+    const imageData = await responseImage.json();
+    console.log(imageFormData);
 
-        const imageData = await responseImage.json()
-        console.log(imageFormData);
-        
-        if(imageData.success){
-            const sellingDetails = {
-                ...formData,
-                image: imageData.image_url,
-                type: formData.type
-            }
-            try {
-                const responseSelling = await fetch('http://localhost:4000/addsellingitem',{
-                    method: 'POST',
-                    headers:{
-                        Accept: 'applocation/json',
-                        'Content-Type': 'application/json',
-                        'auth-token': localStorage.getItem('auth-token')
-                    },
-                    body: JSON.stringify(sellingDetails)
-                })
-                const data = await responseSelling.json()
-                if(data.success){
-                    console.log("Selling Added");
-                    window.location.reload('/')
-                } else{
-                    console.log("Failed to add"); 
-                }
-            } catch (error) {
-                console.error("Error adding product:", error);
-            }
+    if (imageData.success) {
+      const sellingDetails = {
+        ...formData,
+        image: imageData.image_url,
+        type: formData.type,
+      };
+
+      try {
+        const responseSelling = await fetch(
+          "http://localhost:4000/addsellingitem",
+          {
+            method: "POST",
+            headers: {
+              Accept: "applocation/json",
+              "Content-Type": "application/json",
+              "auth-token": localStorage.getItem("auth-token"),
+            },
+            body: JSON.stringify(sellingDetails),
+          }
+        );
+        const data = await responseSelling.json();
+        if (data.success) {
+          alert("Selling Added");
+          window.location.reload("/");
         } else {
-            console.log("Fail to update");
-            
+          console.log("Failed to add");
         }
-    };
+      } catch (error) {
+        console.error("Error adding product:", error);
+      }
+    } else {
+      console.log("Fail to update");
+    }
+  };
   return (
-    <div className="selling_container">
-        <h1>Wanna to make profit? Give us more information!!</h1>
-        <div className="selling_info">
-            <input type="text" name="sellEmail" disabled={true} value={formData.sellEmail} onChange={handleChangeValue} id="" placeholder='Email'/>
-            <input type="text" name="sellName" value={formData.sellName} onChange={handleChangeValue} id="" placeholder='Your name'/>
-            <input type="text" name="name" value={formData.name} onChange={handleChangeValue} id="" placeholder='Item name'/>
-            <input type="text" name="price" value={formData.price} onChange={handleChangeValue} id="" placeholder='Price'/>
-            <input type="text" name="quantity" value={formData.quantity} onChange={handleChangeValue} id="" placeholder='Quantity'/>
-        </div>
-        <div className="selling_type">
-            <p>Type:</p>
-            <input type="radio" title='Coffee' name='category' value="coffee" onChange={handleChangeValue} checked={formData.category ==="coffee"}/>Coffee
-            <input type="radio" title='Tea' name='category' value="tea" onChange={handleChangeValue} checked={formData.category ==="tea"}/>Tea
-            <input type="radio" title='Bean and Seed' name='category' value="bean and seed" onChange={handleChangeValue} checked={formData.category ==="bean and seed"}/>Bean and Seed
-        </div>
-        <div className="selling_img">
-                <p>Image:</p>
-                <label htmlFor="file-input">
-                    {selectedImage ? (
-                        <img src={URL.createObjectURL(selectedImage)} alt="Selected" className='img_upload' />
-                    ) : (
-                        <img src={upload_img} alt="Upload" className='img_upload' />
-                    )}
-                </label>
-                <input type="file" id="file-input" onChange={handleImageChange} />
-            </div>
-        <div className="selling_description">
-            <p>Description:</p>
-            <textarea name="description" value={formData.description} onChange={handleChangeValue} id="" cols="10"></textarea>
-        </div>
-        <button onClick={handleSubmit} className='selling_submit'>Submit</button>
-    </div>
-  )
-}
+    <Box 
+        sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+        }}
+    >
+      <Typography variant="h4" color="#3d3434" fontWeight={700} m={4}>
+        Wanna to make profit? Give us more information!!
+      </Typography>
+      <Box width={"40%"}>
+        <TextField
+          type="text"
+          name="sellEmail"
+          label="Email"
+          variant="outlined"
+          disabled
+          value={formData.sellEmail}
+          onChange={handleChangeValue}
+          placeholder="Email"
+          fullWidth
+          margin="normal"
+        />
+        <TextField
+          type="text"
+          name="sellName"
+          label="Your Name"
+          variant="outlined"
+          value={formData.sellName}
+          onChange={handleChangeValue}
+          placeholder="Your name"
+          fullWidth
+          margin="normal"
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderWidth: "2px",
+              },
+              "&:hover fieldset": {
+                borderColor: "#3D3434",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "#3D3434",
+              },
+            },
+          }}
+        />
+        <TextField
+          type="text"
+          name="name"
+          label="Item Name"
+          variant="outlined"
+          value={formData.name}
+          onChange={handleChangeValue}
+          placeholder="Item name"
+          fullWidth
+          margin="normal"
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderWidth: "2px",
+              },
+              "&:hover fieldset": {
+                borderColor: "#3D3434",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "#3D3434",
+              },
+            },
+          }}
+        />
+        <TextField
+          type="text"
+          name="price"
+          label="Price"
+          variant="outlined"
+          value={formData.price}
+          onChange={handleChangeValue}
+          placeholder="Price"
+          fullWidth
+          margin="normal"
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderWidth: "2px",
+              },
+              "&:hover fieldset": {
+                borderColor: "#3D3434",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "#3D3434",
+              },
+            },
+          }}
+        />
+        <TextField
+          type="text"
+          name="quantity"
+          label="Quantity"
+          variant="outlined"
+          value={formData.quantity}
+          onChange={handleChangeValue}
+          placeholder="Quantity"
+          fullWidth
+          margin="normal"
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderWidth: "2px",
+              },
+              "&:hover fieldset": {
+                borderColor: "#3D3434",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "#3D3434",
+              },
+            },
+          }}
+        />
+      </Box>
+      <Box width={"40%"}>
+        <FormControl component="fieldset">
+          <FormLabel component="legend" sx={{ color: "#3d3434" }}>
+            Type:
+          </FormLabel>
+          <RadioGroup
+            name="category"
+            value={formData.category}
+            onChange={handleChangeValue}
+            row
+          >
+            <FormControlLabel
+              value="coffee"
+              control={<Radio />}
+              label="Coffee"
+            />
+            <FormControlLabel value="tea" control={<Radio />} label="Tea" />
+            <FormControlLabel
+              value="bean and seed"
+              control={<Radio />}
+              label="Bean and Seed"
+            />
+          </RadioGroup>
+        </FormControl>
+      </Box>
+      <Box width={"40%"}>
+        <Typography variant="subtitle1" color="#3d3434">
+          Image:
+        </Typography>
+        <label htmlFor="file-input" style={{ cursor: "pointer" }}>
+          <Box
+            border={1}
+            borderColor="grey.400"
+            borderRadius="4px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            width={100}
+            height={100}
+            bgcolor="#fff"
+          >
+            <Avatar
+              src={
+                selectedImage ? URL.createObjectURL(selectedImage) : upload_img
+              }
+              alt="Selected"
+              variant="square"
+              sx={{
+                width: "100%",
+                height: "100%",
+                display: selectedImage ? "block" : "none",
+              }}
+            />
+            {!selectedImage && (
+              <Typography variant="body2" color="textSecondary">
+                Upload
+              </Typography>
+            )}
+          </Box>
+        </label>
+        <input
+          type="file"
+          id="file-input"
+          onChange={handleImageChange}
+          style={{ display: "none" }}
+        />
+      </Box>
+      <Box width={"40%"} mt={2}>
+        <Typography variant="subtitle1" color="#3d3434">
+          Description:
+        </Typography>
+        <TextField
+          name="description"
+          value={formData.description}
+          onChange={handleChangeValue}
+          multiline
+          rows={6}
+          variant="outlined"
+          fullWidth
+        />
+      </Box>
+      <Button
+        size="large"
+        variant="contained"
+        onClick={handleSubmit}
+        sx={{
+          border: "2px solid #3d3434",
+          color: "#fff",
+          backgroundColor: "#3d3434",
+          mt: 3,
+          width: "300px",
+          height: "60px",
+          fontWeight: "500",
+          fontSize: 18,
+          mb: 5,
+        }}
+      >
+        Submit
+      </Button>
+    </Box>
+  );
+};
 
-export default Selling
+export default Selling;

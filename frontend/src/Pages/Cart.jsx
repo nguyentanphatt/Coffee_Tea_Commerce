@@ -1,10 +1,35 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { ShopContext } from '../Context/ShopContext'
 import remove_icon from '../assets/frontend/remove_icon.png'
 import './Style/Cart.css'
+import { useNavigate } from "react-router-dom";
 const Cart = () => {
 
     const {all_product, cartItems, removeFromCart, getTotalCartAmount} = useContext(ShopContext)
+    const navigate = useNavigate()
+    useEffect(() => {
+        const fetchUserData = async () => {
+          try {
+            const response = await fetch("http://localhost:4000/getuserdata", {
+              method: "GET",
+              headers: {
+                "auth-token": localStorage.getItem("auth-token"),
+              },
+            });
+            const data = await response.json();
+            if (data.success) {
+              console.log("OK");
+            } else {
+              alert("Please login to use");
+              navigate("/login");
+            }
+          } catch (error) {
+            console.error(error);
+          }
+        };
+        fetchUserData();
+    }, [navigate]);
+
 
   return (
     <div className="cart_container">

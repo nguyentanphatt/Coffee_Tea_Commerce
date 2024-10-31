@@ -34,9 +34,11 @@ const upload = multer({storage:storage})
 app.use('/images',express.static('upload/images'))
 
 app.post("/upload",upload.single('product'),(req,res)=>{
+    //const imageUrls = req.files.map(file => `http://localhost:${port}/images/${req.file.filename}`);
+    //`http://localhost:${port}/images/${req.file.filename}`
     res.json({
         success:1,
-        image_url:`http://localhost:${port}/images/${req.file.filename}`
+        image_url: `http://localhost:${port}/images/${req.file.filename}`
     })
 })
 //Schema for product

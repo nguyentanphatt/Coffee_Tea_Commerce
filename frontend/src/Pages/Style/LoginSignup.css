@@ -5,16 +5,13 @@
     padding-top: 100px;
 }
 .loginstyle{
-    height: 70vh;
+    height: 60vh;
 }
 
 .loginstyle .loginsignup_container{
-    height: 500px;
+    height: 400px;
 }
 
-.loginstyle .loginsignup_container h1{
-    margin-bottom: 50px;
-}
 
 .loginsignup_container{
     width: 580px;
@@ -44,16 +41,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.loginsignup_continue button{
-    width: 60%;
-    height: 80px;
-    margin-top: 20px;
-    border: 2px solid #3D3434;
-    border-radius: 2vh;
-    color: white;
-    font-size: 24px;
-    background-color: #3D3434;
-    cursor: pointer;
 }
