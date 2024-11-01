@@ -68,7 +68,11 @@ const CategoryMenu = ({onClose}) => {
 
             <Box className="category_menu-category">
                 <Typography variant="h4"
-                    sx={{mb: 2}}
+                    sx={{
+                        mb: 2,
+                        fontWeight: '600',
+                        textShadow: '3px 3px 5px rgba(0, 0, 0, 0.4)',
+                    }}
                 >
                     WANT TO KNOW MORE</Typography>
                 <Divider sx={{mb:2}}/>

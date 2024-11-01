@@ -2,11 +2,11 @@
     margin: 100px 170px;
 }
 
-.cart_container hr{
+/* .cart_container hr{
     height: 3px;
     background: #3d3434;
     border: 0;
-}
+} */
 
 .cart_form{
     display: grid;
@@ -14,9 +14,6 @@
     align-items: center;
     gap: 35px;
     padding: 20px 0px;
-    color: #454545;
-    font-size: 18px;
-    font-weight: 600;
 }
 
 .cart_format{
@@ -72,17 +69,17 @@
     font-size: 18px;
     font-weight: 500;
 }
-.cart_promo{
+/* .cart_promo{
     width: 50%;
-}
+} */
 
-.cart_promo input{
+/* .cart_promo input{
     width: 300px;
     height: 25px;
     border: 2px solid #3d3434;
     margin-right: 10px;
 }
-
+ */
 .cart_promo button{
     width: 100px;
     height: 32px;
