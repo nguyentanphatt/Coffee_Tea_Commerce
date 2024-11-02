@@ -15,8 +15,8 @@ const Product = () => {
     <div>
       <Breadcrums product={product}/>
       <ProductDisplay product={product}/>
-      <DescriptionBox />
-      <Reviews />
+      <DescriptionBox name={product.name}/>
+      <Reviews name={product.name}/>
     </div>
   )
 }

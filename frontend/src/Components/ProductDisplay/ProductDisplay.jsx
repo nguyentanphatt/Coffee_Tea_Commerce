@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import black_star from '../../assets/frontend/black_star.png'
 import './ProductDisplay.css'
 import { ShopContext } from '../../Context/ShopContext';
+import { Box, Typography, Button, Rating} from '@mui/material'
 const ProductDisplay = (props) => {
 
     const {product} = props; 
@@ -52,44 +53,95 @@ const ProductDisplay = (props) => {
         }
     }
   return (
-    <div className="product_display_container">
-        <div className="product_display_img">
+    <Box className="product_display_container">
+        <Box className="product_display_img">
             <img src={product.image} alt="" />
-            <div className="product_display_nextImg">
+            <Box className="product_display_nextImg">
                 <div className='product_display_next'></div>
                 <div className='product_display_next'></div>
                 <div className='product_display_next'></div>
                 <div className='product_display_next'></div>
-            </div>
-        </div>
-        <div className="product_display_info">
-            <div className="product_display_title">
-                <h1>{product.name}</h1>
-                <p>{product.small_description}</p>
-            </div>
-            <div className='product_display_rating'>
-                <div className="product_display_star">
-                    <img src={black_star} alt="" />
-                    <img src={black_star} alt="" />
-                    <img src={black_star} alt="" />
-                    <img src={black_star} alt="" />
-                    <img src={black_star} alt="" />
-                </div>
-                <p>50+ reviews</p>
-            </div>
-            <div className="product_info_special">
-                <h3>{type} {typeInfo}</h3>
-                <h3>{special} {specialInfo}</h3>
-            </div>
-            <h1>${product.price}</h1>
-            <div className="product_display_add">
-                <button className='btn' onClick={()=>handleChangeNumber('-')}>-</button>
-                <p style={{fontSize: '18px', fontWeight: '600', textAlign: 'center', width:'30px'}}>{count}</p>
-                <button className='btn' onClick={()=>handleChangeNumber('+')}>+</button>
-            </div>
-            <button className='add_to_cart_btn' onClick={()=>{addToCart(product.id, count)}}>ADD TO CART</button>
-        </div>
-    </div>
+            </Box>
+        </Box>
+        <Box className="product_display_info">
+            <Box>
+                <Typography
+                    variant='h4'
+                    color='#3d3434'
+                    fontWeight={700}
+                >{product.name}</Typography>
+                <Typography
+                    variant='body1'
+                    mt={2}
+                    mb={2}
+                >{product.small_description}</Typography>
+            </Box>
+            <Box className='product_display_rating'>
+                <Rating
+                    value={5}
+                    readOnly
+                    sx={{ alignSelf: "center" }}
+                />
+                <Typography
+                    variant='body1'
+                    ml={1}
+                >50+ reviews</Typography>
+            </Box>
+            <Box mt={2}>
+                <Typography
+                    variant='h6'
+                    color='#3d3434'
+                    mr={2}
+                >{type} {typeInfo}</Typography>
+                <Typography
+                    variant='h6'
+                    color='#3d3434'
+                >{special} {specialInfo}</Typography>
+            </Box>
+            <Typography
+                variant='h4'
+                color='#3d3434'
+                fontWeight={700}
+                mt={2}
+            >${product.price}</Typography>
+            <Box className="product_display_add">
+                <Button 
+                    size='small'
+                    onClick={()=>handleChangeNumber('-')}
+                    sx={{
+                        backgroundColor: '#3d3434',
+                        color: '#fff',
+                        fontSize: 16
+                    }}
+                >-</Button>
+                <Typography style={{fontSize: '18px', fontWeight: '600', textAlign: 'center', width:'30px', color:'#3d3434'}}>{count}</Typography>
+                <Button 
+                    size='small'
+                    onClick={()=>handleChangeNumber('+')}
+                    sx={{
+                        backgroundColor: '#3d3434',
+                        color: '#fff',
+                        fontSize: 16
+                    }}                    
+                >+</Button>
+            </Box>
+            <Button   
+                onClick={()=>{addToCart(product.id, count)}}
+                sx={{
+                    backgroundColor: '#3d3434',
+                    fontWeight: '600',
+                    width: '100%',
+                    height: 50,
+                    color: '#fff',
+                    fontSize: 20,
+                    '&:hover':{
+                        background: 'lightgray',
+                        color: '#3d3434'
+                    }
+                }}
+            >ADD TO CART</Button>
+        </Box>
+    </Box>
   )
 }
 
