@@ -381,6 +381,27 @@ app.post('/removefromcart',fetchUser, async (req,res)=>{
     res.send("Removed")
 })
 
+//Remove all product from cart API
+app.post('/removeallfromcart', fetchUser, async (req, res) => {
+    try {
+        const userData = await Users.findOne({ _id: req.user.id });
+        Object.keys(userData.cartData).forEach((key) => {
+            if (userData.cartData[key] > 0) {
+                userData.cartData[key] = 0;
+            }
+        });
+        
+        await Users.findOneAndUpdate(
+            { _id: req.user.id },
+            { cartData: userData.cartData }
+        );
+        res.json({ message: "All items in cart set to zero", success: true });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error", success: false });
+    }
+});
+
 //Get all item in user cart to cart API
 app.post('/getcart',fetchUser,async (req,res)=>{
     let userData = await Users.findOne({_id:req.user.id})

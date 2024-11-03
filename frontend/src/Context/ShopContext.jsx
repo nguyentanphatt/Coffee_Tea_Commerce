@@ -70,6 +70,31 @@ const ShopContextProvider = (props) => {
         }
     }
 
+    const removeAllFromCart = () => {
+        if (localStorage.getItem('auth-token')) {
+            fetch('http://localhost:4000/removeallfromcart', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'auth-token': `${localStorage.getItem('auth-token')}`,
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.success) {
+                    setCartItems({});
+                    console.log(data.message);
+                } else {
+                    console.warn(data.message);
+                }
+            })
+            .catch((error) => {
+                console.error("Failed to remove all items from cart:", error);
+            });
+        }
+    };
+
     const getTotalCartAmount = () =>{
         let totalAmount = 0
         for(const item in cartItems){
@@ -92,7 +117,7 @@ const ShopContextProvider = (props) => {
         return totalItem
     }
 
-    const contextValue = {all_product, cartItems, addToCart, removeFromCart, getTotalCartAmount, getTotalCartItems}
+    const contextValue = {all_product, cartItems, addToCart, removeFromCart, getTotalCartAmount, getTotalCartItems, removeAllFromCart}
     return (
         <ShopContext.Provider value={contextValue}>
             {props.children}
