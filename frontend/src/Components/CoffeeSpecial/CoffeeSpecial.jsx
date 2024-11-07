@@ -3,7 +3,7 @@ import './CoffeeSpecial.css'
 import coffee_icon from '../../assets/frontend/coffee_icon.png'
 import Item from '../Item/Item'
 import { ShopContext } from '../../Context/ShopContext'
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, Grid2 } from '@mui/material'
 import { useState, useContext, useEffect } from 'react'
 const CoffeeSpecial = () => {
 
@@ -25,6 +25,12 @@ const CoffeeSpecial = () => {
                 textTransform: 'uppercase',
                 ml: 3,
                 textShadow: '5px 5px 10px rgba(0, 0, 0, 0.5)',
+                fontSize: {
+                  lg: '3rem',
+                  md: '2rem',
+                  sm: '1.5rem',
+                  xs: '1rem'
+                }
               }}
             >SPECIAL IN LIGHT FAVOR</Typography>
             <img src={coffee_icon} alt="" />

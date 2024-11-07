@@ -25,6 +25,12 @@ const TeaSpecial = () => {
                 textTransform: 'uppercase',
                 ml: 3,
                 textShadow: '3px 3px 5px rgba(100, 100, 100, 0.6)',
+                fontSize: {
+                  lg: '3rem',
+                  md: '2rem',
+                  sm: '1.5rem',
+                  xs: '1rem'
+                }
               }}
             >TEA LEAF GOOD FOR HEALTH</Typography>
             <img src={tea_icon} alt="" />

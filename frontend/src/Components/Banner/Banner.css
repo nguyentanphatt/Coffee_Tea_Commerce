@@ -25,3 +25,38 @@
     width: 100%;
     height: 100%;
 }
+
+@media screen and (max-width: 1200px) {
+    .banner{
+        height: 360px;
+    }
+
+    .banner-right img {
+        width: 90%;
+        height: 90%;
+        margin-left: 60px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .banner{
+        height: 240px;
+    }
+
+    .banner-right img {
+        width: 100%;
+        height: 60%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .banner{
+        height: 160px;
+    }
+    .banner-left {
+        gap: 1px;
+    }
+
+    .banner-right img {
+        width: 100%;
+        height: 40%;
+    }
+}

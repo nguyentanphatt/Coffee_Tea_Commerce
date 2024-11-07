@@ -19,8 +19,19 @@ const AboutUs = () => {
             sx={{
                 color: '#3d3434',
                 fontWeight: 'bold',
-                mt: 5,
-                mb: 5
+                mt: {
+                    lg: 5,
+                    md: 4,
+                    sm: 3,
+                    xs: 2
+                },
+                mb: 5,
+                fontSize: {
+                    lg: '48px',
+                    md: '40px',
+                    sm: '35px',
+                    xs: '20px'
+                }
             }}
         >ABOUT US</Typography>
         <Box className="aboutus_content">

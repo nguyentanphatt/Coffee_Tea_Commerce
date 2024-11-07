@@ -25,6 +25,12 @@ const NewSeed = () => {
                 textTransform: 'uppercase',
                 ml: 3,
                 textShadow: '3px 3px 5px rgba(0, 0, 0, 0.6)',
+                fontSize: {
+                  lg: '3rem',
+                  md: '2rem',
+                  sm: '1.5rem',
+                  xs: '1rem'
+                }
               }}
             >NEW BEAN FOR YOU</Typography>
             <img src={seed_icon} alt="" />

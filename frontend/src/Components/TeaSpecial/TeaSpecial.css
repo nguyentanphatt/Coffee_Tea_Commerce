@@ -27,3 +27,31 @@
     gap: 40px;
     margin: 20px;
 }
+
+@media screen and (max-width: 1200px){
+    .tea_banner{
+        height: 80px;
+    }
+    .tea_banner img {
+        width: 80px;
+        height: 80px;
+    }
+}
+@media screen and (max-width: 900px){
+    .tea_banner{
+        height: 70px;
+    }
+    .tea_banner img {
+        width: 60px;
+        height: 60px;
+    }
+}
+@media screen and (max-width: 600px){
+    .tea_banner{
+        height: 50px;
+    }
+    .tea_banner img {
+        width: 60px;
+        height: 60px;
+    }
+}

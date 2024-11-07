@@ -11,28 +11,58 @@ const Banner = () => {
               sx={{
                 color: '#fff',
                 mb: 2,
-                fontWeight: '600'
+                fontWeight: '600',
+                fontSize:{
+                  lg: '3rem',
+                  md: '2.5rem',
+                  sm: '1.5rem',
+                  xs: '1rem'
+                }
               }}
             >BEST COFFEE IN THE WORLD</Typography>
             <Typography
               variant='h6'
               sx={{
-                mb: 2,
-                color: '#fff'
+                mb: {
+                  lg: 2,
+                  md: 2,
+                  sm: 1,
+                  xs: 1
+                },
+                color: '#fff',
+                fontSize:{
+                  lg: '1.5rem',
+                  md: '1rem',
+                  sm: '0.8rem',
+                  xs: '0.6rem'
+                }
               }}
             >Get now to sale up to 20%</Typography>
             <Button
               variant='contained'
               size='large'
               sx={{
-                fontSize: 16,
+                fontSize: {
+                  lg: 16,
+                  md: 16,
+                  sm: 10,
+                  xs: 8
+
+                },
                 fontWeight: '600',
-                width: '180px',
+                width: {
+                  lg: '180px',
+                  md: '180px',
+                  sm: '120px',
+                  xs: '100px'
+                },
                 backgroundColor: '#342B2B',
                 '&:hover':{
                   backgroundColor: 'gray',
-                  color: '#342B2B'
-                }
+                  color: '#342B2B',
+                  
+                },
+                
               }}
             >Get it now!!</Button>
         </Box>

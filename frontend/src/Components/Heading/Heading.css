@@ -14,7 +14,7 @@
 
 .search{
     display: flex;
-     border: 3px solid #342B2B;
+    border: 3px solid #342B2B;
     margin-right: 50px;
     width: 610px;
     padding-inline: 5px;
@@ -70,6 +70,66 @@
     font-size: 14px;
     background: red;
     color: white;
+}
+
+@media screen and (max-width: 1280px) {
+    .search{
+        width: 500px;
+        height: 20px;
+    }
+    .item_cart .btn{
+        width: 150px;
+    }
+    .item_cart img {
+        width: 40px;
+        height: 40px;
+    }
+    .cart_count{
+        width: 20px;
+        height: 20px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .search{
+        width: 600px;
+        height: 20px;
+    }
+    .item_cart .btn{
+        width: 80px;
+        font-size: 10px;
+    }
+    .item_cart img {
+        width: 30px;
+        height: 30px;
+    }
+    .cart_count{
+        width: 20px;
+        height: 20px;
+    }
+    .logo img{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .search{
+        width: 600px;
+        height: 20px;
+    }
+    .item_cart .btn{
+        width: 80px;
+        font-size: 10px;
+    }
+    .item_cart img {
+        width: 30px;
+        height: 30px;
+    }
+    .cart_count{
+        width: 20px;
+        height: 20px;
+    }
+    .logo img{
+        width: 60%;
+    }
 }
 
   

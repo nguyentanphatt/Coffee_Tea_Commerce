@@ -26,3 +26,31 @@
     gap: 40px;
     margin: 20px;
 }
+
+@media screen and (max-width: 1200px){
+    .bean_banner{
+        height: 80px;
+    }
+    .bean_banner img {
+        width: 80px;
+        height: 80px;
+    }
+}
+@media screen and (max-width: 900px){
+    .bean_banner{
+        height: 70px;
+    }
+    .bean_banner img {
+        width: 60px;
+        height: 60px;
+    }
+}
+@media screen and (max-width: 600px){
+    .bean_banner{
+        height: 50px;
+    }
+    .bean_banner img {
+        width: 60px;
+        height: 60px;
+    }
+}

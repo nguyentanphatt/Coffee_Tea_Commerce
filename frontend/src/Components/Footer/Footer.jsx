@@ -10,34 +10,52 @@ const Footer = () => {
   return (
     <Box className='footer'>
       <Box className="footer_info">
-        <Box className="footer_contac">
+        <Box>
           <Typography
             variant='h4'
             sx={{
               mt: 5,
-              fontWeight: '600'
+              fontWeight: '600',
+              fontSize: {
+                lg: '34px',
+                md: '34px',
+                sm: '25px',
+                xs: '18px'
+              }
             }}
           >Get To Know Us</Typography>
           <p><Link style={{textDecoration: 'none',color: 'inherit'}} to='/aboutus'>About Us</Link></p>
           <p><Link style={{textDecoration: 'none',color: 'inherit'}} to='/contactus'>Contact Us</Link></p>
         </Box>
-        <Box className="footer_help">
+        <Box>
           <Typography
             variant='h4'
             sx={{
               mt: 5,
-              fontWeight: '600'
+              fontWeight: '600',
+              fontSize: {
+                lg: '34px',
+                md: '34px',
+                sm: '25px',
+                xs: '18px'
+              }
             }}
           >Let Us Help  You</Typography>
           <p><Link style={{textDecoration: 'none',color: 'inherit'}} to='/selling'>Selling Item </Link></p>
           <p><Link style={{textDecoration: 'none',color: 'inherit'}} to='/helpcenter'>Help Center </Link></p>
         </Box>
-        <Box className="footer_contactInfo">
+        <Box>
           <Typography
             variant='h4'
             sx={{
               mt: 5,
-              fontWeight: '600'
+              fontWeight: '600',
+              fontSize: {
+                lg: '34px',
+                md: '34px',
+                sm: '25px',
+                xs: '18px'
+              }
             }}
           >Our Contact</Typography>
           <p>Location: 16A Avalon St</p>

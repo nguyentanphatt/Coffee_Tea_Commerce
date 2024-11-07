@@ -24,6 +24,35 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 40px;
     margin: 20px;
+}
+
+@media screen and (max-width: 1200px){
+    .coffee_banner{
+        height: 80px;
+    }
+    .coffee_banner img {
+        width: 80px;
+        height: 80px;
+    }
+}
+@media screen and (max-width: 900px){
+    .coffee_banner{
+        height: 70px;
+    }
+    .coffee_banner img {
+        width: 60px;
+        height: 60px;
+    }
+}
+@media screen and (max-width: 600px){
+    .coffee_banner{
+        height: 50px;
+    }
+    .coffee_banner img {
+        width: 60px;
+        height: 60px;
+    }
 }

@@ -49,7 +49,7 @@ const Heading = () => {
       </Box>
       {filteredProducts.length > 0 && searchTerm.length > 0 && (
         <List
-          style={{
+          sx={{
             position: 'absolute',
             top: '10%',
             left: '694px',
@@ -60,6 +60,26 @@ const Heading = () => {
             overflowY: 'auto',
             zIndex: 1000,
             border: '1px solid #ccc',
+            ...(window.innerWidth <= 1280 && window.innerWidth > 1024 &&{
+              left: '462px',
+              width: '474px',
+              top: '8%'
+            }),
+            ...(window.innerWidth <= 1024 && window.innerWidth > 800 && {
+              left: '332px',
+              width: '346px',
+              top: '8%'
+            }),
+            ...(window.innerWidth <= 800 && window.innerWidth > 500 && {
+              left: '236px',
+              width: '306px',
+              top: '8%'
+            }),
+            ...(window.innerWidth <= 500 && {
+              left: '100px',
+              width: '136px',
+              top: '8%'
+            }),
           }}
         >
           {filteredProducts.map((product) => (
