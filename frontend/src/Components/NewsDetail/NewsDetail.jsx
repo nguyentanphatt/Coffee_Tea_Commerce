@@ -5,7 +5,12 @@ const NewsDetail = (props) => {
   return (
     <Card
       sx={{
-        maxWidth: '600px'
+        maxWidth: {
+          lg: '600px',
+          md: '500px',
+          sm: '400px',
+          xs: '300px'
+        },
       }}
     >
       <CardMedia 
@@ -20,14 +25,27 @@ const NewsDetail = (props) => {
           variant='h4'
           sx={{
             color: '#3D3434',
+            fontSize:{
+              lg: '34px',
+              md: '34px',
+              sm: '26px',
+              xs: '20px'
+            }
           }}
         >
         {props.title}
         </Typography>
         <Typography
           variant='body2'
-          mt={2}
-
+          mt={2}              
+          sx={{
+            fontSize:{
+              lg:'14px',
+              md: '14px',
+              sm: '12px',
+              xs: '10px'
+            }
+          }}
         >
         {props.small_detail}
         </Typography>
@@ -36,7 +54,18 @@ const NewsDetail = (props) => {
         <Button
           size='medium'
           sx={{
-            width: '120px',
+            width: {
+              lg: '120px',
+              md: '120px',
+              sm: '100px',
+              xs: '80px'
+            },
+            fontSize:{
+              lg: '16px',
+              md: '16px',
+              sm: '12px',
+              xs: '10px'
+            },
             '&:hover':{
               backgroundColor: '#3D3434',
               color: '#fff',
@@ -46,7 +75,18 @@ const NewsDetail = (props) => {
         <Button
           size='medium'
           sx={{
-            width: '120px',
+            width: {
+              lg: '120px',
+              md: '120px',
+              sm: '100px',
+              xs: '80px'
+            },
+            fontSize:{
+              lg: '16px',
+              md: '16px',
+              sm: '12px',
+              xs: '10px'
+            },
             '&:hover':{
               backgroundColor: '#3D3434',
               color: '#fff',

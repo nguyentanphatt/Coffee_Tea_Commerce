@@ -25,7 +25,12 @@ const AboutUs = () => {
                     sm: 3,
                     xs: 2
                 },
-                mb: 5,
+                mb: {
+                    lg: 5,
+                    md: 5, 
+                    sm: 3, 
+                    xs: 1
+                },
                 fontSize: {
                     lg: '48px',
                     md: '40px',

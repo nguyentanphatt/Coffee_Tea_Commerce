@@ -5,7 +5,26 @@
 
 .news_detail{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr)); /* Adjust minmax for item size */
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
     gap: 20px;
     padding: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+    .news_detail{
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .news_detail{
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .news_detail{
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        padding-left: 25%;
+    }
 }

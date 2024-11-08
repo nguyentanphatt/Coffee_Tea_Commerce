@@ -72,7 +72,13 @@ const LoginSignup = () => {
                 sx={{
                     mb: 5,
                     color: '#3D3434',
-                    fontWeight: '700'
+                    fontWeight: '700',
+                    fontSize:{
+                        lg: '48px',
+                        md: '40px',
+                        sm: '34px',
+                        xs: '26px'
+                    }
                 }}
             >{state}</Typography>
             <Box>
@@ -86,7 +92,12 @@ const LoginSignup = () => {
                     onChange={handleChangeValue}
                     sx={{
                         marginBottom: '20px',
-                        marginTop: '20px',
+                        marginTop: {
+                            lg: '20px',
+                            md: '20px',
+                            sm: '20px',
+                            xs: '0'
+                        },
                         '& .MuiOutlinedInput-root': {
                             '& fieldset': {
                                 borderColor: '#5d5d5d',
@@ -204,9 +215,19 @@ const LoginSignup = () => {
                         border: '2px solid #3d3434',
                         color: '#fff',
                         backgroundColor:'#3d3434',
-                        mt: 3,
+                        mt: {
+                            lg: 3,
+                            md: 3, 
+                            sm: 2,
+                            xs: 1
+                        },
                         width: '300px',
-                        height: '60px',
+                        height: {
+                            lg: '60px',
+                            md: '60px',
+                            sm: '60px',
+                            xs: '40px'
+                        },
                         fontWeight: '700',
                         fontSize: 18
                     }}

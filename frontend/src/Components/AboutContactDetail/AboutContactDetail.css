@@ -14,30 +14,46 @@
     width: 40%;
     height: 300px;
     object-fit: cover;
-    margin-right: 20px;
 }
 
 .aboutContact_text {
     width: 50%;
     height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
+    padding: 30px;
 }
-
-/* .aboutContact_text h1 {
-    color: #3d3434;
-    text-align: center;
-}
-
-.aboutContact_text p {
-    font-size: 20px;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 30px;
-} */
 
 .reversed {
     flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 1200px) {
+    .aboutContactcontainer{
+        height: 250px;
+    }
+
+    .aboutContactcontainer img{
+        height: 250px;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    .aboutContactcontainer{
+        height: 200px;
+    }
+
+    .aboutContactcontainer img{
+        height: 200px;
+    }
+
+}
+@media screen and (max-width: 600px) {
+    .aboutContactcontainer{
+        height: 160px;
+    }
+
+    .aboutContactcontainer img{
+        height: 160px;
+    }
+
 }
