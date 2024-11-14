@@ -131,7 +131,16 @@ const Selling = () => {
             alignItems: 'center'
         }}
     >
-      <Typography variant="h4" color="#3d3434" fontWeight={700} m={4}>
+      <Typography variant="h4" color="#3d3434" fontWeight={700} m={4}
+        sx={{
+          fontSize: {
+            lg: '34px',
+            md: '34px',
+            sm: '28px',
+            xs: '20px'
+          }
+        }}
+      >
         Wanna to make profit? Give us more information!!
       </Typography>
       <Box width={"40%"}>
@@ -334,10 +343,22 @@ const Selling = () => {
           color: "#fff",
           backgroundColor: "#3d3434",
           mt: 3,
-          width: "300px",
-          height: "60px",
+          width: {
+            lg: '300px',
+            md: '300px',
+            sm: '250px',
+            xs: '200px'
+          },
+          height: {
+            lg: '60px',
+            md: '60px',
+            sm: '50px',
+            xs: '40px'
+          },
           fontWeight: "500",
-          fontSize: 18,
+          fontSize: {
+            lg: 18, md: 18, sm: 18, xs: 14
+          },
           mb: 5,
         }}
       >

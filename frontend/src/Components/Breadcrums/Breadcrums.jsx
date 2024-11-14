@@ -32,7 +32,16 @@ const Breadcrums = (props) => {
   const { category, path } = categoryChange();
 
   return (
-    <Box ml={25} mt={3}>
+    <Box mt={3}
+      sx={{
+        ml:{
+          lg: 25,
+          md: 25,
+          sm: 20,
+          xs: 10
+        }
+      }}
+    >
       <Breadcrumbs aria-label="breadcrumb">
         <Link to="/" style={{ textDecoration: "none", color: "inherit"}}> 
           Home

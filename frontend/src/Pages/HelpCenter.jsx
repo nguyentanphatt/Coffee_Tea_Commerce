@@ -3,6 +3,15 @@ import "./Style/HelpCenter.css";
 import { Link } from "react-router-dom";
 import { Box, Typography, Stack } from "@mui/material";
 const HelpCenter = () => {
+
+  const links = [
+    { label: "Copyright && Policy", path: "/helpcenter/copyright_policy" },
+    { label: "Safety Card", path: "/helpcenter/safety_card" },
+    { label: "Shipping", path: "/helpcenter/shipping" },
+    { label: "Selling Rule", path: "/helpcenter/selling_rule" },
+    { label: "Your Satisfaction", path: "/helpcenter/your_satisfaction" },
+  ];
+
   return (
     <Box className="helpcenter_container">
       <Typography
@@ -10,8 +19,24 @@ const HelpCenter = () => {
         sx={{
           color: "#3d3434",
           fontWeight: "bold",
-          mt: 5,
-          mb: 5,
+          mt: {
+            lg: 5,
+            md: 4,
+            sm: 3,
+            xs: 2,
+          },
+          mb: {
+            lg: 5,
+            md: 5,
+            sm: 3,
+            xs: 1,
+          },
+          fontSize: {
+            lg: "48px",
+            md: "40px",
+            sm: "35px",
+            xs: "20px",
+          },
           textAlign: "center",
         }}
       >
@@ -20,89 +45,41 @@ const HelpCenter = () => {
       <Stack
         spacing={3}
         sx={{
-          ml: 40,
+          ml: {
+            lg: 40,
+            md: 30,
+            sm: 15,
+            xs: 10,
+          },
         }}
       >
-        <Box className="helpcenter_content">
-          <Typography
-            component={Link}
-            to={`/helpcenter/copyright_policy`}
-            variant="h5"
-            sx={{
+        {links.map((link) => (
+          <Box>
+            <Typography 
+              component={Link}
+              to={link.path}
+              variant="h5"
+              sx={{
               color: "red",
               textDecoration: "none",
-            }}
-          >
-            Copyright && Policy
-          </Typography>
-          <Typography variant="body1">
-            About everything you should be know about Copyright && Policy
-          </Typography>
-        </Box>
-        <Box className="helpcenter_content">
-          <Typography
-            component={Link}
-            to={`/helpcenter/safety_card`}
-            variant="h5"
+              fontSize: {
+                lg: "24px",
+                md: "24px",
+                sm: "20px",
+                xs: "16px",
+                },
+              }}
+            >{link.label}</Typography>
+            <Typography
+            variant="body1"
             sx={{
-              color: "red",
-              textDecoration: "none",
+              fontSize: { lg: "16px", md: "16px", sm: "14px", xs: "12px" },
             }}
           >
-            Safety Card
+            About everything you should be know about {link.label}
           </Typography>
-          <Typography variant="body1">
-            About everything you should be know about Safety Card
-          </Typography>
-        </Box>
-        <Box className="helpcenter_content">
-          <Typography
-            component={Link}
-            to={`/helpcenter/shipping`}
-            variant="h5"
-            sx={{
-              color: "red",
-              textDecoration: "none",
-            }}
-          >
-            Shipping
-          </Typography>
-          <Typography variant="body1">
-            About everything you should be know about Shipping
-          </Typography>
-        </Box>
-        <Box className="helpcenter_content">
-          <Typography
-            component={Link}
-            to={`/helpcenter/selling_rule`}
-            variant="h5"
-            sx={{
-              color: "red",
-              textDecoration: "none",
-            }}
-          >
-            Selling Rule
-          </Typography>
-          <Typography variant="body1">
-            About everything you should be know about Selling Rule
-          </Typography>
-        </Box>
-        <Box className="helpcenter_content">
-          <Typography
-            component={Link}
-            to={`/helpcenter/your_satisfaction`}
-            variant="h5"
-            sx={{
-              color: "red",
-              textDecoration: "none",
-            }}
-          >
-            Your Satisfaction
-          </Typography>
-          <Typography variant="body1">
-            About everything you should be know about Your satisfaction
-          </Typography>
-        </Box>
+          </Box>
+        ))}
       </Stack>
     </Box>
   );

@@ -91,8 +91,17 @@ const Cart = () => {
           sx={{
             color: "#3d3434",
             fontWeight: "bold",
-            mb: 5,
+            mb: {
+              lg: 5, md: 5, sm: 4,
+               sx: 3
+            },
             textAlign: "center",
+            fontSize: {
+              lg: '48px',
+              md: '42px',
+              sm: '38px',
+              xs: '30px'
+            }
           }}
         >Cart Item</Typography>
         <Box className="cart_form">
@@ -152,7 +161,22 @@ const Cart = () => {
                     backgroundColor: '#3d3434',
                     color: '#fff',
                     fontWeight: '600',
-                    ml: '170px',
+                    ml: {
+                      lg: '170px',
+                      md: '100px'
+                    },
+                    width: {
+                      lg: '300px',
+                      md: '250px',
+                      sm: '200px',
+                      xs: '200px'
+                    },
+                    fontSize:{
+                      lg:'18px',
+                      md: '14px',
+                      sm: '12px',
+                      xs: '10px'
+                    },
                     '&:hover':{
                       backgroundColor: 'lightgray',
                       color: '#3d3434'
@@ -161,7 +185,8 @@ const Cart = () => {
 
                 >Process To Checkout</Button>
             </Box>
-            <Box width={'50%'}>
+            <Box
+            >
                 <TextField 
                   type='text' 
                   name='promocode' 
@@ -176,7 +201,11 @@ const Cart = () => {
                     setPromoMessage(null)
                   )}
                   sx={{
-                    width: '50%',
+                    width: {
+                      lg: '50%',
+                      md: '100%',
+                      xs: '100%'
+                    },
                     '& .MuiOutlinedInput-root': {
                         '& fieldset': {
                           borderColor: '#5d5d5d',
@@ -196,13 +225,32 @@ const Cart = () => {
                   size='large'
                   onClick={handlePromoCode}
                   sx={{
-                    ml: 2,
-                    height: '40px',
+                    ml: {
+                      lg: 2,
+                      md: 0,
+                    },
+                    mt: {
+                      lg: 0,
+                      md: 2,
+                      sm: 2, xs: 2
+                    },
+                    height: {
+                      lg: '40px',
+                      md: '35px',
+                      sm: '30px',
+                      xs: '25px'
+                    },
                     background: '#3d3434',
                     fontWeight: '600',
                     '&:hover':{
                       backgroundColor: 'lightgray',
                       color: '#3d3434'
+                    },
+                    fontSize: {
+                      lg: '18px',
+                      md: '18px',
+                      sm: '12px',
+                      xs: '10px'
                     }
                   }}
                 >Check</Button>
