@@ -33,7 +33,16 @@ const Reviews = ({ name }) => {
   return (
     <Box sx={{ maxWidth: 1600, margin: "auto", padding: 2 }}>
       <Paper elevation={3} sx={{ padding: 3 }}>
-        <Typography variant="h4" fontWeight="bold" color="#3d3434" gutterBottom>
+        <Typography variant="h4" fontWeight="bold" color="#3d3434" gutterBottom
+          sx={{
+            fontSize: {
+              lg: "34px",
+              md: "34px",
+              sm: "30px",
+              xs: "25px",
+            },
+          }}
+        >
           Reviews
         </Typography>
 
@@ -50,17 +59,42 @@ const Reviews = ({ name }) => {
             }}
           >
             <Box>
-              <Typography variant="body1" fontWeight="bold">
+              <Typography variant="body1" fontWeight="bold"
+                sx={{
+                  fontSize: {
+                    lg: "16px",
+                    md: "16px",
+                    sm: "14px",
+                    xs: "12px",
+                  },
+                }}
+              >
                 {review.user} published {review.date}
               </Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+              <Typography variant="body2" color="text.secondary" sx={{ mt: 1,
+                fontSize:{
+                  lg: '14px',
+                  md: '14px',
+                  sm: '12px',
+                  xs: '10px'
+                }
+
+               }}>
                 {review.content}
               </Typography>
             </Box>
             <Rating
               value={review.rating}
               readOnly
-              sx={{ alignSelf: "center" }}
+              sx={{ alignSelf: "center",
+                fontSize:{
+                  lg: '24px',
+                  md: '20px',
+                  sm: '16px',
+                  xs: '12px'
+                }
+
+               }}
             />
           </Paper>
         ))}
