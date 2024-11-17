@@ -33,10 +33,10 @@ const Item = (props) => {
           image={props.image}
           sx={{
             width: {
-              lg: 277,
-              md: 277,
-              sm: 200,
-              xs: 110
+              lg: '100%',
+              md: '100%',
+              sm: '100%',
+              xs: '100%'
             },
             height: {
               lg: 300,
@@ -67,7 +67,7 @@ const Item = (props) => {
               lg: '1.25rem',
               md: '1.25rem',
               sm: '0.9rem',
-              xs: '0.7rem'
+              xs: '0.8rem'
             }
           }}
         >
@@ -80,11 +80,17 @@ const Item = (props) => {
             sm: 1,
             xs: 0
           },
+          mt: {
+            lg: 0,
+            md: 0,
+            sm: 0,
+            xs: 3
+          },
           fontSize: {
             lg: '14px',
             md: '14px',
             sm: '12px',
-            xs: '8px'
+            xs: '10px'
           } 
         }}>
           {props.small_description}
@@ -96,7 +102,13 @@ const Item = (props) => {
               lg: '16px',
               md: '16px',
               sm: '14px',
-              xs: '10px'
+              xs: '12px'
+            },
+            mt:{
+              lg: 0,
+              md: 0,
+              sm: 0,
+              xs: 0
             }
           }}
         >

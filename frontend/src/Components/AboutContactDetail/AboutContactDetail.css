@@ -1,59 +1,85 @@
 .aboutContactcontainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 50px;
-    background-color: white;
-    border: 2px solid #3d3434;
-    height: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 50px;
+  background-color: white;
+  border: 2px solid #3d3434;
+  height: 300px;
 }
 
 .aboutContactcontainer img {
-    width: 40%;
-    height: 300px;
-    object-fit: cover;
+  width: 40%;
+  height: 300px;
+  object-fit: cover;
 }
 
 .aboutContact_text {
-    width: 50%;
-    height: auto;
-    padding: 30px;
+  width: 50%;
+  height: auto;
+  padding: 30px;
+  overflow: hidden;
 }
 
 .reversed {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+.textContent {
+  color: #666;
+  margin-top: 30px;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.truncated {
+  -webkit-line-clamp: 3;
+  -ms-line-clamp: 3;
+  line-clamp: 3;
 }
 
 @media screen and (max-width: 1200px) {
-    .aboutContactcontainer{
-        height: 250px;
-    }
+  .aboutContactcontainer {
+    height: 250px;
+  }
 
-    .aboutContactcontainer img{
-        height: 250px;
-    }
-
+  .aboutContactcontainer img {
+    height: 250px;
+  }
 }
 
 @media screen and (max-width: 900px) {
-    .aboutContactcontainer{
-        height: 200px;
-    }
+  .aboutContactcontainer {
+    height: 200px;
+  }
 
-    .aboutContactcontainer img{
-        height: 200px;
-    }
-
+  .aboutContactcontainer img {
+    height: 200px;
+  }
 }
+
 @media screen and (max-width: 600px) {
-    .aboutContactcontainer{
-        height: 160px;
-    }
+  .aboutContactcontainer {
+    height: 160px;
+  }
 
-    .aboutContactcontainer img{
-        height: 160px;
-    }
+  .aboutContactcontainer img {
+    height: 100%;
+  }
 
+  .aboutContact_text {
+    width: 90%;
+  }
+
+  .textContent {
+    -webkit-line-clamp: 2;
+    -ms-line-clamp: 2;
+    line-clamp: 2;
+  }
 }

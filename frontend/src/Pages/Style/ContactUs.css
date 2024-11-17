@@ -31,14 +31,13 @@
 }
 
 .contactImg {
-    width: 40%;
-    height: auto;
+    width: 50%;
 }
 
 .contactImg img{
     width: 100%;
-    margin-right: 50px;
     object-fit: cover;
+    height: 100%;
 }
 
 
@@ -56,25 +55,24 @@
 
 @media screen and (max-width: 1200px) {
     .contactImg img {
-        height: 250px;
+        height: 100%;
     }
     .contactImg{
-        width: 50%;
+        width: 60%;
     }
 
     .social_img img{
-        width: 40px;
-        height: 40px;
+        height: 100%;
     }
 }
 
 @media screen and (max-width: 900px) {
 
     .contactImg img {
-        height: 200px;
+        height: 100%;
     }
     .contactImg{
-        width: 50%;
+        width: 100%;
     }
     .social_img img{
         width: 30px;
@@ -84,10 +82,10 @@
 @media screen and (max-width: 600px) {
 
     .contactImg img {
-        height: 200px;
+        height: 180px;
     }
     .contactImg{
-        width: 50%;
+        width: 60%;
     }
     .social_img img{
         width: 20px;

@@ -105,12 +105,54 @@ const Cart = () => {
           }}
         >Cart Item</Typography>
         <Box className="cart_form">
-            <Typography color='#3d3434' fontWeight={600}>Product</Typography>
-            <Typography color='#3d3434' fontWeight={600}>Title</Typography>
-            <Typography color='#3d3434' fontWeight={600}>Price</Typography>
-            <Typography color='#3d3434' fontWeight={600}>Quantity</Typography>
-            <Typography color='#3d3434' fontWeight={600}>Total</Typography>
-            <Typography color='#3d3434' fontWeight={600}>Action</Typography>
+            <Typography color='#3d3434' fontWeight={600} sx={{
+                              fontSize: {
+                                lg: '16px',
+                                md: '16px',
+                                sm: '14px',
+                                xs: '12px'
+                              }
+                            }}>Product</Typography>
+            <Typography color='#3d3434' fontWeight={600} sx={{
+                              fontSize: {
+                                lg: '16px',
+                                md: '16px',
+                                sm: '14px',
+                                xs: '12px'
+                              }
+                            }}>Title</Typography>
+            <Typography color='#3d3434' fontWeight={600} sx={{
+                              fontSize: {
+                                lg: '16px',
+                                md: '16px',
+                                sm: '14px',
+                                xs: '12px'
+                              }
+                            }}>Price</Typography>
+            <Typography color='#3d3434' fontWeight={600} sx={{
+                              fontSize: {
+                                lg: '16px',
+                                md: '16px',
+                                sm: '14px',
+                                xs: '12px'
+                              }
+                            }}>Quantity</Typography>
+            <Typography color='#3d3434' fontWeight={600} sx={{
+                              fontSize: {
+                                lg: '16px',
+                                md: '16px',
+                                sm: '14px',
+                                xs: '12px'
+                              }
+                            }}>Total</Typography>
+            <Typography color='#3d3434' fontWeight={600} sx={{
+                              fontSize: {
+                                lg: '16px',
+                                md: '16px',
+                                sm: '14px',
+                                xs: '12px'
+                              }
+                            }}>Action</Typography>
         </Box>
         {hasItemsInCart && <Divider sx={{borderColor:'#3d3434', borderWidth: 2}}/>}
         {all_product.map((item)=>{
@@ -119,10 +161,41 @@ const Cart = () => {
                     <Box>
                         <Box className='cart_format cart_form'>
                             <img src={item.image} alt="" className='cart_item_img' />
-                            <Typography>{item.name}</Typography>
-                            <Typography>{item.price}</Typography>
-                            <Typography className='cart_quantity'>{cartItems[item.id]}</Typography>
-                            <Typography>${item.price*cartItems[item.id]}</Typography>
+                            <Typography sx={{
+                              fontSize: {
+                                lg: '16px',
+                                md: '16px',
+                                sm: '14px',
+                                xs: '12px'
+                              }
+                            }}>{item.name}</Typography>
+                            <Typography
+                            sx={{
+                              fontSize: {
+                                lg: '16px',
+                                md: '16px',
+                                sm: '14px',
+                                xs: '12px'
+                              }
+                            }}>{item.price}</Typography>
+                            <Typography
+                            sx={{
+                              fontSize: {
+                                lg: '16px',
+                                md: '16px',
+                                sm: '14px',
+                                xs: '12px'
+                              }
+                            }}>{cartItems[item.id]}</Typography>
+                            <Typography
+                            sx={{
+                              fontSize: {
+                                lg: '16px',
+                                md: '16px',
+                                sm: '14px',
+                                xs: '12px'
+                              }
+                            }}>${item.price*cartItems[item.id]}</Typography>
                             <img src={remove_icon} alt="" className='cart_remove_icon' onClick={()=>{removeFromCart(item.id)}}/>
                         </Box>
                     </Box>
@@ -136,23 +209,79 @@ const Cart = () => {
         <Box className="cart_down">
             <Box className="cart_total">
                 <Box className="cart_total_info">
-                    <Typography fontSize={16} color='#3d3434' fontWeight={600}>Subtotal</Typography>
-                    <Typography fontSize={16} color='#3d3434' fontWeight={600}>${getTotalCartAmount()}</Typography>
+                    <Typography fontSize={16} color='#3d3434' fontWeight={600} sx={{
+                              fontSize: {
+                                lg: '16px',
+                                md: '16px',
+                                sm: '14px',
+                                xs: '12px'
+                              }
+                            }}>Subtotal</Typography>
+                    <Typography fontSize={16} color='#3d3434' fontWeight={600} sx={{
+                              fontSize: {
+                                lg: '16px',
+                                md: '16px',
+                                sm: '14px',
+                                xs: '12px'
+                              }
+                            }}>${getTotalCartAmount()}</Typography>
                 </Box>
                 <Box className="cart_total_info">
-                    <Typography fontSize={16} color='#3d3434' fontWeight={600}>Shipping Fee</Typography>
-                    <Typography fontSize={16} color='#3d3434' fontWeight={600}>0</Typography>
+                    <Typography fontSize={16} color='#3d3434' fontWeight={600} sx={{
+                              fontSize: {
+                                lg: '16px',
+                                md: '16px',
+                                sm: '14px',
+                                xs: '12px'
+                              }
+                            }}>Shipping Fee</Typography>
+                    <Typography fontSize={16} color='#3d3434' fontWeight={600} sx={{
+                              fontSize: {
+                                lg: '16px',
+                                md: '16px',
+                                sm: '14px',
+                                xs: '12px'
+                              }
+                            }}>0</Typography>
                 </Box>
                 {checkPromoCode && (
                   <Box className="cart_total_info">
-                    <Typography fontSize={16} color='#3d3434' fontWeight={600}>Promo Code ({promoCode.toUpperCase()})</Typography>
-                    <Typography fontSize={16} color='#3d3434' fontWeight={600} mb={3}>{(discount * 100).toFixed(0)}%</Typography>
+                    <Typography fontSize={16} color='#3d3434' fontWeight={600} sx={{
+                              fontSize: {
+                                lg: '16px',
+                                md: '16px',
+                                sm: '14px',
+                                xs: '12px'
+                              }
+                            }}>Promo Code ({promoCode.toUpperCase()})</Typography>
+                    <Typography fontSize={16} color='#3d3434' fontWeight={600} mb={3} sx={{
+                              fontSize: {
+                                lg: '16px',
+                                md: '16px',
+                                sm: '14px',
+                                xs: '12px'
+                              }
+                            }}>{(discount * 100).toFixed(0)}%</Typography>
                   </Box>
                 )}
                 <Divider sx={{borderColor:'#3d3434', borderWidth: 2, mb: 2}}/>
                 <Box className="cart_total_info">
-                    <Typography fontSize={16} color='#3d3434' fontWeight={600}>Total</Typography>
-                    <Typography fontSize={16} color='#3d3434' fontWeight={600} mb={3}>${discountedTotal.toFixed(2)}</Typography>
+                    <Typography fontSize={16} color='#3d3434' fontWeight={600} sx={{
+                              fontSize: {
+                                lg: '16px',
+                                md: '16px',
+                                sm: '14px',
+                                xs: '12px'
+                              }
+                            }}>Total</Typography>
+                    <Typography fontSize={16} color='#3d3434' fontWeight={600} mb={3} sx={{
+                              fontSize: {
+                                lg: '16px',
+                                md: '16px',
+                                sm: '14px',
+                                xs: '12px'
+                              }
+                            }}>${discountedTotal.toFixed(2)}</Typography>
                 </Box>
                 <Button
                   onClick={handleOpenModal}
@@ -162,20 +291,21 @@ const Cart = () => {
                     color: '#fff',
                     fontWeight: '600',
                     ml: {
-                      lg: '170px',
-                      md: '100px'
+                      lg: '150px',
+                      md: '100px',
+                      sm: '50px'
                     },
                     width: {
-                      lg: '300px',
-                      md: '250px',
-                      sm: '200px',
-                      xs: '200px'
+                      lg: '50%',
+                      md: '50%',
+                      sm: '60%',
+                      xs: '100%'
                     },
                     fontSize:{
                       lg:'18px',
                       md: '14px',
                       sm: '12px',
-                      xs: '10px'
+                      xs: '8px'
                     },
                     '&:hover':{
                       backgroundColor: 'lightgray',
@@ -186,6 +316,7 @@ const Cart = () => {
                 >Process To Checkout</Button>
             </Box>
             <Box
+              className="cart_promo"
             >
                 <TextField 
                   type='text' 
@@ -203,21 +334,50 @@ const Cart = () => {
                   sx={{
                     width: {
                       lg: '50%',
-                      md: '100%',
-                      xs: '100%'
+                      md: '70%',
+                      sm: '90%',
+                      xs: '90%',
                     },
-                    '& .MuiOutlinedInput-root': {
-                        '& fieldset': {
-                          borderColor: '#5d5d5d',
-                          borderWidth: '2px',
-                        },
-                        '&:hover fieldset': {
-                          borderColor: '#3D3434',
-                        },
-                        '&.Mui-focused fieldset': {
-                          borderColor: '#3D3434',
-                        },
-                      },
+                    ml:{
+                      lg: 2,
+                      md: 2,
+                      sm: 2,
+                      xs: 1
+                    },
+                    "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: "#5d5d5d",
+                    borderWidth: "2px",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "#3D3434",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#3D3434",
+                  },
+                  height: {
+                    lg: "auto",
+                    md: "auto",
+                    sm: "auto",
+                    xs: "30px",
+                  },
+                },
+                "& .MuiInputLabel-root": {
+                  fontSize: { sx: "12px" },
+                  top: {
+                    lg: "-3px",
+                    md: "-3px",
+                    sm: "-3px",
+                    xs: "-7px",
+                  }, 
+                  transform: {
+                    xs: "translate(14px, 10px) scale(1)",
+                    sm: "translate(14px, 20px) scale(1)",
+                  }, 
+                },
+                "& .MuiInputLabel-shrink": {
+                  transform: { xs: "translate(14px, -10px) scale(0.75)" },
+                },
                   }}
                 />
                 <Button
@@ -227,16 +387,18 @@ const Cart = () => {
                   sx={{
                     ml: {
                       lg: 2,
-                      md: 0,
+                      md: 2,
+                      sm: 2,
+                      xs: 1
                     },
                     mt: {
                       lg: 0,
-                      md: 2,
+                      md: 0,
                       sm: 2, xs: 2
                     },
                     height: {
                       lg: '40px',
-                      md: '35px',
+                      md: '40px',
                       sm: '30px',
                       xs: '25px'
                     },
@@ -247,10 +409,10 @@ const Cart = () => {
                       color: '#3d3434'
                     },
                     fontSize: {
-                      lg: '18px',
-                      md: '18px',
+                      lg: '16px',
+                      md: '14px',
                       sm: '12px',
-                      xs: '10px'
+                      xs: '8px'
                     }
                   }}
                 >Check</Button>
@@ -277,7 +439,12 @@ const Cart = () => {
         >
           <Box 
             sx={{
-              width: 600,
+              width: {
+                lg: 600,
+                md: 600,
+                sm: 600,
+                xs: 400
+              },
               height: 400,
               backgroundColor: '#fff',
               transform: 'translate(-50%, -50%)',
@@ -300,6 +467,14 @@ const Cart = () => {
                 color='#3d3434'
                 ml={3}
                 fontWeight={600}
+                sx={{
+                  fontSize:{
+                    lg: '24px',
+                    md: '24px',
+                    sm: '20px',
+                    xs: '16px'
+                  }
+                }}
               >Payment</Typography>
             <Box
               sx={{
@@ -369,6 +544,14 @@ const Cart = () => {
                 color='#3d3434'
                 ml={3}
                 fontWeight={600}
+                sx={{
+                  fontSize:{
+                    lg: '24px',
+                    md: '24px',
+                    sm: '20px',
+                    xs: '16px'
+                  }
+                }}
               >Delivery</Typography>
               <Textarea 
                 placeholder='Write your address here'
@@ -387,7 +570,13 @@ const Cart = () => {
               variant='contained'
               size='large'
               sx={{
-                mt: 2
+                mt: 2,
+                fontSize:{
+                  lg: '16px',
+                  md: '16px',
+                  sm: '16px',
+                  xs: '12px'
+                }
               }}
             >CheckOut</Button>
             </Box>
@@ -401,7 +590,12 @@ const Cart = () => {
           <Box
             sx={{
               width: 400,
-              height: 400,
+              height: {
+                lg: 400,
+                md: 400,
+                sm: 400,
+                xs: 300
+              },
               backgroundColor: '#fff',
               transform: 'translate(-50%, -50%)',
               top: '50%',
@@ -414,15 +608,21 @@ const Cart = () => {
               flexDirection: 'column',
             }}
           >
-            <img src={success} alt="" style={{width: 100, height: 100, marginBottom: 10}}/>
-            <Typography variant='h5' fontWeight={700} color='#00cd00'>YOUR ORDER IS CONFIRMED</Typography>
+            <img src={success} alt="" style={{width: 100, height: 100, marginBottom: 10}} className='success_img'/>
+            <Typography variant='h5' fontWeight={700} color='#00cd00' sx={{fontSize:{lg: '24px', md: '24px', sm: '24px', xs: '18px'}}}>YOUR ORDER IS CONFIRMED</Typography>
             <Button 
               onClick={handleSubCloseModal}
               color='primary' 
               variant='contained'
               size='large'
               sx={{
-                mt: 4
+                mt: 4,
+                fontSize:{
+                  lg: '16px',
+                  md: '16px',
+                  sm: '16px',
+                  xs: '12px'
+                }
               }}
             >Go Back</Button>
           </Box>

@@ -23,7 +23,7 @@ const HelpCenter = () => {
             lg: 5,
             md: 4,
             sm: 3,
-            xs: 2,
+            xs: 4,
           },
           mb: {
             lg: 5,
@@ -49,12 +49,18 @@ const HelpCenter = () => {
             lg: 40,
             md: 30,
             sm: 15,
-            xs: 10,
+            xs: 5,
           },
+          mt: {
+            xs: 4
+          },
+          mb: {
+            xs: 5
+          }
         }}
       >
         {links.map((link) => (
-          <Box>
+          <Box mt={2}>
             <Typography 
               component={Link}
               to={link.path}

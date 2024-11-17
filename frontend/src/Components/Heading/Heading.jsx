@@ -1,8 +1,7 @@
 import React,{useState, useContext, useEffect} from 'react'
 import logo from '../../assets/frontend/logo.png'
-import search_img from '../../assets/frontend/search.png'
 import cart from '../../assets/frontend/cart.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './Heading.css'
 import { ShopContext } from '../../Context/ShopContext'
 import { InputBase, IconButton, List, ListItem, ListItemAvatar, ListItemText, Avatar, Button, Box } from '@mui/material'
@@ -12,7 +11,7 @@ const Heading = () => {
   const {all_product, getTotalCartItems} = useContext(ShopContext)
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredProducts, setFilteredProducts] = useState([]);
-
+  const navigate = useNavigate()
   useEffect(() => {
     if (searchTerm) {
       const results = all_product.filter(product =>
@@ -30,6 +29,10 @@ const Heading = () => {
   const handleProductClick = () => {
     setSearchTerm('');
   };
+
+  const handleCartClick = () => {
+    navigate('/cart')
+  }
 
   return (
     <Box className='heading'>
@@ -51,34 +54,34 @@ const Heading = () => {
         <List
           sx={{
             position: 'absolute',
-            top: '10%',
-            left: '694px',
-            width: '624px',
+            top: '12%',
+            left: '31%',
+            width: '41%',
             backgroundColor: '#fff',
             boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
             maxHeight: '200px',
             overflowY: 'auto',
             zIndex: 1000,
             border: '1px solid #ccc',
-            ...(window.innerWidth <= 1280 && window.innerWidth > 1024 &&{
-              left: '462px',
-              width: '474px',
-              top: '8%'
+            ...(window.innerWidth <= 1200 && window.innerWidth > 900 &&{
+              left: '200px',
+              width: '400px',
+              top: '10%'
             }),
-            ...(window.innerWidth <= 1024 && window.innerWidth > 800 && {
-              left: '332px',
-              width: '346px',
-              top: '8%'
+            ...(window.innerWidth <= 900 && window.innerWidth > 600 && {
+              left: '200px',
+              width: '320px',
+              top: '12%',
             }),
-            ...(window.innerWidth <= 800 && window.innerWidth > 500 && {
-              left: '236px',
-              width: '306px',
-              top: '8%'
+            ...(window.innerWidth <= 600 && window.innerWidth > 300 && {
+              left: '80px',
+              width: '190px',
+              top: '6%'
             }),
-            ...(window.innerWidth <= 500 && {
+            ...(window.innerWidth <= 300 && {
               left: '100px',
               width: '136px',
-              top: '8%'
+              top: '%'
             }),
           }}
         >
@@ -94,13 +97,20 @@ const Heading = () => {
                 transition: 'background-color 0.2s ease',
                 '&:hover':{
                   backgroundColor: '#f0f0f0'
-                }
+                },
               }}
             >
               <ListItemAvatar>
                 <Avatar src={product.image} alt={product.name} />
               </ListItemAvatar>
-              <ListItemText primary={product.name} />
+              <ListItemText primary={product.name} primaryTypographyProps={{
+                fontSize:{
+                  lg: '16px',
+                  md: '16px',
+                  sm: '12px',
+                  xs: '10px'
+                }
+              }}/>
             </ListItem>
           ))}
         </List>
@@ -121,7 +131,15 @@ const Heading = () => {
             <Button className='btn' variant='outlined'>Login with us</Button>
           </Link>
         }    
-        <Link to='/cart'><img src={cart} alt="" /></Link>
+        {/* <Link to='/cart'className='link'></Link>
+        <img src={cart} alt="" /> */}
+        <Box
+          component="img"
+          onClick={handleCartClick}
+          src={cart}
+        >
+
+        </Box>
         <div className="cart_count">{getTotalCartItems()}</div>
       </Box>
     </Box>

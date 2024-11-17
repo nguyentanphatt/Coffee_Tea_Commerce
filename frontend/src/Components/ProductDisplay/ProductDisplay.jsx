@@ -72,8 +72,8 @@ const ProductDisplay = (props) => {
               fontSize: {
                 lg: "34px",
                 md: "34px",
-                sm: "30px",
-                xs: "25px"
+                sm: "25px",
+                xs: "20px"
               },
             }}
           >
@@ -81,8 +81,6 @@ const ProductDisplay = (props) => {
           </Typography>
           <Typography
             variant="body1"
-            mt={2}
-            mb={2}
             sx={{
               fontSize: {
                 lg: "16px",
@@ -90,13 +88,24 @@ const ProductDisplay = (props) => {
                 sm: "14px",
                 xs: "12px"
               },
+              mt:{
+                lg: 2, md: 2, sm: 1, xs: 0
+              },
+              mb:{
+                lg: 2, md: 2, sm: 1, xs: 0
+              }
             }}
           >
             {product.small_description}
           </Typography>
         </Box>
         <Box className="product_display_rating">
-          <Rating value={5} readOnly sx={{ alignSelf: "center" }} />
+          <Rating value={5} readOnly sx={{ alignSelf: "center", fontSize:{
+                  lg: '24px',
+                  md: '20px',
+                  sm: '18px',
+                  xs: '16px'
+                } }} />
           <Typography
             variant="body1"
             ml={1}
@@ -105,14 +114,18 @@ const ProductDisplay = (props) => {
                 lg: "16px",
                 md: "16px",
                 sm: "14px",
-                xs: "12px"
+                xs: "10px"
               },
             }}
           >
             50+ reviews
           </Typography>
         </Box>
-        <Box mt={2}>
+        <Box sx={{
+          mt:{
+            lg: 2, md: 2, sm: 1, xs: 0
+          }
+        }}>
           <Typography variant="h6" color="#3d3434" mr={2} sx={{
             fontSize: {
                 lg: '20px',
@@ -139,7 +152,7 @@ const ProductDisplay = (props) => {
                 fontSize: {
                   lg: "34px",
                   md: "34px",
-                  sm: "30px",
+                  sm: "25px",
                   xs: "25px"
                 },
               }}
@@ -159,15 +172,9 @@ const ProductDisplay = (props) => {
               height: {
                 lg: '30px',
                 md: '30px',
-                sm: '25px',
+                sm: '20px',
                 xs: '20px'
               },
-              width:{
-                lg: '50px',
-                md: '50px',
-                sm: '30px',
-                xs: '20px'
-              }
             }}
           >
             -
@@ -184,24 +191,22 @@ const ProductDisplay = (props) => {
             {count}
           </Typography>
           <Button
-            size="small"
+            size="large"
             onClick={() => handleChangeNumber("+")}
             sx={{
               backgroundColor: "#3d3434",
               color: "#fff",
               fontSize: {
-                lg: 16, md: 16, sx: 14, xs: 14
+                lg: 16, md: 16, sx: 14, xs: 10
               },
               height: {
                 lg: '30px',
                 md: '30px',
-                sm: '25px',
+                sm: '20px',
                 xs: '20px'
               },
-              width:{
+              width: {
                 lg: '50px',
-                md: '50px',
-                sm: '30px',
                 xs: '20px'
               }
             }}
@@ -216,18 +221,23 @@ const ProductDisplay = (props) => {
           sx={{
             backgroundColor: "#3d3434",
             fontWeight: "600",
-            width: "100%",
+            width: {
+              lg: '50%',
+              md: '50%',
+              sm: '50%',
+              xs: '100%'
+            },
             height: {
                 lg: 50,
-                md: 50,
-                sm: 35,
+                md: 40,
+                sm: 30,
                 xs: 25
             },
             color: "#fff",
             fontSize: {
                 lg: 20,
-                md: 20,
-                sm: 16,
+                md: 18,
+                sm: 14,
                 xs: 12
             },
             "&:hover": {

@@ -18,7 +18,7 @@ const Footer = () => {
               fontWeight: '600',
               fontSize: {
                 lg: '34px',
-                md: '34px',
+                md: '30px',
                 sm: '25px',
                 xs: '18px'
               }
@@ -35,7 +35,7 @@ const Footer = () => {
               fontWeight: '600',
               fontSize: {
                 lg: '34px',
-                md: '34px',
+                md: '30px',
                 sm: '25px',
                 xs: '18px'
               }
@@ -52,7 +52,7 @@ const Footer = () => {
               fontWeight: '600',
               fontSize: {
                 lg: '34px',
-                md: '34px',
+                md: '30px',
                 sm: '25px',
                 xs: '18px'
               }

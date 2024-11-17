@@ -47,7 +47,8 @@ const HelpDetail = () => {
                 },
                 pt: {
                   lg: 5,
-                  md: 4
+                  md: 4,
+                  xs: 2
                 }
               }}
             >

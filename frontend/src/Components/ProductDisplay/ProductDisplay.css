@@ -1,17 +1,15 @@
 .product_display_container{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
     margin-bottom: 50px;
-    
+    width: 100%;
+    height: auto;
 }
 
 .product_display_img{
-    width: 40%;
-    margin-left: 200px;
+    width: 50%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .product_display_img img{
@@ -24,7 +22,6 @@
     align-items: center;
     justify-content: flex-start;
     padding-top: 20px;
-    margin-left: 130px;
 }
 
 .product_display_next {
@@ -40,8 +37,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 20px;
-    width: 500px;
+    width: 50%;
 }
 
 .product_display_title{
@@ -60,64 +56,64 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    width: 40%;
 }
 
 @media screen and (max-width: 1200px){
-    .product_display_nextImg{
-        margin-left: 100px;
+
+    .product_display_add{
+        width: 50%;
+    }
+
+    .product_display_img img {
+        width: 70%;
+    }
+
+    
+}
+
+@media screen and (max-width: 900px){
+
+    .product_display_img{
+        width: 50%;
     }
 
     .product_display_info{
-        width: 450px;
+        width: 50%;
     }
 
     .product_display_img img{
         width: 70%;
     }
-}
 
-@media screen and (max-width: 900px){
-    .product_display_nextImg{
-        margin-left: 70px;
-    }
-
-    .product_display_info{
-        width: 350px;
-    }
-
-    .product_display_img{
-        margin-left: 150px;
-    }
-    .product_display_img img{
-        width: 80%;
+    .product_display_add{
+        width: 50%;
     }
 }
 
 @media screen and (max-width: 600px){
-    .product_display_nextImg{
-        margin-left: 30px;
+    .product_display_img{
+        width: 50%;
+
     }
 
     .product_display_info{
-        width: 200px;
-    }
-
-    .product_display_img{
-        margin-left: 100px;
+        width: 50%;
     }
 
     .product_display_img img{
-        width: 70%;
-    }
-
-    .product_display_next{
-        border-radius: 2vh;
-        width: 8px;
-        height: 8px;   
+        width: 100%;
     }
 
     .product_display_add{
-        margin-bottom: 20px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .product_display_next {
+        border-radius: 2vh;
+        width: 10px;
+        height: 10px;
+        margin: 5px;
     }
 }

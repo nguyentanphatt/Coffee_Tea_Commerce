@@ -99,11 +99,12 @@
 }
 .item_category-option{
     margin-left: 20px;
+    width: 10%;
 }
 
 .item_category-checkbox{
-    width: 200px;
-    padding: 10px;
+    width: 90%;
+    margin-left: 10px;
 }
 
 .item_category-item{
@@ -111,6 +112,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 50px;
+    width: 90%;
 }
 .item_category-option_search{
     display: flex;
@@ -118,11 +120,207 @@
     padding-top: 30px;
 }
 
-.item_category-option_search button{
-    width: 80px;
-    height: 30px;
-    background-color: #3D3434;
-    border-radius: 2vh;
-    font-size: 14px;
-    color: white;
+
+@media screen and (max-width: 1200px) {
+
+    .item_category-item{
+        gap: 30px;
+    }
+
+    .item_category_banner img{
+        width: 70%;
+        height: auto;
+    }
+
+    .coffee_h1{
+        left: 60%;
+        top: 10%;
+        font-size: 30px;
+    }
+
+    .coffee_p1{
+        left: 45%;
+        top: 27%;
+        font-size: 20px;
+    }
+
+    .coffee_p2{
+        left: 65%;
+        top: 33%;
+        font-size: 20px;
+    }
+    .tea_h1{
+        left: 50%;
+        top: 5%;
+        font-size: 30px;
+    }
+    
+    .tea_p1{
+        left: 22%;
+        top: 27%;
+        font-size: 20px;
+    }
+    
+    .tea_p2{
+        left: 62%;
+        top: 36%;
+        font-size: 20px;
+    }
+
+    .seed_h1{
+        left: 50%;
+        top: 10%;
+        font-size: 30px;
+    }
+    .seed_p1{
+        left: 35%;
+        top: 27%;
+        font-size: 20px;
+    }
+    
+    .seed_p2{
+        left: 35%;
+        top: 35%;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .item_category-item{
+        gap: 20px;
+    }
+
+    .item_category_banner img{
+        width: 70%;
+        height: auto;
+        margin-left: 150px;
+    }
+
+    .coffee_h1{
+        left: 55%;
+        top: 10%;
+        font-size: 24px;
+    }
+
+    .coffee_p1{
+        left: 50%;
+        top: 27%;
+        font-size: 18px;
+        width: 30%;
+    }
+
+    .coffee_p2{
+        left: 65%;
+        top: 50%;
+        font-size: 18px;
+    }
+    .tea_h1{
+        left: 50%;
+        top: 5%;
+        font-size: 24px;
+    }
+    
+    .tea_p1{
+        left: 30%;
+        top: 27%;
+        font-size: 18px;
+        width: 40%;
+    }
+    
+    .tea_p2{
+        left: 52%;
+        top: 60%;
+        font-size: 18px;
+    }
+
+    .seed_h1{
+        left: 50%;
+        top: 10%;
+        font-size: 24px;
+    }
+    .seed_p1{
+        left: 32%;
+        top: 27%;
+        font-size: 18px;
+    }
+    
+    .seed_p2{
+        left: 32%;
+        top: 35%;
+        font-size: 18px;
+    }
+
+    .item_category-option{
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .item_category-item{
+        gap: 10px;
+    }
+
+    .item_category_banner img{
+        width: 70%;
+        height: auto;
+        margin-left: 80px;
+    }
+
+    .coffee_h1{
+        left: 55%;
+        top: 10%;
+        font-size: 16px;
+    }
+
+    .coffee_p1{
+        left: 52%;
+        top: 27%;
+        font-size: 10px;
+        width: 30%;
+    }
+
+    .coffee_p2{
+        left: 65%;
+        top: 50%;
+        font-size: 10px;
+    }
+    .tea_h1{
+        left: 50%;
+        top: 5%;
+        font-size: 16px;
+    }
+    
+    .tea_p1{
+        left: 30%;
+        top: 27%;
+        font-size: 10px;
+        width: 40%;
+    }
+    
+    .tea_p2{
+        left: 52%;
+        top: 60%;
+        font-size: 10px;
+    }
+
+    .seed_h1{
+        left: 45%;
+        top: 0%;
+        font-size: 16px;
+    }
+    .seed_p1{
+        left: 35%;
+        top: 20%;
+        font-size: 10px;
+        width: 50%;
+    }
+    
+    .seed_p2{
+        left: 35%;
+        top: 45%;
+        font-size: 10px;
+        width: 50%;
+    }
 }

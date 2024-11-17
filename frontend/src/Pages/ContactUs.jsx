@@ -50,114 +50,136 @@ const ContactUs = () => {
       </Typography>
       <Box className="contactus_form">
         <Box className="contactus_ourContact">
-          <List
-            sx={{
-              width: "60%",
-              ml: {
-                lg: 10,
-                md: 8,
-                sm: 4,
-                xs: 2,
-              },
-            }}
-          >
-            <Typography
-              variant="h5"
+          <Box sx={{ width: {
+            lg: '50%',
+            md: '50%',
+            sm: '50%',
+            xs: '60%'
+          } }}>
+            <List
               sx={{
-                color: "#3d3434",
-                fontWeight: "bold",
+                width: "100%",
                 ml: {
-                  lg: 15,
-                  md: 13,
-                  sm: 8,
-                  xs: 4,
-                },
-                fontSize: {
-                  lg: "24px",
-                  md: "24px",
-                  sm: "20px",
-                  xs: "16px",
+                  lg: 10,
+                  md: 0,
+                  sm: 0,
+                  xs: 0,
                 },
               }}
             >
-              Our Contact
-            </Typography>
-            <ListItem>
-              <ListItemIcon>
-                <LocationOnIcon />
-              </ListItemIcon>
-              <ListItemText
-                primary="Location"
-                secondary="16A Avalon St, Heimal Captital"
-                primaryTypographyProps={{
+              <Typography
+                variant="h5"
+                sx={{
+                  color: "#3d3434",
+                  fontWeight: "bold",
+                  ml: {
+                    lg: 15,
+                    md: 8,
+                    sm: 8,
+                    xs: 1,
+                  },
                   fontSize: {
-                    lg: "16px",
-                    md: "16px",
-                    sm: "14px",
-                    xs: "12px",
+                    lg: "24px",
+                    md: "24px",
+                    sm: "20px",
+                    xs: "16px",
                   },
                 }}
-                secondaryTypographyProps={{
-                  fontSize: {
-                    lg: "14px",
-                    md: "14px",
-                    sm: "12px",
-                    xs: "10px",
-                  },
-                }}
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <PhoneIcon />
-              </ListItemIcon>
-              <ListItemText
-                primary="Phone"
-                secondary="+809809809"
-                primaryTypographyProps={{
-                  fontSize: {
-                    lg: "16px",
-                    md: "16px",
-                    sm: "14px",
-                    xs: "12px",
-                  },
-                }}
-                secondaryTypographyProps={{
-                  fontSize: {
-                    lg: "14px",
-                    md: "14px",
-                    sm: "12px",
-                    xs: "10px",
-                  },
-                }}
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <EmailOutlinedIcon />
-              </ListItemIcon>
-              <ListItemText
-                primary="Email"
-                secondary="CoffeeLY@gmail.com"
-                primaryTypographyProps={{
-                  fontSize: {
-                    lg: "16px",
-                    md: "16px",
-                    sm: "14px",
-                    xs: "12px",
-                  },
-                }}
-                secondaryTypographyProps={{
-                  fontSize: {
-                    lg: "14px",
-                    md: "14px",
-                    sm: "12px",
-                    xs: "10px",
-                  },
-                }}
-              />
-            </ListItem>
-          </List>
+              >
+                Our Contact
+              </Typography>
+              <ListItem sx={{ py: { xs: 0 }, px: { xs: 0 } }}>
+                <ListItemIcon
+                  sx={{
+                    "@media (max-width:500px)": {
+                      minWidth: 16,
+                    },
+                  }}
+                >
+                  <LocationOnIcon />
+                </ListItemIcon>
+                <ListItemText
+                  primary="Location"
+                  secondary="16A Avalon St, Heimal Captital"
+                  primaryTypographyProps={{
+                    fontSize: {
+                      lg: "16px",
+                      md: "16px",
+                      sm: "14px",
+                      xs: "12px",
+                    },
+                    mr: {},
+                  }}
+                  secondaryTypographyProps={{
+                    fontSize: {
+                      lg: "14px",
+                      md: "14px",
+                      sm: "12px",
+                      xs: "10px",
+                    },
+                  }}
+                />
+              </ListItem>
+              <ListItem sx={{ py: { xs: 0 }, px: { xs: 0 } }}>
+                <ListItemIcon sx={{
+                    "@media (max-width:500px)": {
+                      minWidth: 16,
+                    },
+                  }}>
+                  <PhoneIcon />
+                </ListItemIcon>
+                <ListItemText
+                  primary="Phone"
+                  secondary="+809809809"
+                  primaryTypographyProps={{
+                    fontSize: {
+                      lg: "16px",
+                      md: "16px",
+                      sm: "14px",
+                      xs: "12px",
+                    },
+                  }}
+                  secondaryTypographyProps={{
+                    fontSize: {
+                      lg: "14px",
+                      md: "14px",
+                      sm: "12px",
+                      xs: "10px",
+                    },
+                  }}
+                />
+              </ListItem>
+              <ListItem sx={{ py: { xs: 0 }, px: { xs: 0 } }}>
+                <ListItemIcon sx={{
+                    "@media (max-width:500px)": {
+                      minWidth: 16,
+                    },
+                  }}>
+                  <EmailOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText
+                  primary="Email"
+                  secondary="CoffeeLY@gmail.com"
+                  primaryTypographyProps={{
+                    fontSize: {
+                      lg: "16px",
+                      md: "16px",
+                      sm: "14px",
+                      xs: "12px",
+                    },
+                  }}
+                  secondaryTypographyProps={{
+                    fontSize: {
+                      lg: "14px",
+                      md: "14px",
+                      sm: "12px",
+                      xs: "10px",
+                    },
+                  }}
+                />
+              </ListItem>
+            </List>
+          </Box>
           <Box className="contactImg">
             <img src={contact_img} alt="" />
           </Box>
@@ -223,13 +245,13 @@ const ContactUs = () => {
                   lg: "50%",
                   md: "50%",
                   sm: "90%",
-                  xs: "80%",
+                  xs: "90%",
                 },
                 mr: {
                   lg: 3,
                   md: 3,
                   sm: 3,
-                  xs: 6,
+                  xs: 3,
                 },
                 border: "2px solid #3d3434",
                 paddingLeft: "10px",
@@ -283,10 +305,9 @@ const ContactUs = () => {
                   sm: "16px",
                   xs: "10px",
                 },
-                '&:hover':{
-                  backgroundColor: 'gray',
-                  color: '#342B2B',
-                  
+                "&:hover": {
+                  backgroundColor: "gray",
+                  color: "#342B2B",
                 },
               }}
             >
@@ -299,8 +320,8 @@ const ContactUs = () => {
             ml: {
               lg: 10,
               md: 10,
-              sm: 10,
-              xs: 4,
+              sm: 5,
+              xs: 3,
             },
           }}
         >

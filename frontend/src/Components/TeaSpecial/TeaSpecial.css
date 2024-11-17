@@ -55,3 +55,13 @@
         height: 60px;
     }
 }
+
+@media screen and (max-width: 440px){
+    .tea_banner{
+        height: 50px;
+    }
+    .tea_banner img {
+        width: 50px;
+        height: 50px;
+    }
+}

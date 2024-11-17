@@ -143,7 +143,14 @@ const Selling = () => {
       >
         Wanna to make profit? Give us more information!!
       </Typography>
-      <Box width={"40%"}>
+      <Box sx={{
+        width:{
+          lg: '40%',
+          md: '60%',
+          sm: '70%',
+          xs: '70%'
+        }
+      }}>
         <TextField
           type="text"
           name="sellEmail"
@@ -155,6 +162,32 @@ const Selling = () => {
           placeholder="Email"
           fullWidth
           margin="normal"
+          sx={{
+            "& .MuiOutlinedInput-root": {
+                  height: {
+                    lg: "auto",
+                    md: "auto",
+                    sm: "auto",
+                    xs: "30px",
+                  },
+                },
+                "& .MuiInputLabel-root": {
+                  fontSize: { sx: "12px" },
+                  top: {
+                    lg: "-3px",
+                    md: "-3px",
+                    sm: "-3px",
+                    xs: "-7px",
+                  }, 
+                  transform: {
+                    xs: "translate(14px, 10px) scale(1)",
+                    sm: "translate(14px, 20px) scale(1)",
+                  }, 
+                },
+                "& .MuiInputLabel-shrink": {
+                  transform: { xs: "translate(14px, -10px) scale(0.75)" },
+                },
+          }}
         />
         <TextField
           type="text"
@@ -168,16 +201,39 @@ const Selling = () => {
           margin="normal"
           sx={{
             "& .MuiOutlinedInput-root": {
-              "& fieldset": {
-                borderWidth: "2px",
-              },
-              "&:hover fieldset": {
-                borderColor: "#3D3434",
-              },
-              "&.Mui-focused fieldset": {
-                borderColor: "#3D3434",
-              },
-            },
+                  "& fieldset": {
+                    borderColor: "#5d5d5d",
+                    borderWidth: "2px",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "#3D3434",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#3D3434",
+                  },
+                  height: {
+                    lg: "auto",
+                    md: "auto",
+                    sm: "auto",
+                    xs: "30px",
+                  },
+                },
+                "& .MuiInputLabel-root": {
+                  fontSize: { sx: "12px" },
+                  top: {
+                    lg: "-3px",
+                    md: "-3px",
+                    sm: "-3px",
+                    xs: "-7px",
+                  }, 
+                  transform: {
+                    xs: "translate(14px, 10px) scale(1)",
+                    sm: "translate(14px, 20px) scale(1)",
+                  }, 
+                },
+                "& .MuiInputLabel-shrink": {
+                  transform: { xs: "translate(14px, -10px) scale(0.75)" },
+                },
           }}
         />
         <TextField
@@ -192,16 +248,39 @@ const Selling = () => {
           margin="normal"
           sx={{
             "& .MuiOutlinedInput-root": {
-              "& fieldset": {
-                borderWidth: "2px",
-              },
-              "&:hover fieldset": {
-                borderColor: "#3D3434",
-              },
-              "&.Mui-focused fieldset": {
-                borderColor: "#3D3434",
-              },
-            },
+                  "& fieldset": {
+                    borderColor: "#5d5d5d",
+                    borderWidth: "2px",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "#3D3434",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#3D3434",
+                  },
+                  height: {
+                    lg: "auto",
+                    md: "auto",
+                    sm: "auto",
+                    xs: "30px",
+                  },
+                },
+                "& .MuiInputLabel-root": {
+                  fontSize: { sx: "12px" },
+                  top: {
+                    lg: "-3px",
+                    md: "-3px",
+                    sm: "-3px",
+                    xs: "-7px",
+                  }, 
+                  transform: {
+                    xs: "translate(14px, 10px) scale(1)",
+                    sm: "translate(14px, 20px) scale(1)",
+                  }, 
+                },
+                "& .MuiInputLabel-shrink": {
+                  transform: { xs: "translate(14px, -10px) scale(0.75)" },
+                },
           }}
         />
         <TextField
@@ -216,16 +295,39 @@ const Selling = () => {
           margin="normal"
           sx={{
             "& .MuiOutlinedInput-root": {
-              "& fieldset": {
-                borderWidth: "2px",
-              },
-              "&:hover fieldset": {
-                borderColor: "#3D3434",
-              },
-              "&.Mui-focused fieldset": {
-                borderColor: "#3D3434",
-              },
-            },
+                  "& fieldset": {
+                    borderColor: "#5d5d5d",
+                    borderWidth: "2px",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "#3D3434",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#3D3434",
+                  },
+                  height: {
+                    lg: "auto",
+                    md: "auto",
+                    sm: "auto",
+                    xs: "30px",
+                  },
+                },
+                "& .MuiInputLabel-root": {
+                  fontSize: { sx: "12px" },
+                  top: {
+                    lg: "-3px",
+                    md: "-3px",
+                    sm: "-3px",
+                    xs: "-7px",
+                  }, 
+                  transform: {
+                    xs: "translate(14px, 10px) scale(1)",
+                    sm: "translate(14px, 20px) scale(1)",
+                  }, 
+                },
+                "& .MuiInputLabel-shrink": {
+                  transform: { xs: "translate(14px, -10px) scale(0.75)" },
+                },
           }}
         />
         <TextField
@@ -240,20 +342,50 @@ const Selling = () => {
           margin="normal"
           sx={{
             "& .MuiOutlinedInput-root": {
-              "& fieldset": {
-                borderWidth: "2px",
-              },
-              "&:hover fieldset": {
-                borderColor: "#3D3434",
-              },
-              "&.Mui-focused fieldset": {
-                borderColor: "#3D3434",
-              },
-            },
+                  "& fieldset": {
+                    borderColor: "#5d5d5d",
+                    borderWidth: "2px",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "#3D3434",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#3D3434",
+                  },
+                  height: {
+                    lg: "auto",
+                    md: "auto",
+                    sm: "auto",
+                    xs: "30px",
+                  },
+                },
+                "& .MuiInputLabel-root": {
+                  fontSize: { sx: "12px" },
+                  top: {
+                    lg: "-3px",
+                    md: "-3px",
+                    sm: "-3px",
+                    xs: "-7px",
+                  }, 
+                  transform: {
+                    xs: "translate(14px, 10px) scale(1)",
+                    sm: "translate(14px, 20px) scale(1)",
+                  }, 
+                },
+                "& .MuiInputLabel-shrink": {
+                  transform: { xs: "translate(14px, -10px) scale(0.75)" },
+                },
           }}
         />
       </Box>
-      <Box width={"40%"}>
+      <Box sx={{
+        width:{
+          lg: '40%',
+          md: '60%',
+          sm: '70%',
+          xs: '70%'
+        }
+      }}>
         <FormControl component="fieldset">
           <FormLabel component="legend" sx={{ color: "#3d3434" }}>
             Type:
@@ -278,7 +410,14 @@ const Selling = () => {
           </RadioGroup>
         </FormControl>
       </Box>
-      <Box width={"40%"}>
+      <Box sx={{
+        width:{
+          lg: '40%',
+          md: '60%',
+          sm: '70%',
+          xs: '70%'
+        }
+      }}>
         <Typography variant="subtitle1" color="#3d3434">
           Image:
         </Typography>
@@ -320,7 +459,14 @@ const Selling = () => {
           style={{ display: "none" }}
         />
       </Box>
-      <Box width={"40%"} mt={2}>
+      <Box sx={{
+        width:{
+          lg: '40%',
+          md: '60%',
+          sm: '70%',
+          xs: '70%'
+        }
+      }} mt={2}>
         <Typography variant="subtitle1" color="#3d3434">
           Description:
         </Typography>

@@ -22,7 +22,7 @@ import Cart from './Pages/Cart';
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename='/Coffee_Tea_commerce_Demo'>
         <Heading/>
         <Navbar />
         <ScrollToTop />

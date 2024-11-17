@@ -36,9 +36,9 @@ const Breadcrums = (props) => {
       sx={{
         ml:{
           lg: 25,
-          md: 25,
-          sm: 20,
-          xs: 10
+          md: 20,
+          sm: 15,
+          xs: 5
         }
       }}
     >

@@ -34,7 +34,7 @@ let all_product = [
         "description": "A lively, balanced coffee, sweet and smooth with lively citrus topnotes and a lingering buttery finish. Bright enough for breakfast, smooth enough to drink all day...or mix with whiskey for a memorable Irish Coffee.",
         "small_description": "A refreshing start to your day.",
         "image": image01,
-        "favor": "Light favor",
+        "favor": "Light Favor",
         "category": "coffee",
         "quantity": 100,
         "grind": "Espresso",
@@ -47,7 +47,7 @@ let all_product = [
         "description": "Caribbean Roasters Sunrise Roast Ground Coffee is a medium roasted blend featuring delicate notes of chocolate, orange zest, and apricot. Enjoy the flavors of the island life from the comfort of home with this 8oz pouch.",
         "small_description": "Wake up gently with the soft.",
         "image": image02,
-        "favor": "Light favor",
+        "favor": "Light Favor",
         "category": "coffee",
         "quantity": 100,
         "grind": "Manual Drip",
@@ -60,7 +60,7 @@ let all_product = [
         "description": "Bright, fruity, and melodious, with notes of cherry, dark chocolate, and orange peel. Our seasonal espresso blend. ",
         "small_description": "For espresso lovers.",
         "image": image03,
-        "favor": "Light favor",
+        "favor": "Light Favor",
         "category": "coffee",
         "quantity": 100,
         "grind": "Auto Drip",
@@ -73,7 +73,7 @@ let all_product = [
         "description": "Rich, intense, and unforgettable—our Dark Roast of the Decade is a masterpiece crafted for true coffee aficionados. With deep, smoky flavors and a bold body, this roast delivers a powerful experience with every sip. ",
         "small_description": "Rich, intense, and unforgettable.",
         "image": image04,
-        "favor": "Strong favor",
+        "favor": "Strong Favor",
         "category": "coffee",
         "quantity": 100,
         "grind": "Espresso",
@@ -86,7 +86,7 @@ let all_product = [
         "description": "Our favorite beans for this deepest roast are from the leading Latin American origins, such as Guatemala and Colombia, where high altitudes enable coffee cherry to mature more slowly, becoming denser, harder, and packed with flavor.",
         "small_description": "Bold, smoky, and sustainably sourced.",
         "image": image05,
-        "favor": "Strong favor",
+        "favor": "Strong Favor",
         "category": "coffee",
         "quantity": 100,
         "grind": "Manual Drip",
@@ -99,7 +99,7 @@ let all_product = [
         "description": "Unleash your inner beast with Monster Fuel, a high-octane coffee blend crafted for those who need serious energy. This powerful dark roast packs a punch with bold, smoky flavors and an extra boost of caffeine to keep you going all day long. ",
         "small_description": "Bold, smoky flavors.",
         "image": image06,
-        "favor": "Strong favor",
+        "favor": "Strong Favor",
         "category": "coffee",
         "quantity": 100,
         "grind": "Auto Drip",
@@ -112,7 +112,7 @@ let all_product = [
         "description": "The heaviest bodied and smoothest of the Sonofresco espresso blends, with complexity concentrated at the bottom of the profile: dry fruit, dark chocolate notes. Designed to master large milk drinks with body and presence rather than with sharpness. Produces a low-toned, syrupy straight shot.",
         "small_description": "Crisp, toasty.",
         "image": image07,
-        "favor": "Good with milk",
+        "favor": "Good With Milk",
         "category": "coffee",
         "quantity": 100,
         "grind": "Espresso",
@@ -125,7 +125,7 @@ let all_product = [
         "description": "Made exclusively from 100% Arabica specialty beans, each cup promises a superior taste that traditional instant coffees can’t match. Our unique freeze-drying process locks in the aroma and depth of flavour, ensuring that you enjoy a premium coffee experience without the need for any machines.",
         "small_description": "Apple acidity, sweet orange.",
         "image": image08,
-        "favor": "Good with milk",
+        "favor": "Good With Milk",
         "category": "coffee",
         "quantity": 100,
         "grind": "Manual Drip",
@@ -138,7 +138,7 @@ let all_product = [
         "description": "A light to medium roast with naturally sweet undertones, Bliss Brew blends perfectly with milk for a smooth, creamy cup. The delicate flavors of honey and vanilla shine through, offering a balanced sweetness that makes it ideal for milk-based drinks like lattes and macchiatos.",
         "small_description": "Sweet undertones.",
         "image": image09,
-        "favor": "Good with milk",
+        "favor": "Good With Milk",
         "category": "coffee",
         "quantity": 100,
         "grind": "Auto Drip",
@@ -151,11 +151,11 @@ let all_product = [
         "description": "Sencha is a popular Japanese green tea that boasts a light, grassy flavor with a hint of sweetness. It has a refreshing and clean profile, making it a great choice for a morning boost or an afternoon pick-me-up. Its vibrant green color and smooth finish are sure to delight.",
         "small_description": "Light, sweetness.",
         "image": image10,
-        "favor": "Light favor",
+        "favor": "Light Favor",
         "category": "tea",
         "quantity": 100,
         "form": "Pound",
-        "type":"Tea bag"
+        "type":"Tea Bag"
     },
     {
         "id":11,
@@ -164,11 +164,11 @@ let all_product = [
         "description": "Known for its delicate flavor, white tea is made from young tea leaves and buds. It offers a subtle sweetness and a light, airy aroma, making it a refreshing choice. Its gentle taste is perfect for those who prefer a mild and soothing tea experience.",
         "small_description": "Delicate, light, airy aroma.",
         "image": image11,
-        "favor": "Light favor",
+        "favor": "Light Favor",
         "category": "tea",
         "quantity": 100,
         "form": "Bags",
-        "type":"Tea bag"
+        "type":"Tea Bag"
     },
     {
         "id":12,
@@ -177,11 +177,11 @@ let all_product = [
         "description": "Chamomile tea is made from dried chamomile flowers and is known for its light, floral flavor. It has a naturally soothing quality, often enjoyed for its calming effects. With its gentle sweetness and subtle apple-like notes, chamomile is perfect for winding down at any time of the day.",
         "small_description": "Sweetness, apply favor.",
         "image": image12,
-        "favor": "Light favor",
+        "favor": "Light Favor",
         "category": "tea",
         "quantity": 100,
-        "form": "Tin can",
-        "type":"Powdered tea"
+        "form": "Tin Can",
+        "type":"Powdered Tea"
     },
     {
         "id":13,
@@ -190,11 +190,11 @@ let all_product = [
         "description": "Assam black tea is renowned for its robust and malty flavor. Grown in the Assam region of India, it has a bold character that is perfect for those who enjoy a strong cup of tea. Its rich, dark color and full-bodied taste make it an excellent choice for breakfast teas, often enjoyed with milk and sugar.",
         "small_description": "Robust and malty flavor.",
         "image": image13,
-        "favor": "Strong favor",
+        "favor": "Strong Favor",
         "category": "tea",
         "quantity": 100,
         "form": "Bags",
-        "type":"Powdered tea"
+        "type":"Powdered Tea"
     },
     {
         "id":14,
@@ -203,11 +203,11 @@ let all_product = [
         "description": "Earl Grey is a classic black tea flavored with bergamot oil, giving it a distinctive and aromatic flavor profile. The strong black tea base combined with the citrusy notes of bergamot creates a bold and refreshing cup, perfect for tea lovers who appreciate a fragrant and flavorful experience.",
         "small_description": "Distinctive and aromatic flavor.",
         "image": image14,
-        "favor": "Strong favor",
+        "favor": "Strong Favor",
         "category": "tea",
         "quantity": 100,
         "form": "Pound",
-        "type":"Tea bag"
+        "type":"Tea Bag"
     },
     {
         "id":15,
@@ -216,11 +216,11 @@ let all_product = [
         "description": "Pu-erh is a fermented dark tea from China known for its earthy and complex flavor. Its strong, rich taste often includes notes of leather, wood, and a slight sweetness. Pu-erh is unique because it improves with age, making each sip a journey through its deep and layered flavors. It’s an excellent choice for those who enjoy a hearty and distinctive tea experience.",
         "small_description": "Earthy and complex flavor.",
         "image": image15,
-        "favor": "Strong favor",
+        "favor": "Strong Favor",
         "category": "tea",
         "quantity": 100,
         "form": "Bags",
-        "type":"Powdered tea"
+        "type":"Powdered Tea"
     },
     {
         "id":16,
@@ -232,8 +232,8 @@ let all_product = [
         "favor": "Special leaf",
         "category": "tea",
         "quantity": 100,
-        "form": "Tin can",
-        "type":"Tea bag"
+        "form": "Tin Can",
+        "type":"Tea Bag"
     },
     {
         "id":17,
@@ -246,7 +246,7 @@ let all_product = [
         "category": "tea",
         "quantity": 100,
         "form": "Bags",
-        "type":"Tea bag"
+        "type":"Tea Bag"
     },
     {
         "id":18,
@@ -259,7 +259,7 @@ let all_product = [
         "category": "tea",
         "quantity": 100,
         "form": "Bags",
-        "type":"Powdered tea"
+        "type":"Powdered Tea"
     },
     {
         "id":19,

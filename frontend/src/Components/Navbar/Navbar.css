@@ -50,7 +50,17 @@
 @media screen and (max-width: 900px){
     .navbar-container{
         justify-content: flex-start;
-        height: 50px;
+        height: 40px;
+    }
+    .navbar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .navbar-container{
+        justify-content: flex-start;
+        height: 30px;
     }
     .navbar {
         display: none;

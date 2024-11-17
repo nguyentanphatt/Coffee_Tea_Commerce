@@ -7,7 +7,7 @@ import News from './News'
 
 const HomePage = () => {
   return (
-    <div>
+    <div style={{backgroundColor: '#f5f5f5'}}>
         <Banner />
         <CoffeeSpecial />
         <TeaSpecial />

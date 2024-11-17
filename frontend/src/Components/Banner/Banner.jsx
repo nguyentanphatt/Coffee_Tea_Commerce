@@ -10,11 +10,13 @@ const Banner = () => {
               variant='h3'
               sx={{
                 color: '#fff',
-                mb: 2,
+                mb: {
+                  lg: 2, mg: 2, sm: 1, xs: 0
+                },
                 fontWeight: '600',
                 fontSize:{
                   lg: '3rem',
-                  md: '2.5rem',
+                  md: '2.3rem',
                   sm: '1.5rem',
                   xs: '1rem'
                 }
@@ -27,14 +29,14 @@ const Banner = () => {
                   lg: 2,
                   md: 2,
                   sm: 1,
-                  xs: 1
+                  xs: 0
                 },
                 color: '#fff',
                 fontSize:{
                   lg: '1.5rem',
                   md: '1rem',
                   sm: '0.8rem',
-                  xs: '0.6rem'
+                  xs: '0.62rem'
                 }
               }}
             >Get now to sale up to 20%</Typography>
@@ -44,17 +46,17 @@ const Banner = () => {
               sx={{
                 fontSize: {
                   lg: 16,
-                  md: 16,
+                  md: 12,
                   sm: 10,
                   xs: 8
 
                 },
                 fontWeight: '600',
                 width: {
-                  lg: '180px',
-                  md: '180px',
-                  sm: '120px',
-                  xs: '100px'
+                  lg: '50%',
+                  md: '60%',
+                  sm: '60%',
+                  xs: '80%'
                 },
                 backgroundColor: '#342B2B',
                 '&:hover':{
@@ -62,7 +64,6 @@ const Banner = () => {
                   color: '#342B2B',
                   
                 },
-                
               }}
             >Get it now!!</Button>
         </Box>

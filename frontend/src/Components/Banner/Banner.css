@@ -5,7 +5,9 @@
     justify-content: space-between;
     gap: 100px;
     background-color: #6D6C6C;
-    margin: 20px;
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
 }
 
 .banner-left {
@@ -14,11 +16,11 @@
     flex-direction: column;
     justify-content: center;
     gap: 10px;
+    width: 40%;
 }
 
 .banner-right {
-    width: 1000px;
-    height: 400px;
+    width: 60%;
 }
 
 .banner-right img{
@@ -28,35 +30,74 @@
 
 @media screen and (max-width: 1200px) {
     .banner{
-        height: 360px;
+        height: 100%;
+    }
+
+    .banner-left{
+        margin-bottom: 5px;
     }
 
     .banner-right img {
-        width: 90%;
-        height: 90%;
-        margin-left: 60px;
+        width: 100%;
+        height: 100%;
     }
 }
 @media screen and (max-width: 900px) {
     .banner{
-        height: 240px;
+        height: 100%;
+    }
+
+    .banner-left {
+        gap: 1px;
+        margin-left: 30px;
+        width: 40%;
+    }
+
+    .banner-right {
+        width: 80%;
     }
 
     .banner-right img {
         width: 100%;
-        height: 60%;
+        height: 100%;
     }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
     .banner{
-        height: 160px;
+        height: 100%;
     }
     .banner-left {
         gap: 1px;
+        margin-left: 30px;
+        width: 40%;
+    }
+
+    .banner-right {
+        width: 60%;
     }
 
     .banner-right img {
         width: 100%;
-        height: 40%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .banner{
+        height: 100%;
+    }
+    .banner-left {
+        width: 60%;
+        padding: 5px;
+        margin-left: 10px;
+    }
+
+    .banner-right {
+        width: 70%;
+    }
+
+    .banner-right img {
+        width: 100%;
+        height: 100%;
     }
 }
